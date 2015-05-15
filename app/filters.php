@@ -33,6 +33,17 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('sentry.admin',function(){
+	if(!Sentry::check()){
+
+	}else{
+		$user = Sentry::getUser();
+		if(! $user->hasAccess('admin')){
+			
+		}
+	}
+});
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())

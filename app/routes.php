@@ -15,3 +15,6 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::get('/danhmuc','UserController@index');
+Route::get('/login','UserController@getLogin');
+Route::get('/register','UserController@getRegister');
