@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'raovatct_db',
+			'database'  => 'raovatct',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

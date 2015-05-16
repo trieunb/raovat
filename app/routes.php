@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', ['as'=>'home', 'uses'=>'HomeController@index']);
 Route::get('/danhmuc','UserController@index');
-Route::get('/login','UserController@getLogin');
-Route::get('/register','UserController@getRegister');
+
+Route::group(array('before'=>'sentry.logged'), function() {
+	Route::get('/login',array('as'=>'users.login', 'uses'=>'AuthController@login'));
+	Route::post('/login','AuthController@doLogin');
+	Route::get('/register',array('as'=>'users.register', 'uses'=>'AuthController@register'));
+	Route::post('/register','AuthController@doRegister');
+});
+
+Route::group(array('before'=>'sentry.auth'), function() {
+	Route::get('/profile', 'UserController@profile');
+});

@@ -44,6 +44,13 @@ Route::filter('sentry.admin',function(){
 	}
 });
 
+Route::filter('sentry.auth', function() {
+	if( ! Sentry::check()) return Redirect::route('users.login');
+});
+Route::filter('sentry.logged', function() {
+	if(Sentry::check())	return Redirect::to('/');
+});
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())

@@ -1,0 +1,641 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"edit",
+				"edit_column"
+			],
+			[
+				"Inp",
+				"Input-all	Input-all"
+			],
+			[
+				"wi",
+				"withInput"
+			],
+			[
+				"ntv",
+				"ntv_nganhnghe"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"province",
+				"province_id"
+			],
+			[
+				"with",
+				"withErrors"
+			],
+			[
+				"val",
+				"validator"
+			],
+			[
+				"Input",
+				"Input-all	Input-all"
+			],
+			[
+				"loca",
+				"locationDB"
+			],
+			[
+				"res",
+				"resume"
+			],
+			[
+				"provin",
+				"province_id"
+			],
+			[
+				"provi",
+				"province_id"
+			],
+			[
+				"ntv_n",
+				"ntv_noilamviec"
+			],
+			[
+				"nt",
+				"ntv_noilamviec"
+			],
+			[
+				"key",
+				"keyGet"
+			],
+			[
+				"Redirec",
+				"Redirect-route	Redirect-route"
+			],
+			[
+				"eac",
+				"each	.each()"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"In",
+				"Input-get	Input-get"
+			],
+			[
+				"work",
+				"work_location"
+			],
+			[
+				"is_n",
+				"is_numeric"
+			],
+			[
+				"ntv_",
+				"ntv_nganhnghe"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"Red",
+				"Redirect-back	Redirect-back"
+			],
+			[
+				"pa",
+				"params"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"remove",
+				"removeprop	.removeProp()"
+			],
+			[
+				"pro",
+				"prop	.prop() - multiple"
+			],
+			[
+				"Re",
+				"Request-json	Request-json"
+			],
+			[
+				"Cook",
+				"Cookie-get	Cookie-get"
+			],
+			[
+				"refer",
+				"refererUrl"
+			],
+			[
+				"Request",
+				"Request-url	Request-url"
+			],
+			[
+				"VIew",
+				"View-name	View-name"
+			],
+			[
+				"View",
+				"View-make	View-make"
+			],
+			[
+				"Config",
+				"Config-get	Config-get"
+			],
+			[
+				"Conf",
+				"Config-set	Config-set"
+			],
+			[
+				"Con",
+				"Config-get	Config-get"
+			],
+			[
+				"Route",
+				"Route-group	Route-group"
+			],
+			[
+				"uplo",
+				"uploadID"
+			],
+			[
+				"Redi",
+				"Redirect-to	Redirect-to"
+			],
+			[
+				"jobs",
+				"jobseekers"
+			],
+			[
+				"Req",
+				"Request-all	Request-all"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"Res",
+				"Response-json	Response-json"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"job",
+				"jobseekers"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "genera",
+		"selected_items":
+		[
+			[
+				"genera",
+				"Laravel Generate: Migration"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"gen",
+				"Laravel Generate: Migration"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"gener",
+				"Laravel Generate: Migration"
+			],
+			[
+				"gene",
+				"Laravel Generate: Seed"
+			],
+			[
+				"ge",
+				"Laravel Generate: Migration"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/xampp/htdocs/raovatct/app/controllers/HomeController.php",
+		"/E/xampp/htdocs/raovatct/app/controllers/UserController.php",
+		"/E/xampp/htdocs/vnjobs/app/database/migrations/2015_05_13_015633_add_jobseekers1_table.php",
+		"/E/xampp/htdocs/vnjobs/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php",
+		"/E/xampp/htdocs/vnjobs/app/models/Resume.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/resumes/print.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/resumes/edit.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/Admin/ResumeController.php",
+		"/C/Users/DAT/AppData/Local/Temp/fz3temp-1/index.ctp",
+		"/E/xampp/htdocs/vnjobs/app/models/NTV.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/resumes/index.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/jobseekers/edit.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/Admin/JobSeekerController.php",
+		"/E/xampp/htdocs/vnjobs/app/models/WorkLocation.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/resumes/create.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/DTT/Forms/AdminCVCreate.php",
+		"/E/xampp/htdocs/vnjobs/app/start/global.php",
+		"/E/xampp/htdocs/vnjobs/app/routes.php",
+		"/E/xampp/htdocs/class.php",
+		"/E/xampp/htdocs/vnjobs/vendor/laravel/framework/src/Illuminate/Support/Collection.php",
+		"/E/xampp/htdocs/vnjobs/app/models/CVLanguage.php",
+		"/C/Users/DAT/Downloads/decrypt",
+		"/E/xampp/htdocs/vnjobs/app/models/Category.php",
+		"/E/xampp/htdocs/vnjobs/app/models/CVCategory.php",
+		"/E/xampp/htdocs/vnjobs/app/macros.php",
+		"/E/xampp/htdocs/vnjobs/vendor/laravel/framework/src/Illuminate/Pagination/Factory.php",
+		"/E/xampp/htdocs/vnjobs/vendor/laravel/framework/src/Illuminate/Pagination/Paginator.php",
+		"/C/Users/DAT/AppData/Local/Temp/fz3temp-2/youtube.com.php",
+		"/C/Users/DAT/AppData/Roaming/Skype/My Skype Received Files/bdtvhd.php",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/DAT/Desktop/hosts",
+		"/E/xampp/htdocs/vnjobs/app/database/migrations/2015_05_13_045458_create_mt_certificates_table.php",
+		"/E/xampp/htdocs/vnjobs/app/database/migrations/2015_05_07_023559_create_certificates_table.php",
+		"/E/xampp/htdocs/vnjobs/app/config/packages/cartalyst/sentry/config.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/NTV/JobSeekerAuth.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/Admin/AdminController.php",
+		"/E/xampp/htdocs/vnjobs/app/database/migrations/2015_05_07_022139_create_jobseekers_table.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/jobseekers/create.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/users/edit.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/users/create.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/layouts/admin.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/users/index.blade.php",
+		"/E/xampp/htdocs/vnjobs/public/assets/js/jquery.cookie.js",
+		"/E/xampp/htdocs/vnjobs/app/breadcrumbs.php",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/admin/sidebar.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa1.539/bootstrap3.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/packages/davejamesmiller/laravel-breadcrumbs/bootstrap3.blade.php",
+		"/C/Users/DAT/Desktop/fake-uploader/app/config/compile.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.584/bootstrap3.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.750/bootstrap3.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.151/default.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.955/default.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/config/mail.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.236/mail.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.015/packages.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.842/view.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.450/app.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.539/composer.json",
+		"/E/xampp/htdocs/vnjobs/vendor/davejamesmiller/laravel-breadcrumbs/src/DaveJamesMiller/Breadcrumbs/Generator.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.827/breadcrumbs.php",
+		"/E/xampp/htdocs/vnjobs/app/Http/breadcrumbs.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.198/breadcrumbs.php",
+		"/E/xampp/htdocs/vnjobs/app/config/app.php",
+		"/E/xampp/htdocs/vnjobs/app/breakcrumbs.php",
+		"/C/Users/DAT/AppData/Local/Temp/fz3temp-1/database.php",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/jobseekers/index.blade.php",
+		"/C/Users/DAT/Desktop/fake-uploader/server.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.572/breadcrumbs.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.524/macros.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.392/local.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.525/global.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.000/artisan.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.397/StrTest.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.040/TestCase.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.356/StrTest.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.649/DatatablesTest.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.357/UsersController.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.756/datatables.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.782/database.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.190/Str.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.461/EventServiceProvider.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.373/RepositoryServiceProvider.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.267/RepositoryServiceProvider.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.799/EventServiceProvider.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.492/composer.json",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.536/default.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.567/notifications.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.364/navbar.blade.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.417/create.blade.php",
+		"/E/xampp/htdocs/vnjobs/composer.json",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.429/routes.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.435/macros.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.262/filters.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.660/global.php",
+		"/C/Users/DAT/AppData/Local/Temp/Rar$DIa0.994/composer.json",
+		"/E/xampp/htdocs/vnjobs/public/assets/css/bootstrap-switch.css",
+		"/E/xampp/htdocs/vnjobs/public/assets/js/bootstrap-switch.min.js",
+		"/E/xampp/htdocs/vnjobs/app/database/migrations/2015_05_12_015747_add_jobseekers_table.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/Admin/UserController.php",
+		"/E/xampp/htdocs/vnjobs/app/DTT/Forms/AdminUserSave.php",
+		"/E/xampp/htdocs/vnjobs/app/views/jobseekers/register.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/layouts/jobseeker.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/lang/en/jobseekers.php",
+		"/C/Users/DAT/Desktop/messages",
+		"/E/xampp/htdocs/vnjobs/app/lang/vi/jobseekers.php",
+		"/E/xampp/htdocs/vnjobs/public/vnjobs_html/dangky.php",
+		"/E/xampp/htdocs/vnjobs/public/vnjobs_html/home.php",
+		"/E/xampp/htdocs/vnjobs/app/views/jobseekers/login.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/jobseekers/home.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/controllers/NTV/Jobseeker.php",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/jobseekers/breadcrumb.blade.php",
+		"/E/xampp/htdocs/vnjobs/public/assets/js/main.js",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/jobseekers/search.blade.php",
+		"/E/xampp/htdocs/vnjobs/public/vnjobs_html/header.php",
+		"/E/xampp/htdocs/testlaravel/app/routes.php",
+		"/E/xampp/htdocs/testlaravel/app/controllers/HomeController.php",
+		"/E/xampp/htdocs/testlaravel/composer.json",
+		"/E/xampp/htdocs/testlaravel/app/config/app.php",
+		"/E/xampp/htdocs/testlaravel/app/config/packages/artdarek/oauth-4-laravel/config.php",
+		"/E/xampp/htdocs/vnjobs/public/assets/css/dataTables.bootstrap.css",
+		"/E/xampp/htdocs/vnjobs/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php",
+		"/E/xampp/htdocs/vnjobs/vendor/bllim/datatables/src/Bllim/Datatables/Datatables.php",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/admin/navbar.blade.php",
+		"/E/xampp/htdocs/vnjobs/public/ace/index.html",
+		"/E/xampp/htdocs/vnjobs/app/views/admin/dashboard.blade.php",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/sidebar.blade.php",
+		"/E/xampp/htdocs/vnjobs/public/assets/css/bootstrap.min.css",
+		"/E/xampp/htdocs/vnjobs/app/views/includes/navbar.blade.php"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"full_name",
+			"mt_certificates",
+			"{\n",
+			"$query",
+			"$q",
+			"q",
+			"']",
+			"value['",
+			"search",
+			"jobseekers",
+			"null",
+			"orWhere",
+			"']);\n",
+			"id",
+			"Form::o",
+			"72.125.224.68",
+			"create",
+			",",
+			"numeric",
+			"rules",
+			"'});\n",
+			"    ",
+			"search_email",
+			"    ",
+			"country_v2-query",
+			"index",
+			"jobsekkers",
+			"resumes",
+			"    ",
+			"Dashboard",
+			"brea",
+			"form-field-select-4",
+			"<script src=\"",
+			"<link rel=\"stylesheet\" href=\"",
+			"level",
+			"education",
+			"work_location",
+			"gender",
+			"status",
+			"date_of_birth",
+			"full_name",
+			"status",
+			"salary",
+			") ) }}",
+			"col-sm-2",
+			"<div class=\"col-sm-10\">",
+			"col-sm-2 control-label",
+			"jobseekers",
+			"firefox",
+			"<img src=\"assets/images/customer.png\" alt=\"...\">",
+			"::to",
+			"<a href=\"#\"><img src=\"assets/images/demo.png\"></a>",
+			"setContent",
+			"The Response content must be a string or object implementing __toStrin",
+			"avata",
+			"<script src=\"",
+			"Open Sans",
+			"open sans",
+			"ntv_email",
+			"ntv_info",
+			"ntv_email",
+			"ntv_e",
+			"ntv_linkedinID",
+			"ntv_googleID",
+			"ntv_fbID",
+			"ntv_tinhthanh",
+			"ntv_diachi",
+			"ntv_tinhtranghonnhan",
+			"ntv_gioitinh",
+			"ntv_ngaysinh",
+			"ntv_hoten",
+			"ntv_email",
+			"ntvcv_id",
+			"mul_",
+			"ntv_",
+			"ntv_info",
+			"ntv_hoten",
+			"ntv_cv",
+			"ntv_hosomacdinh",
+			"ntv_ngaysinh",
+			"ntv_hoten",
+			"ntv_email",
+			"<option value=\"",
+			"                                           ",
+			"\n",
+			">",
+			"<option value='",
+			"\n",
+			">",
+			"</option>",
+			"<option ",
+			"			",
+			"ntvcv_id",
+			"\n",
+			");",
+			"string",
+			"\n",
+			"$",
+			"string",
+			"\n",
+			");",
+			"\n",
+			"')",
+			"'",
+			"integer",
+			"\n",
+			"->",
+			"\n",
+			"string",
+			"\n",
+			"string",
+			"\n",
+			"->",
+			"\\",
+			"H:",
+			"vnjob"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"	",
+			"Roboto",
+			"",
+			"C:"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "filters.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"vendor/bllim/datatables/src/bllim/datatables/datatables.php",
+				"vendor\\bllim\\datatables\\src\\Bllim\\Datatables\\Datatables.php"
+			],
+			[
+				"endor/symfony/http-foundation/symfony/component/httpfoundation/response.php",
+				"vendor\\symfony\\http-foundation\\Symfony\\Component\\HttpFoundation\\Response.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 385.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

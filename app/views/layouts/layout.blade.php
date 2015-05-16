@@ -1,263 +1,347 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>@yield('title', isset($title) ?: 'Trang chủ') - Cần Thơ Info</title>
 
-	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }} "> <!-- CSS reset -->
-	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> <!-- Resource style -->
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/bootswatch.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
-	<script src="{{ asset('assets/js/modernizr.js') }}"></script> <!-- Modernizr -->
-  	
-	<title>@yield('title')</title>
-</head>
-<body>
-	<header class="cd-main-header">
-		<a class="cd-logo" href="#0"><img src="img/cd-logo.svg" alt="Logo"></a>
+		<!-- Bootstrap CSS -->
+		{{ HTML::style('assets/css/bootstrap.min.css') }}
 
-		<ul class="cd-header-buttons">
-			<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-			<li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
-		</ul> <!-- cd-header-buttons -->
-	</header>
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="row clearfix">
+						<div class="col-md-6 column">
+						</div>
+						<div class="col-md-6 column">
+						</div>
+					</div>
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Brand</a>
+						</div>
+						
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="#">Link</a>
+								</li>
+								<li>
+									<a href="#">Link</a>
+								</li>
+								<li class="dropdown">
+									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Action</a>
+										</li>
+										<li>
+											<a href="#">Another action</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">One more separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" />
+								</div> <button type="submit" class="btn btn-default">Submit</button>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<a href="#">Link</a>
+								</li>
+								<li class="dropdown">
+									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Action</a>
+										</li>
+										<li>
+											<a href="#">Another action</a>
+										</li>
+										<li>
+											<a href="#">Something else here</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li>
+											<a href="#">Separated link</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						
+					</nav>
+					<div class="jumbotron">
+						<h1>
+							Welcome to Cần Thơ Info
+						</h1>
+						<p>
+							Chào mừng bạn đến với hệ thống website rao vặt lớn nhất Cần Thơ
+						</p>
+						<p>
+							<a class="btn btn-primary btn-large" href="#">Đăng Ký Ngay</a>
+						</p>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-9 column">
+							<h2>
+								Tin tức 01
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+							</p>
+							<h2>
+								Tin tức 02
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+							</p>
+							
+							<h2>
+								Tin tức 03
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								<a class="btn" href="#">View details »</a>
+							</p>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/people" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/city" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/sports" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/people" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/city" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<img alt="300x200" src="http://lorempixel.com/600/200/sports" />
+										<div class="caption">
+											<h3>
+												Tin tức HOT
+											</h3>
+											<p>
+												Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+											</p>
+											<p>
+												<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 column">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Tài khoản
+									</h3>
+								</div>
+								<div class="panel-body">
+									Panel content
+								</div>
+								<div class="panel-footer">
+									Panel footer
+								</div>
+							</div>
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										Danh mục
+									</h3>
+								</div>
+								<div class="panel-body">
+									Panel content
+								</div>
+								<div class="panel-footer">
+									Panel footer
+								</div>
+							</div><img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" /><img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-md-12 column">
+							<div class="row clearfix">
+								<div class="col-md-4 column">
+									 <address> <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+								</div>
+								<div class="col-md-4 column">
+									<ul>
+										<li>
+											Lorem ipsum dolor sit amet
+										</li>
+										<li>
+											Consectetur adipiscing elit
+										</li>
+										<li>
+											Integer molestie lorem at massa
+										</li>
+										<li>
+											Facilisis in pretium nisl aliquet
+										</li>
+										<li>
+											Nulla volutpat aliquam velit
+										</li>
+										<li>
+											Faucibus porta lacus fringilla vel
+										</li>
+										<li>
+											Aenean sit amet erat nunc
+										</li>
+										<li>
+											Eget porttitor lorem
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-4 column">
+									<ol>
+										<li>
+											Lorem ipsum dolor sit amet
+										</li>
+										<li>
+											Consectetur adipiscing elit
+										</li>
+										<li>
+											Integer molestie lorem at massa
+										</li>
+										<li>
+											Facilisis in pretium nisl aliquet
+										</li>
+										<li>
+											Nulla volutpat aliquam velit
+										</li>
+										<li>
+											Faucibus porta lacus fringilla vel
+										</li>
+										<li>
+											Aenean sit amet erat nunc
+										</li>
+										<li>
+											Eget porttitor lorem
+										</li>
+									</ol>
+								</div>
+							</div>
+							<h3>
+								h3. Lorem ipsum dolor sit amet.
+							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	<main class="cd-main-content">
-		@yield('content')
-	</main>
-
-	<div class="cd-overlay"></div>
-
-	<nav class="cd-nav">
-		<ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
-			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Danh Mục</a>
-
-				<ul class="cd-secondary-nav is-hidden">
-					<li class="go-back"><a href="#0">Menu</a></li>
-					<li class="see-all"><a href="http://codyhouse.co/?p=409">All Clothing</a></li>
-					<li class="has-children">
-						<a href="http://codyhouse.co/?p=409">Accessories</a>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
-							<li class="has-children">
-								<a href="#0">Beanies</a>
-
-								<ul class="is-hidden">
-									<li class="go-back"><a href="#0">Accessories</a></li>
-									<li class="see-all"><a href="http://codyhouse.co/?p=409">All Benies</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Caps &amp; Hats</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Gifts</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Scarves &amp; Snoods</a></li>
-								</ul>
-							</li>
-							<li class="has-children">
-								<a href="#0">Caps &amp; Hats</a>
-
-								<ul class="is-hidden">
-									<li class="go-back"><a href="#0">Accessories</a></li>
-									<li class="see-all"><a href="http://codyhouse.co/?p=409">All Caps &amp; Hats</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Beanies</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Caps</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Hats</a></li>
-								</ul>
-							</li>
-							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<a href="http://codyhouse.co/?p=409">Bottoms</a>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
-							<li class="has-children">
-								<a href="#0">Jeans</a>
-
-								<ul class="is-hidden">
-									<li class="go-back"><a href="#0">Bottoms</a></li>
-									<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jeans</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Ripped</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Skinny</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Slim</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Straight</a></li>
-								</ul>
-							</li>
-							<li><a href="#0">Leggings</a></li>
-							<li><a href="#0">Shorts</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<a href="http://codyhouse.co/?p=409">Jackets</a>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<a href="http://codyhouse.co/?p=409">Tops</a>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
-							<li class="has-children">
-								<a href="#0">T-Shirts</a>
-
-								<ul class="is-hidden">
-									<li class="go-back"><a href="#0">Tops</a></li>
-									<li class="see-all"><a href="http://codyhouse.co/?p=409">All T-shirts</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Plain</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Print</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Striped</a></li>
-									<li><a href="http://codyhouse.co/?p=409">Long sleeved</a></li>
-								</ul>
-							</li>
-							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Thư Viện</a>
-
-				<ul class="cd-nav-gallery is-hidden">
-					<li class="go-back"><a href="#0">Menu</a></li>
-					<li class="see-all"><a href="http://codyhouse.co/?p=409">Browse Gallery</a></li>
-					<li>
-						<a class="cd-nav-item" href="http://codyhouse.co/?p=409">
-							<img src="img/img.jpg" alt="Product Image">
-							<h3>Product #1</h3>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item" href="http://codyhouse.co/?p=409">
-							<img src="img/img.jpg" alt="Product Image">
-							<h3>Product #2</h3>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item" href="http://codyhouse.co/?p=409">
-							<img src="img/img.jpg" alt="Product Image">
-							<h3>Product #3</h3>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item" href="http://codyhouse.co/?p=409">
-							<img src="img/img.jpg" alt="Product Image">
-							<h3>Product #4</h3>
-						</a>
-					</li>
-				</ul>
-			</li>
-
-			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Dịch Vụ</a>
-				<ul class="cd-nav-icons is-hidden">
-					<li class="go-back"><a href="#0">Menu</a></li>
-					<li class="see-all"><a href="http://codyhouse.co/?p=409">Browse Services</a></li>
-					<li>
-						<a class="cd-nav-item item-1" href="http://codyhouse.co/?p=409">
-							<h3>Service #1</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-2" href="http://codyhouse.co/?p=409">
-							<h3>Service #2</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-3" href="http://codyhouse.co/?p=409">
-							<h3>Service #3</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-4" href="http://codyhouse.co/?p=409">
-							<h3>Service #4</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-5" href="http://codyhouse.co/?p=409">
-							<h3>Service #5</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-6" href="http://codyhouse.co/?p=409">
-							<h3>Service #6</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-7" href="http://codyhouse.co/?p=409">
-							<h3>Service #7</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-
-					<li>
-						<a class="cd-nav-item item-8" href="http://codyhouse.co/?p=409">
-							<h3>Service #8</h3>
-							<p>This is the item description</p>
-						</a>
-					</li>
-				</ul>
-			</li>
-
-			<li><a href="{{ URL::action('UserController@getLogin') }}">Đăng Nhập</a></li>
-		</ul> <!-- primary-nav -->
-	</nav> <!-- cd-nav -->
-
-	<div id="cd-search" class="cd-search">
-		<form>
-			<input type="search" placeholder="Search...">
-		</form>
-	</div>
-	
-<script src="{{ asset('assets/js/jquery-2.1.1.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.mobile.custom.min.js') }}"></script>
-<script src="{{ asset('assets/js/main.js') }}"></script> <!-- Resource jQuery -->
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-</body>
+		<!-- jQuery -->
+		{{ HTML::script('assets/js/jquery-1.11.1.js') }}
+		<!-- Bootstrap JavaScript -->
+		{{ HTML::script('assets/js/bootstrap.min.js') }}
+	</body>
 </html>

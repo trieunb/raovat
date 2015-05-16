@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Login</title>
+		<title>Đăng nhập</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		{{ HTML::style('assets/css/bootstrap.min.css') }}
 		<link href="{{ asset('assets/css/login.css') }}" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,31 +28,32 @@
 		      </div>
 
 
-		      <form role="form">
+		      {{ Form::open(array('url'=>'/login', 'method'=>'POST')) }}
+		      @include('includes.notifications')
 		        <div class="form-group">
 		        	<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-					  <input type="text" class="form-control" placeholder="Tên đăng nhập" aria-describedby="basic-addon1">
+					  {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Tên đăng nhập') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
 		         <div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-star"></i></span>
-					  <input type="password" class="form-control" placeholder="Mật khẩu" aria-describedby="basic-addon1">
+					  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Nhập mật khẩu') ) }}
 					</div>
 		        </div>
 		        
 		        <div class="checkbox">
 		          <label>
-		            <input type="checkbox">
-		            ghi nhớ mật khẩu</label>
+		           	{{ Form::checkbox('remember', 1, 1) }} Ghi nhớ đăng nhập ?
+		          </label>
 		        </div>
 		        <div class="btn-login">
 		        	<input type="submit" class="btn btn btn-primary" value="Đăng nhập">
 		        </div>
 		      </form>
 		      <div class="quenmatkhau">
-		      	<span>(<a href="">Quên mật khẩu?</a> / <a href="#">Đăng Ký</a>)</h4></span>
+		      	<span>(<a href="">Quên mật khẩu?</a> / <a href="{{ URL::route('users.register') }}">Đăng Ký</a>)</h4></span>
 		      </div>
 		      <div class="login-or">
 		        <hr class="hr-or">
@@ -77,8 +78,8 @@
 		</div>
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
+		{{ HTML::script('assets/js/jquery-2.1.1.js') }}
 		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		{{ HTML::script('assets/js/bootstrap.min.js') }}
 	</body>
 </html>		
