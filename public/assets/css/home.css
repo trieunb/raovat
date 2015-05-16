@@ -25,7 +25,9 @@ a:hover {
 .widget ul {
 	padding-left: 15px;
 }
-
+.margin-top-5 {
+	margin-top: 5px;
+}
 /**** PAGE *****/
 * {transition: 0.3s;}
 .header {
@@ -61,8 +63,33 @@ a:hover {
 .paid-ads .post-title {
 	margin-top: 10px;
 }
+a.paid-job {
+	color: #FF0000;
+	font-weight: bold;
+}
+a.paid-job:hover {
+	color: #00ac98;
+}
 .btn-readmore {
 	clear: both;
+}
+span.index-company {
+	color: #838383;
+	font-style: italic;
+}
+div.index-job {
+	border-bottom: 1px solid #DDD;
+}
+span.flash-hot {
+	background: url('../img/hot.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 23px;
+	height: 13px;
+	position: relative;
+	display: inline-block;
+	zoom: 1;
+	top: 1px;
 }
 footer {
 	background: #3c3c3c;

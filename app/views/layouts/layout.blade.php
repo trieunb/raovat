@@ -64,39 +64,69 @@
 					<div class="row clearfix">
 						<div class="col-md-9 column">
 							<div class="content">
-								<div class="post paid-ads">
-									<h3 class="post-title">
-										<a href="#">Tin tức 01</a>
-									</h3>
-									<div class="post-content">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium recusandae beatae commodi numquam aspernatur quos quasi? Reiciendis, quod voluptatibus, odit maiores ad, expedita obcaecati non impedit saepe, deserunt minima fugit.
-										</p>
-										<a href="#" class="btn btn-info btn-cantho">Xem chi tiết</a>
+								<h3>Việc làm mới đăng</h3>
+								<div class="row">
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
 									</div>
-								</div>
-								<hr>
-								<div class="post">
-									<h3 class="post-title">
-										<a href="#">Tin tức 01</a>
-									</h3>
-									<div class="post-content">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium recusandae beatae commodi numquam aspernatur quos quasi? Reiciendis, quod voluptatibus, odit maiores ad, expedita obcaecati non impedit saepe, deserunt minima fugit.
-										</p>
-										<a href="#" class="btn btn-info btn-cantho">Xem chi tiết</a>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
 									</div>
-								</div>
-								<hr>
-								<div class="post">
-									<h3 class="post-title">
-										<a href="#">Tin tức 01</a>
-									</h3>
-									<div class="post-content">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium recusandae beatae commodi numquam aspernatur quos quasi? Reiciendis, quod voluptatibus, odit maiores ad, expedita obcaecati non impedit saepe, deserunt minima fugit.
-										</p>
-										<a href="#" class="btn btn-info btn-cantho">Xem chi tiết</a>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#" class="paid-job">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a>
+											<span class="flash-hot"></span>
+											<br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
+									</div>
+									<div class="col-xs-4 margin-top-5">
+										<div class="index-job">
+											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
+											<span class="index-company">Công ty TNHH Digitalship Japan</span>
+										</div>
 									</div>
 								</div>
 							</div>
