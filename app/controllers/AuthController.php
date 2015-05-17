@@ -2,11 +2,11 @@
 
 class AuthController extends \BaseController {
 
-	public function login()
+	public function getLogin()
 	{
 		return View::make('users.login');
 	}
-	public function doLogin()
+	public function postLogin()
 	{
 		$validator = new App\DTT\Forms\UserLoginForm;
 		if($validator->fails())
@@ -19,8 +19,8 @@ class AuthController extends \BaseController {
 			unset($credentials['remember']);
 			try
 			{
-				$user = Sentry::getUser();
-				var_dump($user); die();
+				// $user = Sentry::getUser();
+				// var_dump($user); die();
 				$user = Sentry::authenticate($credentials, $remember);
 				return Redirect::route('home');
 			}
@@ -58,16 +58,13 @@ class AuthController extends \BaseController {
 		}
 	}
 
-	public function getLogout(){
 
-		Sentry::logout();
-		return Redirect::to('users.login');
-	}
-	public function register()
+	public function getRegister()
 	{
 		return View::make('users.register');
 	}
-	public function doRegister()
+
+	public function postRegister()
 	{
 		$validator = new App\DTT\Forms\UserRegisterForm;
 		if($validator->fails())
@@ -107,89 +104,18 @@ class AuthController extends \BaseController {
 		}
 	}
 
+	public function getLogout(){
+
+		Sentry::logout();
+		return Redirect::to('user/login');
+
+	}
+
 	public function getDangtin(){
+
 		return View::make('users.dangtin');
+
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /auth
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /auth/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /auth
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /auth/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /auth/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /auth/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /auth/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 }

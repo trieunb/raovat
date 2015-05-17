@@ -50,7 +50,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-left">
 								<li class="active"> <a href="#">Trang chủ</a> </li>
-								<li> <a href="#">Đăng tin</a> </li>
+								<li> <a href="{{ URL::to('user/dangtin') }}">Đăng tin</a> </li>
 								<li> <a href="#">Liên hệ</a> </li>
 							</ul>
 						</div>
@@ -247,7 +247,7 @@
 									<ul>
 										<li><a href="#">Thông tin tài khoản</a></li>
 										<li><a href="#">Nâng cấp tài khoản</a></li>
-										<li><a href="{{ URL::action('AuthController@getLogout') }}">Đăng xuât</a></li>
+										<li><a href="">Đăng xuât</a></li>
 									</ul>
 								</div>
 								

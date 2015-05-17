@@ -8,7 +8,7 @@
 
 		<!-- Bootstrap CSS -->
 		{{ HTML::style('assets/css/bootstrap.min.css') }}
-		<link href="{{ asset('assets/css/login.css') }}" rel="stylesheet">
+		<link href="{{ asset('assets/css/user.css') }}" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +57,7 @@
 		        <span class="span-or">Hoặc</span>
 		      </div>
 
-		      {{ Form::open(array('url'=>'/register', 'method'=>'POST')) }}
+		      {{ Form::open(array('url'=>'user/register', 'method'=>'POST')) }}
 		      @include('includes.notifications')
 		        <div class="form-group">
 		          <div class="input-group">
@@ -110,7 +110,7 @@
 		        </div>
 		        <div class="btn-login">
 		        	<input type="submit" class="btn btn btn-success" value="Đăng ký">
-		        	<a href="{{ URL::route('users.login') }}" class="btn btn-primary">Đăng nhập</a>
+		        	<a href="{{ URL::to('user/login') }}" class="btn btn-primary">Đăng nhập</a>
 		        </div>
 		      {{ Form::close() }}
 		    </div>

@@ -45,7 +45,7 @@ Route::filter('sentry.admin',function(){
 });
 
 Route::filter('sentry.auth', function() {
-	if( ! Sentry::check()) return Redirect::route('users.login');
+	if( ! Sentry::check()) return Redirect::to('user/login');
 });
 Route::filter('sentry.logged', function() {
 	if(Sentry::check())	return Redirect::to('/');
@@ -61,7 +61,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest('users/login');
 		}
 	}
 });
