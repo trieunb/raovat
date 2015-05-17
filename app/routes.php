@@ -15,6 +15,9 @@ Route::get('/', ['as'=>'home', 'uses'=>'HomeController@index']);
 Route::get('/danhmuc','UserController@index');
 
 Route::group(array('before'=>'sentry.logged'), function() {
+
+	Route::controller('user','AuthController');
+
 	Route::get('/login',array('as'=>'users.login', 'uses'=>'AuthController@login'));
 	Route::post('/login','AuthController@doLogin');
 	Route::get('/register',array('as'=>'users.register', 'uses'=>'AuthController@register'));

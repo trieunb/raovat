@@ -247,7 +247,7 @@
 									<ul>
 										<li><a href="#">Thông tin tài khoản</a></li>
 										<li><a href="#">Nâng cấp tài khoản</a></li>
-										<li><a href="#">Đăng xuât</a></li>
+										<li><a href="{{ URL::action('AuthController@getLogout') }}">Đăng xuât</a></li>
 									</ul>
 								</div>
 								

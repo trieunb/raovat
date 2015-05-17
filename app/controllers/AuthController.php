@@ -19,6 +19,8 @@ class AuthController extends \BaseController {
 			unset($credentials['remember']);
 			try
 			{
+				$user = Sentry::getUser();
+				var_dump($user); die();
 				$user = Sentry::authenticate($credentials, $remember);
 				return Redirect::route('home');
 			}
@@ -54,6 +56,12 @@ class AuthController extends \BaseController {
 			}
 			return Redirect::back()->withInput()->withErrors($error);
 		}
+	}
+
+	public function getLogout(){
+
+		Sentry::logout();
+		return Redirect::to('users.login');
 	}
 	public function register()
 	{
@@ -97,6 +105,10 @@ class AuthController extends \BaseController {
 			}
 			return Redirect::back()->withInput()->withErrors($error);
 		}
+	}
+
+	public function getDangtin(){
+		return View::make('users.dangtin');
 	}
 
 	/**
