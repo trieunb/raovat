@@ -70,7 +70,7 @@ return array(
 		|
 		*/
 
-		'key' => 'cartalyst_sentry',
+		'key' => 'cartalyst_sentry_canthoit',
 
  	),
 

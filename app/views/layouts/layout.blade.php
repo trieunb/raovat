@@ -16,7 +16,7 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+		@yield('style')
 	</head>
 	<body class="cantho">
 		<div class="container">
@@ -31,7 +31,7 @@
 						</div>
 						<div class="col-sm-6 column">
 							<div id="ads" class="pull-right">
-								<a href="http://google.com" target="_blank">{{ HTML::image('assets/img/468x80.gif', null, array('class'=>'img-responsive') ) }}</a>
+								<a href="{{ URL::to('/') }}" target="_blank">{{ HTML::image('assets/img/468x80.gif', null, array('class'=>'img-responsive') ) }}</a>
 							</div>
 						</div>
 					</div>
@@ -49,9 +49,9 @@
 						
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-left">
-								<li class="active"> <a href="#">Trang chủ</a> </li>
+								<li class="active"> {{ HTML::link('/', 'Trang chủ') }} </li>
 								<li> <a href="{{ URL::to('user/dangtin') }}">Đăng tin</a> </li>
-								<li> <a href="#">Liên hệ</a> </li>
+								<li> {{ HTML::link('/', 'Liên hệ') }} </li>
 							</ul>
 						</div>
 					</div>
@@ -63,272 +63,14 @@
 				<div class="col-md-12 column">
 					<div class="row clearfix">
 						<div class="col-md-9 column">
-							<div class="content">
-								<h3>Việc làm mới đăng</h3>
-								<div class="row">
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#" class="paid-job">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a>
-											<span class="flash-hot"></span>
-											<br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-									<div class="col-xs-4 margin-top-5">
-										<div class="index-job">
-											<a href="#">Tuyển nhân viên lập trình web PHP cần kinh nghiệm và kĩ thuật cao</a><br>
-											<span class="index-company">Công ty TNHH Digitalship Japan</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<hr>
-							<div class="row">
-								<h2>Nhà tài trợ</h2>
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="thumbnail">
-										{{ HTML::image('assets/img/post.jpg') }}
-										<div class="caption">
-											<h4>
-												<a href="#">Công ty TNHH Company</a>
-											</h4>
-											<p>
-												Công ty TNHH Company là một công ty lớn chuyên về lĩnh vực IT.
-											</p>
-											<p>
-												<a href="#" class="btn btn-info btn-cantho">Xem</a>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
+							@yield('content')
 						</div>
 						<div class="col-md-3 column">
-							<div class="panel panel-primary widget">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										Tài khoản
-									</h3>
-								</div>
-								<div class="panel-body">
-									<span>
-										Xin chào, <strong>Username</strong>
-									</span>
-									<ul>
-										<li><a href="#">Thông tin tài khoản</a></li>
-										<li><a href="#">Nâng cấp tài khoản</a></li>
-										<li><a href="">Đăng xuât</a></li>
-									</ul>
-								</div>
-								
-							</div>
-							<div class="panel panel-primary widget">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										Danh mục
-									</h3>
-								</div>
-								<div class="panel-body">
-									<ul>
-										<li><a href="#">Bán hàng</a></li>
-										<li><a href="#">IT/Phần mềm</a></li>
-										<li><a href="#">IT/Phần cứng</a></li>
-										<li><a href="#">Dịch vụ</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="panel panel-primary widget">
-								<div class="panel-body">
-									{{ HTML::image('assets/img/ads.jpg', null, array('class'=>'img-thumbnail im-responsive')) }}
-								</div>
-							</div>
+							@include('includes.sidebar')
 							
 						</div>
 						<div class="col-xs-12">
-							<div class="carousel slide media-carousel" id="media">
-        <div class="carousel-inner">
-          <div class="item  active">
-            <div class="row">
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>          
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div> 
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>         
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>          
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>  
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>        
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>          
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>      
-              <div class="col-md-3">
-                <a class="thumbnail" href="#">{{ HTML::image('assets/img/post.jpg') }}</a>
-              </div>  
-            </div>
-          </div>
-        </div>
-        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-        <a data-slide="next" href="#media" class="right carousel-control">›</a>
-      </div> 
+							@include('includes.advertiser')
 						</div>
 					</div>
 
@@ -395,7 +137,7 @@
 						<div class="row clearfix">
 							<div class="col-xs-6">
 								<span>
-									Copyright &copy; 2015 Company
+									Copyright &copy; 2015 CanThoIT
 								</span>
 							</div>
 							<div class="col-xs-6">
@@ -414,5 +156,6 @@
 		{{ HTML::script('assets/js/jquery-1.11.1.js') }}
 		<!-- Bootstrap JavaScript -->
 		{{ HTML::script('assets/js/bootstrap.min.js') }}
+		@yield('script')
 	</body>
 </html>

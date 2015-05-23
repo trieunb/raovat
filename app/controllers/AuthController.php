@@ -2,11 +2,11 @@
 
 class AuthController extends \BaseController {
 
-	public function getLogin()
+	public function getDangNhap()
 	{
 		return View::make('users.login');
 	}
-	public function postLogin()
+	public function postDangNhap()
 	{
 		$validator = new App\DTT\Forms\UserLoginForm;
 		if($validator->fails())
@@ -59,12 +59,12 @@ class AuthController extends \BaseController {
 	}
 
 
-	public function getRegister()
+	public function getDangKy()
 	{
 		return View::make('users.register');
 	}
 
-	public function postRegister()
+	public function postDangKy()
 	{
 		$validator = new App\DTT\Forms\UserRegisterForm;
 		if($validator->fails())
@@ -104,11 +104,62 @@ class AuthController extends \BaseController {
 		}
 	}
 
-	public function getLogout(){
+	public function getDangXuat(){
 
 		Sentry::logout();
 		return Redirect::to('user/login');
 
+	}
+	public function getGoogleCallback()
+	{
+		// get data from input
+	    $code = Input::get( 'code' );
+	    $googleService = OAuth::consumer( 'Google' );
+	    if ( !empty( $code ) ) {
+	        $token = $googleService->requestAccessToken( $code );
+	        $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
+
+	        if(@$result['id']) 
+	        {
+	        	$user = User::where('google_id', $result['id'])->first();
+	        	if( ! $user)
+	        	{
+	        		$result['username'] = explode('@', $result['email']);
+	        		$result['username'] = $result['username'][0];
+	        		Session::put('result', $result);
+	        		return Redirect::to('thanh-vien/dang-ky');
+	        	} else {
+	        		try
+					{
+					    $user = Sentry::findUserById($user->id);
+					    Sentry::login($user, true);
+					    return Redirect::to('/');
+					}
+					catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
+					{
+					    $error = 'Login field is required.';
+					}
+					catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+					{
+					    $error = 'User not found.';
+					}
+					catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
+					{
+					    $error = 'User not activated.';
+					}
+	        		
+	        		return Redirect::to('/thanh-vien/dang-nhap')->withErrors($error);
+	        	}
+	        }
+	    }
+	    else {
+	        $url = $googleService->getAuthorizationUri();
+	        return Redirect::to( (string)$url );
+	    }
+	}
+	public function getQuenMatKhau()
+	{
+		return "Quen mat khau";
 	}
 
 	public function getDangtin(){

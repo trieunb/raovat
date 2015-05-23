@@ -16,12 +16,7 @@ Route::get('/', ['as'=>'home', 'uses'=>'HomeController@index']);
 
 Route::group(array('before'=>'sentry.logged'), function() {
 
-	Route::controller('user','AuthController');
-
-	// Route::get('/login',array('as'=>'users.login', 'uses'=>'AuthController@login'));
-	// Route::post('/login','AuthController@doLogin');
-	// Route::get('/register',array('as'=>'users.register', 'uses'=>'AuthController@register'));
-	// Route::post('/register','AuthController@doRegister');
+	Route::controller('thanh-vien','AuthController');
 });
 
 Route::group(array('before'=>'sentry.auth'), function() {

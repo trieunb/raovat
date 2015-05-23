@@ -46,7 +46,7 @@
 		      </div>
 		      <div class="row google">
 		      	<div class="col-xs-12 col-sm-12 col-md-12">
-		          <a href="#" class="btn btn-lg btn-info btn-block">
+		          <a href="{{ URL::to('thanh-vien/google-callback') }}" class="btn btn-lg btn-info btn-block">
 		          	<i class="fa fa-google-plus"></i> Google
 		          </a>
 		        </div>
@@ -56,38 +56,38 @@
 		        <hr class="hr-or">
 		        <span class="span-or">Hoặc</span>
 		      </div>
-
-		      {{ Form::open(array('url'=>'user/register', 'method'=>'POST')) }}
+				<?php $result = Session::get('result', array('id'=>'', 'username'=>'', 'email'=>'', 'name'=>'')); ?>
+		      {{ Form::open(array('url'=>'thanh-vien/dang-ky', 'method'=>'POST')) }}
 		      @include('includes.notifications')
+		      	{{ Form::hidden('google_id', $result['id']) }}
 		        <div class="form-group">
 		          <div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-						{{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Tên đăng nhập') ) }}
-					  
+						{{ Form::text('username', $result['username'], array('class'=>'form-control', 'placeholder'=>'Tên đăng nhập', 'required') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
 		         <div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-star"></i></span>
-					  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Nhập mật khẩu') ) }}
+					  {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Nhập mật khẩu', 'required') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
 		         <div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-star"></i></span>
-					  {{ Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Nhập lại mật khẩu') ) }}
+					  {{ Form::password('password_confirmation', array('class'=>'form-control', 'placeholder'=>'Nhập lại mật khẩu', 'required') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
 		        	<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-					  {{ Form::text('full_name',null, array('class'=>'form-control', 'placeholder'=>'Họ tên') ) }}
+					  {{ Form::text('full_name',$result['name'], array('class'=>'form-control', 'placeholder'=>'Họ tên') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
 		        	<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-envelope"></i></span>
-					  {{ Form::email('email', null, array('class'=>'form-control', 'placeholder'=>'Nhập Email') ) }}
+					  {{ Form::email('email', $result['email'], array('class'=>'form-control', 'placeholder'=>'Nhập Email', 'required') ) }}
 					</div>
 		        </div>
 		        <div class="form-group">
@@ -110,7 +110,7 @@
 		        </div>
 		        <div class="btn-login">
 		        	<input type="submit" class="btn btn btn-success" value="Đăng ký">
-		        	<a href="{{ URL::to('user/login') }}" class="btn btn-primary">Đăng nhập</a>
+		        	<a href="{{ URL::to('thanh-vien/dang-nhap') }}" class="btn btn-primary">Đăng nhập</a>
 		        </div>
 		      {{ Form::close() }}
 		    </div>

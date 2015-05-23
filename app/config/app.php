@@ -124,6 +124,7 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
 
 	),
 
@@ -194,6 +195,7 @@ return array(
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Datatables'    => 'Bllim\Datatables\Facade\Datatables',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 
 	),
 
