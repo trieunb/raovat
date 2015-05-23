@@ -79,3 +79,6 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+$GLOBALS['user'] = Sentry::getUser();
+View::share('user', $GLOBALS['user']);

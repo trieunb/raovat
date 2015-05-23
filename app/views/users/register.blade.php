@@ -46,7 +46,7 @@
 		      </div>
 		      <div class="row google">
 		      	<div class="col-xs-12 col-sm-12 col-md-12">
-		          <a href="{{ URL::to('thanh-vien/google-callback') }}" class="btn btn-lg btn-info btn-block">
+		          <a href="{{ URL::to('auth/google-callback') }}" class="btn btn-lg btn-info btn-block">
 		          	<i class="fa fa-google-plus"></i> Google
 		          </a>
 		        </div>
@@ -57,7 +57,7 @@
 		        <span class="span-or">Hoặc</span>
 		      </div>
 				<?php $result = Session::get('result', array('id'=>'', 'username'=>'', 'email'=>'', 'name'=>'')); ?>
-		      {{ Form::open(array('url'=>'thanh-vien/dang-ky', 'method'=>'POST')) }}
+		      {{ Form::open(array('url'=>'auth/dang-ky', 'method'=>'POST')) }}
 		      @include('includes.notifications')
 		      	{{ Form::hidden('google_id', $result['id']) }}
 		        <div class="form-group">
@@ -110,7 +110,7 @@
 		        </div>
 		        <div class="btn-login">
 		        	<input type="submit" class="btn btn btn-success" value="Đăng ký">
-		        	<a href="{{ URL::to('thanh-vien/dang-nhap') }}" class="btn btn-primary">Đăng nhập</a>
+		        	<a href="{{ URL::to('auth/dang-nhap') }}" class="btn btn-primary">Đăng nhập</a>
 		        </div>
 		      {{ Form::close() }}
 		    </div>

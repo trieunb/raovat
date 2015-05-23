@@ -196,6 +196,7 @@ return array(
 		'Datatables'    => 'Bllim\Datatables\Facade\Datatables',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
+		'Form'		=>	'App\DTT\Services\Form',
 
 	),
 

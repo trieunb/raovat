@@ -23,5 +23,9 @@ class HomeController extends BaseController {
 	{
 		return View::make('hello');
 	}
+	public function notfound()
+	{
+		return View::make('frontend.notfound');
+	}
 
 }

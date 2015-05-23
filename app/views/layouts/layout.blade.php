@@ -50,7 +50,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-left">
 								<li class="active"> {{ HTML::link('/', 'Trang chủ') }} </li>
-								<li> <a href="{{ URL::to('user/dangtin') }}">Đăng tin</a> </li>
+								<li> <a href="{{ URL::to('rao-vat/dang-tin') }}">Đăng tin</a> </li>
 								<li> {{ HTML::link('/', 'Liên hệ') }} </li>
 							</ul>
 						</div>

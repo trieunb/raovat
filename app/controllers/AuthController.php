@@ -104,12 +104,6 @@ class AuthController extends \BaseController {
 		}
 	}
 
-	public function getDangXuat(){
-
-		Sentry::logout();
-		return Redirect::to('user/login');
-
-	}
 	public function getGoogleCallback()
 	{
 		// get data from input
@@ -127,7 +121,7 @@ class AuthController extends \BaseController {
 	        		$result['username'] = explode('@', $result['email']);
 	        		$result['username'] = $result['username'][0];
 	        		Session::put('result', $result);
-	        		return Redirect::to('thanh-vien/dang-ky');
+	        		return Redirect::to('auth/dang-ky');
 	        	} else {
 	        		try
 					{
@@ -148,7 +142,7 @@ class AuthController extends \BaseController {
 					    $error = 'User not activated.';
 					}
 	        		
-	        		return Redirect::to('/thanh-vien/dang-nhap')->withErrors($error);
+	        		return Redirect::to('auth/dang-nhap')->withErrors($error);
 	        	}
 	        }
 	    }
@@ -161,12 +155,5 @@ class AuthController extends \BaseController {
 	{
 		return "Quen mat khau";
 	}
-
-	public function getDangtin(){
-
-		return View::make('users.dangtin');
-
-	}
-
 
 }

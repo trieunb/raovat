@@ -28,7 +28,7 @@
 		      </div>
 
 
-		      {{ Form::open(array('url'=>'thanh-vien/dang-nhap', 'method'=>'POST')) }}
+		      {{ Form::open(array('url'=>'auth/dang-nhap', 'method'=>'POST')) }}
 		      @include('includes.notifications')
 		        <div class="form-group">
 		        	<div class="input-group">
@@ -53,7 +53,7 @@
 		        </div>
 		      </form>
 		      <div class="quenmatkhau">
-		      	<span>(<a href="{{ URL::to('thanh-vien/quen-mat-khau') }}">Quên mật khẩu?</a> / <a href="{{ URL::to('thanh-vien/dang-ky') }}">Đăng Ký</a>)</h4></span>
+		      	<span>(<a href="{{ URL::to('auth/quen-mat-khau') }}">Quên mật khẩu?</a> / <a href="{{ URL::to('auth/dang-ky') }}">Đăng Ký</a>)</h4></span>
 		      </div>
 		      <div class="login-or">
 		        <hr class="hr-or">
@@ -68,7 +68,7 @@
 		      </div>
 		      <div class="row google">
 		      	<div class="col-xs-12 col-sm-12 col-md-12">
-		          <a href="{{ URL::to('thanh-vien/google-callback') }}" class="btn btn-lg btn-info btn-block">Google</a>
+		          <a href="{{ URL::to('auth/google-callback') }}" class="btn btn-lg btn-info btn-block">Google</a>
 		        </div>
 		      </div>
 		    

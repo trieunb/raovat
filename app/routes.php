@@ -15,10 +15,15 @@ Route::get('/', ['as'=>'home', 'uses'=>'HomeController@index']);
 //Route::get('/danhmuc','UserController@index');
 
 Route::group(array('before'=>'sentry.logged'), function() {
-
-	Route::controller('thanh-vien','AuthController');
+	Route::controller('auth','AuthController');
 });
 
 Route::group(array('before'=>'sentry.auth'), function() {
-	Route::get('/profile', 'UserController@profile');
+	Route::controller('thanh-vien','UserController');
+	Route::get('rao-vat/dang-tin', 'NewsController@getDangTin');
+	Route::post('rao-vat/dang-tin', 'NewsController@postDangTin');
+
 });
+Route::get('rao-vat/xem-tin/{id}', 'NewsController@getXemTin');
+Route::get('/trang-khong-tim-thay', 'HomeController@notfound');
+Route::get('/danh-muc/{id?}', 'NewsController@getDanhMuc');
