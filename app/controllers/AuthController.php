@@ -151,6 +151,60 @@ class AuthController extends \BaseController {
 	        return Redirect::to( (string)$url );
 	    }
 	}
+
+	public function getFacebook()
+	{
+		// get data from input
+    	$code = Input::get( 'code' );
+ 
+	    // get fb service
+	    $fb = OAuth::consumer( 'Facebook' );
+	    if ( !empty( $code ) ) {
+	       // This was a callback request from facebook, get the token
+        $token = $fb->requestAccessToken( $code );
+ 
+        // Send a request with it
+        $result = json_decode( $fb->request( '/me' ), true );
+
+	        if(@$result['id']) 
+	        {
+	        	$user = User::where('facebook_id', $result['id'])->first();
+	        	if( ! $user)
+	        	{
+	        		$result['username'] = explode('@', $result['email']);
+	        		$result['username'] = $result['username'][0];
+	        		Session::put('result', $result);
+	        		return Redirect::to('auth/dang-ky');
+	        	} else {
+	        		try
+					{
+					    $user = Sentry::findUserById($user->id);
+					    Sentry::login($user, true);
+					    return Redirect::to('/');
+					}
+					catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
+					{
+					    $error = 'Login field is required.';
+					}
+					catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+					{
+					    $error = 'User not found.';
+					}
+					catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
+					{
+					    $error = 'User not activated.';
+					}
+	        		
+	        		return Redirect::to('auth/dang-nhap')->withErrors($error);
+	        	}
+	        }
+		}
+		else {
+	        $url = $fb->getAuthorizationUri();
+	        return Redirect::to( (string)$url );
+	    }
+	}
+
 	public function getQuenMatKhau()
 	{
 		return "Quen mat khau";

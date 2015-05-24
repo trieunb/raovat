@@ -62,7 +62,7 @@
 
 		      <div class="row facebook">
 		        <div class="col-xs-12 col-sm-12 col-md-12">
-		          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+		          <a href="{{ URL::to('auth/facebook') }}" class="btn btn-lg btn-primary btn-block">Facebook</a>
 		        </div>
 		        
 		      </div>

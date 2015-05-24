@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title') $news->tieude @stop
+@section('title') {{ $news->tieude }} @stop
 @section('content')
 <div class="content">
 	<h3 class="post-title">{{ $news->tieude }}</h3>
@@ -38,7 +38,15 @@
 			</tr>
 		</tbody>
 	</table>
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+<div class="fb-comments"
+ data-href="http://developers.facebook.com/docs/plugins/comments/"
+ data-width="100%" 
+ data-colorscheme="light"
+ data-numposts="1">
 </div>
+</div>
+
 @stop
 
 @section('style')
@@ -48,5 +56,9 @@
   padding: 10px;
   color: #C20000;
 	}
+	.fb_iframe_widget, .fb_iframe_widget span,.fb_iframe_widget span iframe[style] {
+    min-width: 100% !important;
+    width: 100% !important;
+}
 	</style>
 @stop

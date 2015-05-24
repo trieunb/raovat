@@ -40,7 +40,7 @@
 
 		      <div class="row facebook">
 		        <div class="col-xs-12 col-sm-12 col-md-12">
-		          <a href="#" class="btn btn-lg btn-info btn-block"><i class="fa fa-facebook"></i> Facebook</a>
+		          <a href="{{ URL::to('auth/facebook') }}" class="btn btn-lg btn-info btn-block"><i class="fa fa-facebook"></i> Facebook</a>
 		        </div>
 		        
 		      </div>
@@ -60,6 +60,7 @@
 		      {{ Form::open(array('url'=>'auth/dang-ky', 'method'=>'POST')) }}
 		      @include('includes.notifications')
 		      	{{ Form::hidden('google_id', $result['id']) }}
+		      	{{ Form::hidden('facebook_id', $result['id']) }}
 		        <div class="form-group">
 		          <div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
