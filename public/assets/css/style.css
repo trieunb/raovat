@@ -1074,3 +1074,8 @@ support for no js
   }
 }
 
+.form-group.lienhe {
+  text-align: center;
+  font-size: 25px !important;
+  color: rgb(95, 176, 228);
+}

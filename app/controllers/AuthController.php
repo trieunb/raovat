@@ -19,9 +19,8 @@ class AuthController extends \BaseController {
 			unset($credentials['remember']);
 			try
 			{
-				// $user = Sentry::getUser();
-				// var_dump($user); die();
 				$user = Sentry::authenticate($credentials, $remember);
+				
 				return Redirect::route('home');
 			}
 			catch (Cartalyst\Sentry\Users\LoginRequiredException $e)

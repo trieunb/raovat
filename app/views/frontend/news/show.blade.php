@@ -25,7 +25,7 @@
 				<td>{{ $news->user->phone }}</td>
 			</tr>
 			<tr>
-				<td>Email: </td>
+				<td>Địa chỉ: </td>
 				<td>{{ $news->user->address }}</td>
 			</tr>
 			<tr>
@@ -38,9 +38,9 @@
 			</tr>
 		</tbody>
 	</table>
-<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+<div class="fb-like" data-href="http://www.canthoinfo.com/index.asp" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 <div class="fb-comments"
- data-href="http://developers.facebook.com/docs/plugins/comments/"
+ data-href="http://www.canthoinfo.com/index.asp"
  data-width="100%" 
  data-colorscheme="light"
  data-numposts="1">

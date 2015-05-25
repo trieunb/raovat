@@ -125,6 +125,7 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
+		'Vinelab\Editor\EditorServiceProvider',
 
 	),
 

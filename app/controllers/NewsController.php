@@ -3,7 +3,11 @@
 class NewsController extends Controller {
 	public function getDangTin()
 	{
-		return View::make('frontend.news.add');
+		$user_id = Sentry::getUser();
+		$thongtinlienhe = User::where('id','=',$user_id->id)->first();
+		// echo '<pre>';
+		// print_r($thongtinlienhe->toArray());die();
+		return View::make('frontend.news.add',compact('thongtinlienhe'));
 	}
 	public function postDangTin()
 	{
@@ -18,6 +22,31 @@ class NewsController extends Controller {
 			$user = Sentry::getUser();
 			$data['user_id'] = $user->id;
 			$data['noidung'] = strip_tags($data['noidung'], '<b><i><u><font><br>');
+			$data['loaitin'] = Input::get('loaitin');
+			$data['gia'] = Input::get('gia');
+
+			$data['quytrinhvanchuyen'] = Input::get('quytrinhvanchuyen');
+			$data['name'] = Input::get('name');
+			$data['email'] = Input::get('email');
+			$data['phone'] = Input::get('phone');
+			$data['address'] = Input::get('address');
+
+			$data['image'] = Input::get('image');
+
+			if (Input::hasfile('image')) {
+                $file = Input::file('image');
+                $destinationPath = 'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = $destinationPath . $newname;
+                }
+            }
+
 			$news = News::create($data);
 			if($news)
 			{

@@ -166,6 +166,9 @@
 		{{ HTML::script('assets/js/jquery-1.11.1.js') }}
 		<!-- Bootstrap JavaScript -->
 		{{ HTML::script('assets/js/bootstrap.min.js') }}
+		
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+		
 		@yield('script')
 	</body>
 </html>

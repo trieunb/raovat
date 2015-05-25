@@ -11,7 +11,8 @@
 		"bllim/datatables": "1.4.4",
 		"fzaninotto/faker": "1.5.*@dev",
 		"swiftmailer/swiftmailer": "~5.4",
-		"artdarek/oauth-4-laravel": "dev-master"
+		"artdarek/oauth-4-laravel": "dev-master",
+		"vinelab/laravel-editor": "*"
 	},
 	"autoload": {
 		"classmap": [

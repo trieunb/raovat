@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddUsers1Table extends Migration {
+class AddTinravat1Table extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,12 @@ class AddUsers1Table extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('tinraovat', function(Blueprint $table)
 		{
-			$table->string('facebook_id');
-			$table->string('google_id');
+			$table->string('name');
+			$table->string('email');
+			$table->string('phone');
+			$table->string('address');
 		});
 	}
 
@@ -27,7 +29,7 @@ class AddUsers1Table extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('tinraovat', function(Blueprint $table)
 		{
 			
 		});
