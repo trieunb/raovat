@@ -41,8 +41,14 @@
 		</div>
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Hình Ảnh:</label>
-			<div class="col-sm-10">
-				{{ Form::file('image', null,['required']) }}
+			<div class="col-sm-3">
+				{{ Form::file('image1', null,['required']) }}
+			</div>
+			<div class="col-sm-3">
+				{{ Form::file('image2', null,['required']) }}
+			</div>
+			<div class="col-sm-3">
+				{{ Form::file('image3', null,['required']) }}
 			</div>
 		</div>
 		<div class="form-group">

@@ -30,11 +30,21 @@ class NewsController extends Controller {
 			$data['email'] = Input::get('email');
 			$data['phone'] = Input::get('phone');
 			$data['address'] = Input::get('address');
+			// $image = array(
+			// 		'image1'=>Input::get('image1'),
+			// 		'image2'=>Input::get('image2'),
+			// 		'image3'=>Input::get('image3')
+			// 	);
+			//$image = Input::get('image1').'-'.Input::get('image2').'-'.Input::get('image3');
 
-			$data['image'] = Input::get('image');
+			//$data['image'] = $image;
 
-			if (Input::hasfile('image')) {
-                $file = Input::file('image');
+			if (Input::hasfile('image1')||Input::hasfile('image2')||Input::hasfile('image3')) {
+                $file = array(
+                		'image1'=>Input::file('image1'),
+						'image2'=>Input::file('image2'),
+						'image3'=>Input::file('image3')
+                	);
                 $destinationPath = 'images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
