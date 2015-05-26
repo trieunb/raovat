@@ -6,6 +6,9 @@
 	<p class="post-content">
 		{{ nl2br($news->noidung) }}
 	</p>
+	<div class="thumb-post">
+		<img src="{{ asset($images[0]) }}">
+	</div>	
 	<div class="clearfix"></div>
 	<table class="table table-hover table-bordered">
 		<tbody>

@@ -11,6 +11,7 @@ class NewsController extends Controller {
 	}
 	public function postDangTin()
 	{
+
 		$data = Input::all();
 		$validator = new App\DTT\Forms\NewsAddForm;
 		if($validator->fails())
@@ -30,21 +31,28 @@ class NewsController extends Controller {
 			$data['email'] = Input::get('email');
 			$data['phone'] = Input::get('phone');
 			$data['address'] = Input::get('address');
-			// $image = array(
-			// 		'image1'=>Input::get('image1'),
-			// 		'image2'=>Input::get('image2'),
-			// 		'image3'=>Input::get('image3')
-			// 	);
-			//$image = Input::get('image1').'-'.Input::get('image2').'-'.Input::get('image3');
 
-			//$data['image'] = $image;
 
-			if (Input::hasfile('image1')||Input::hasfile('image2')||Input::hasfile('image3')) {
-                $file = array(
-                		'image1'=>Input::file('image1'),
-						'image2'=>Input::file('image2'),
-						'image3'=>Input::file('image3')
-                	);
+			$image = array();
+			//$file = array();
+
+			if (Input::hasfile('image1')) {
+                $file =Input::file('image1');
+                $destinationPath = public_path().'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = 'images/dangtin/' . $newname;
+                   $image[] = $data['image'];
+                }
+            }
+
+            if (Input::hasfile('image2')) {
+                $file =Input::file('image2');
                 $destinationPath = 'images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
@@ -54,8 +62,74 @@ class NewsController extends Controller {
 
                 if ($file->move($destinationPath, $newname)) {
                    $data['image'] = $destinationPath . $newname;
+                    $image[] = $data['image'];
                 }
             }
+
+            if (Input::hasfile('image3')) {
+                $file =Input::file('image3');
+                $destinationPath = 'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = $destinationPath . $newname;
+                    $image[] = $data['image'];
+                }
+            }
+
+            if (Input::hasfile('image4')) {
+                $file =Input::file('image4');
+                $destinationPath = 'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = $destinationPath . $newname;
+                    $image[] = $data['image'];
+                }
+            }
+
+            if (Input::hasfile('image5')) {
+                $file =Input::file('image5');
+                $destinationPath = 'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = $destinationPath . $newname;
+                    $image[] = $data['image'];
+                }
+            }
+
+            if (Input::hasfile('image6')) {
+                $file =Input::file('image6');
+                $destinationPath = 'images/dangtin/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $data['image'] = $destinationPath . $newname;
+                    $image[] = $data['image'];
+                }
+            }
+
+            $data['image'] = json_encode($image);
+
+            // echo '<pre>';
+            // print_r($image);die();
 
 			$news = News::create($data);
 			if($news)
@@ -70,13 +144,19 @@ class NewsController extends Controller {
 	{
 		if( ! $id) return Redirect::to('/');
 		$news = News::find($id);
+
+		$images = json_decode($news->image);
+
+		// echo '<pre>';
+		// print_r($images);die();
+
 		if( ! $news)
 		{
 			return View::make('frontend.notfound');
 		} else {
 			$news->luotxem += 1;
 			$news->save();
-			return View::make('frontend.news.show', compact('news'));
+			return View::make('frontend.news.show', compact('news','images'));
 		}
 	}
 	public function getDanhMuc($id = false)

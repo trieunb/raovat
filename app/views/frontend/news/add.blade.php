@@ -40,17 +40,54 @@
 			</div>VNĐ
 		</div>
 		<div class="form-group">
+
 			<label for="input" class="col-sm-2 control-label">Hình Ảnh:</label>
-			<div class="col-sm-3">
+			<div class="image-group">
+			<div class="col-sm-10 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 1</strong></span>
 				{{ Form::file('image1', null,['required']) }}
+				</label>
 			</div>
-			<div class="col-sm-3">
+			
+			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 2</strong></span>
 				{{ Form::file('image2', null,['required']) }}
+				</label>
 			</div>
-			<div class="col-sm-3">
+			
+			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 3</strong></span>
 				{{ Form::file('image3', null,['required']) }}
+				</label>
 			</div>
+			
+			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 4</strong></span>
+				{{ Form::file('image4', null,['required']) }}
+				</label>
+			</div>
+			
+			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 5</strong></span>
+				{{ Form::file('image5', null,['required']) }}
+				</label>
+			</div>
+			
+			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
+				<label class="file-upload">
+				<span><strong>Image 6</strong></span>
+				{{ Form::file('image6', null,['required']) }}
+				</label>
+			</div>
+			</div>
+
 		</div>
+
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Quy Trình Vận Chuyển:</label>
 			<div class="col-sm-10">
@@ -101,6 +138,7 @@
 	{{ HTML::style('assets/css/bootstrap-wysihtml5.css') }}
 	{{ HTML::style('assets/css/froala_style.min.css') }}
 	{{ HTML::style('assets/css/froala_editor.min.css') }}
+	{{ HTML::style('assets/css/file-upload.css') }}
 	<style type="text/css">
 	.form-group.lienhe {
 	  text-align: center;
@@ -114,6 +152,8 @@
 	{{ HTML::script('assets/js/wysihtml5-0.3.0.js') }}
 	{{ HTML::script('assets/js/prettify.js') }}
 	{{ HTML::script('assets/js/bootstrap-wysihtml5.js') }}
+	
+	{{ HTML::script('assets/js/upload-file-jelly-min.js') }}
 	<script>
 		$('.textarea').wysihtml5();
 	</script>
@@ -130,7 +170,7 @@
           $('#editor').editable({inlineMode: false})
       });
   </script>
-  
+  {{ HTML::script('assets/js/file-upload.js') }}
      <!-- Include Font Awesome. -->
 
 @stop
