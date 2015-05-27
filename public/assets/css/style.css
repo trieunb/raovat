@@ -1079,3 +1079,7 @@ support for no js
   font-size: 25px !important;
   color: rgb(95, 176, 228);
 }
+p.img-post span {
+  color: rgb(95, 176, 228);
+  font-size: 15px;
+}

@@ -38,7 +38,7 @@ class NewsController extends Controller {
 
 			if (Input::hasfile('image1')) {
                 $file =Input::file('image1');
-                $destinationPath = public_path().'images/dangtin/';
+                $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -53,7 +53,7 @@ class NewsController extends Controller {
 
             if (Input::hasfile('image2')) {
                 $file =Input::file('image2');
-                $destinationPath = 'images/dangtin/';
+                $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -61,14 +61,14 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $data['image'] = $destinationPath . $newname;
+                   $data['image'] = 'images/dangtin/' . $newname;
                     $image[] = $data['image'];
                 }
             }
 
             if (Input::hasfile('image3')) {
                 $file =Input::file('image3');
-                $destinationPath = 'images/dangtin/';
+                $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -76,14 +76,14 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $data['image'] = $destinationPath . $newname;
+                   $data['image'] = 'images/dangtin/' . $newname;
                     $image[] = $data['image'];
                 }
             }
 
             if (Input::hasfile('image4')) {
                 $file =Input::file('image4');
-                $destinationPath = 'images/dangtin/';
+                $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -91,14 +91,14 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $data['image'] = $destinationPath . $newname;
+                   $data['image'] = 'images/dangtin/' . $newname;
                     $image[] = $data['image'];
                 }
             }
 
             if (Input::hasfile('image5')) {
                 $file =Input::file('image5');
-                $destinationPath = 'images/dangtin/';
+                 $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -106,14 +106,14 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $data['image'] = $destinationPath . $newname;
+                   $data['image'] = 'images/dangtin/' . $newname;
                     $image[] = $data['image'];
                 }
             }
 
             if (Input::hasfile('image6')) {
                 $file =Input::file('image6');
-                $destinationPath = 'images/dangtin/';
+                 $destinationPath = public_path().'/images/dangtin/';
                 $filename = $file->getClientOriginalName();
 
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
@@ -121,7 +121,7 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $data['image'] = $destinationPath . $newname;
+                   $data['image'] = 'images/dangtin/' . $newname;
                     $image[] = $data['image'];
                 }
             }
@@ -169,7 +169,18 @@ class NewsController extends Controller {
 			if( ! $cate) return Response::make('Trang không tìm thấy.', 404);
 			$news = News::where('cat_id', $id)->orderBy('id', 'desc')->paginate(10);
 		}
+
+        $images = array();
+
+        foreach ($news as $key => $value) {
+            $images[] = json_decode($value->image);
+        }
+
+        //$images = json_decode($news->image);
+
+        // echo '<pre>';
+        // print_r($news->toArray());die();
 		
-		return View::make('frontend.news.list', compact('news'));
+		return View::make('frontend.news.list', compact('news','images'));
 	}
 }
