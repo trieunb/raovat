@@ -34,19 +34,29 @@ App::after(function($request, $response)
 */
 
 Route::filter('sentry.admin',function(){
-	if(!Sentry::check()){
 
+	if(!Sentry::check()){
+		return Redirect::to('admin/login');
 	}else{
 		$user = Sentry::getUser();
 		if(! $user->hasAccess('admin')){
-			
+			return Response::make('Unauthorized', 401);
 		}
 	}
 });
 
+Route::filter('sentry.admin.auth',function(){
+
+	if(Sentry::check()){
+		return Redirect::to('admin/index');
+	}
+});
+
+
 Route::filter('sentry.auth', function() {
 	if( ! Sentry::check()) return Redirect::to('auth/dang-nhap');
 });
+
 Route::filter('sentry.logged', function() {
 	if(Sentry::check())	return Redirect::to('/');
 });

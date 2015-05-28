@@ -149,3 +149,10 @@ footer {
   height: 100px
 }
 /* End carousel */
+.col-sm-12 p {
+  color: black;
+}
+.col-sm-12 p.pull-left {
+  font-size: 15px;
+  font-weight: 700;
+}
