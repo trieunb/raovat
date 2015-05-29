@@ -28,7 +28,7 @@ App::after(function($request, $response)
 |--------------------------------------------------------------------------
 |
 | The following filters are used to verify that the user of the current
-| session is logged into this application. The "basic" filter easily
+| session is logged into this application. The "basic" filter easilygetIndex
 | integrates HTTP Basic authentication for quick, simple checking.
 |
 */
@@ -48,7 +48,7 @@ Route::filter('sentry.admin',function(){
 Route::filter('sentry.admin.auth',function(){
 
 	if(Sentry::check()){
-		return Redirect::to('admin/index');
+		return Redirect::to('admin/');
 	}
 });
 

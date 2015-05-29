@@ -28,19 +28,23 @@ Route::get('rao-vat/xem-tin/{id}', 'NewsController@getXemTin');
 Route::get('/trang-khong-tim-thay', 'HomeController@notfound');
 Route::get('/danh-muc/{id?}', 'NewsController@getDanhMuc');
 
-Route::group(['before'=>'sentry.admin.auth'], function() {
+Route::group(['prefix'=>'admin'],function(){
 
-	Route::controller('admin','AdminController');
+	
 
-});
+	Route::group(['before'=>'sentry.admin.auth'], function() {
 
-
-
+		Route::get('/login','AdminController@getLogin');
+		Route::post('/login','AdminController@getLogin');
+		
+	});
 
 Route::group(array('before'=>'sentry.admin'),function(){
 
-	//Route::controller('admin','AdminController');
-	Route::controller('admin','AdminAuthController');
+		Route::controller('/','AdminAuthController');
 
+	});
+	
 });
+
 

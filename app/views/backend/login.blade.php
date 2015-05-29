@@ -11,7 +11,8 @@
 
 <body>
 
-{{ Form::open(array('url'=>'admin/login','class'=>'box login')) }}
+{{ Form::open(array('url'=>'/admin/login','class'=>'box login')) }}
+
 @include('includes.notifications')
 	<fieldset class="boxBody">
 	  <label>Username</label>
