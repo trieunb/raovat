@@ -71,24 +71,6 @@
 
 								<b class="arrow"></b>
 							</li>
-
-							<li class="">
-								<a href="#">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Cài đặt 03
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="#">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Cài đặt 04
-								</a>
-
-								<b class="arrow"></b>
-							</li>
 							<li class="">
 								<a href="#" class="dropdown-toggle">
 									<i class="menu-icon fa fa-caret-right"></i>
@@ -156,16 +138,24 @@
 							<li class="}">
 								<a href="{{ URL::action('AdminAuthController@getThanhVien') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Danh sách
+									Thành Viên
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="">
+								<a href="{{ URL::action('AdminAuthController@getDanhMuc') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Thêm mới
+									Danh Mục
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="{{ URL::action('AdminAuthController@getTinRaoVat') }}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Tin Rao Vặt
 								</a>
 
 								<b class="arrow"></b>

@@ -48,7 +48,7 @@ Route::filter('sentry.admin',function(){
 Route::filter('sentry.admin.auth',function(){
 
 	if(Sentry::check()){
-		return Redirect::to('admin/');
+		return Redirect::to('admin');
 	}
 });
 

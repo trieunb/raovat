@@ -1083,3 +1083,7 @@ p.img-post span {
   color: rgb(95, 176, 228);
   font-size: 15px;
 }
+.page-header strong {
+  font-size: 30px;
+  color: rgb(66, 139, 202);
+}

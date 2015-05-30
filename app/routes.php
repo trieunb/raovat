@@ -35,16 +35,16 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::group(['before'=>'sentry.admin.auth'], function() {
 
 		Route::get('/login','AdminController@getLogin');
-		Route::post('/login','AdminController@getLogin');
+		Route::post('/login','AdminController@postLogin');
+		//Route::controller('/','AdminController');
 		
 	});
 
-Route::group(array('before'=>'sentry.admin'),function(){
+	Route::group(array('before'=>'sentry.admin'),function(){
 
-		Route::controller('/','AdminAuthController');
-
-	});
-	
+			Route::controller('/','AdminAuthController');
+		});
+		
 });
 
 

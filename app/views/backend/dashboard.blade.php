@@ -39,9 +39,9 @@
 					<div class="page-content">
 
 						<div class="page-header">
-							<h1>
+							
 								@yield('page-header')
-							</h1>
+							
 						</div><!-- /.page-header -->
 
 						<div class="row">
