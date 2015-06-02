@@ -1,4 +1,10 @@
 <div class="panel panel-primary widget">
+								<div class="panel-body">
+									<a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;" class="btn btn-block btn-success">Tạo gian hàng</a>
+								</div>
+							</div>
+
+<div class="panel panel-primary widget">
 								<div class="panel-heading">
 									<h3 class="panel-title">
 										Tài khoản

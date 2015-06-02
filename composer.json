@@ -12,7 +12,8 @@
 		"fzaninotto/faker": "1.5.*@dev",
 		"swiftmailer/swiftmailer": "~5.4",
 		"artdarek/oauth-4-laravel": "dev-master",
-		"vinelab/laravel-editor": "*"
+		"vinelab/laravel-editor": "*",
+		"gloudemans/shoppingcart": "~1.2"
 	},
 	"autoload": {
 		"classmap": [
@@ -44,4 +45,5 @@
 		"preferred-install": "dist"
 	},
 	"minimum-stability": "stable"
+	
 }

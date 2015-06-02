@@ -1,0 +1,288 @@
+/*
+Theme Name: 
+Description: 
+*/
+/**
+ * 3.0 Text Elements
+ * ----------------------------------------------------------------------------
+ */
+article.post-content cite,
+article.post-content dfn,
+article.post-content em,
+article.post-content i {
+	font-style: italic;
+}
+article.post-content p {
+	margin: 0 0 24px;
+    line-height: 1.8;
+}
+
+article.post-content ol,
+article.post-content ul {
+	margin: 16px 0;
+	padding: 0 0 0 40px;
+}
+
+article.post-content ul {
+	list-style-type: square;
+}
+
+article.post-content ol {
+	list-style: decimal outside;
+}
+
+article.post-content li > ul,
+article.post-content li > ol {
+	margin: 0;
+}
+
+article.post-content dl {
+	margin: 0 20px;
+}
+
+article.post-content dt {
+	font-weight: bold;
+}
+
+article.post-content dd {
+	margin: 0 0 20px;
+}
+
+article.post-content strong {
+	font-weight: bold;
+}
+
+article.post-content code,
+article.post-content kbd,
+article.post-content pre,
+article.post-content samp {
+	font-family: monospace, serif;
+	font-size: 14px;
+}
+
+article.post-content pre {
+	background: #f5f5f5;
+	color: #666;
+	font-family: monospace;
+	font-size: 14px;
+	margin: 20px 0;
+	overflow: auto;
+	padding: 20px;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+article.post-content blockquote,
+article.post-content q {
+	quotes: none;
+}
+
+article.post-content blockquote:before,
+article.post-content blockquote:after,
+article.post-content q:before,
+article.post-content q:after {
+	content: "";
+	content: none;
+}
+
+article.post-content blockquote {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 300;
+	margin: 24px 40px;
+}
+
+article.post-content blockquote blockquote {
+	margin-right: 0;
+}
+
+article.post-content blockquote cite,
+article.post-content blockquote small {
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+article.post-content cite {
+	border-bottom: 0;
+}
+
+article.post-content abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+article.post-content address {
+	font-style: italic;
+	margin: 0 0 24px;
+}
+
+article.post-content del {
+	color: #333;
+}
+
+article.post-content ins {
+	background: #fff9c0;
+	border: none;
+	color: #333;
+	text-decoration: none;
+}
+
+article.post-content sub,
+article.post-content sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+article.post-content sup {
+	top: -0.5em;
+}
+
+article.post-content sub {
+	bottom: -0.25em;
+}
+
+
+/**
+ * 4.0 Links
+ * ----------------------------------------------------------------------------
+ */
+
+article.post-content a {
+	color: #ca3c08;
+	text-decoration: none;
+}
+
+article.post-content a:visited {
+	color: #ac0404;
+}
+
+article.post-content a:focus {
+	outline: thin dotted;
+}
+
+article.post-content a:active,
+article.post-content a:hover {
+	color: #ea9629;
+	outline: 0;
+}
+
+article.post-content a:hover {
+	text-decoration: underline;
+}
+
+
+/**
+ * 5.0 Alignment
+ * ----------------------------------------------------------------------------
+ */
+
+article.post-content .alignleft {
+	float: left;
+	margin: 5px 20px 5px 0;
+}
+
+article.post-content .alignright {
+	float: right;
+	margin: 5px 0 5px 20px;
+}
+
+article.post-content .aligncenter {
+	display: block;
+	margin: 5px auto;
+}
+
+article.post-content img.alignnone {
+	display: block;
+	margin: 5px auto;
+}
+
+
+/**
+ * 6.0 Tables
+ * ----------------------------------------------------------------------------
+ */
+
+article.post-content table {
+	border: 1px solid #ededed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 14px;
+	line-height: 2;
+	margin: 0 0 20px;
+	width: 100%;
+}
+
+article.post-content caption,
+article.post-content th,
+article.post-content td {
+	font-weight: normal!important;
+    border: 1px solid #ededed;
+	text-align: left;
+}
+
+article.post-content caption {
+	font-size: 16px;
+	margin: 20px 0;
+}
+
+article.post-content th {
+	font-weight: normal!important;
+	text-transform: uppercase;
+    border: 1px solid #ededed;
+}
+
+article.post-content td {
+	border: 1px solid #ededed;
+	padding: 6px 10px 6px 0;
+}
+
+
+/**
+ * 7.0 Images
+ * ----------------------------------------------------------------------------
+ */
+
+article.post-content img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+article.post-content .wp-caption {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+article.post-content .wp-caption.alignleft {
+	margin: 5px 10px 5px 0;
+}
+
+article.post-content .wp-caption.alignright {
+	margin: 5px 0 5px 10px;
+}
+
+article.post-content .wp-caption-dt {
+	margin: 0;
+}
+
+article.post-content .wp-caption .wp-caption-text,
+article.post-content .wp-caption-dd {
+	color: #220e10;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 1.5;
+	margin-bottom: 24px;
+	padding: 0;
+}
+
+article.post-content .mceTemp + ul,
+article.post-content .mceTemp + ol  {
+	list-style-position: inside;
+}

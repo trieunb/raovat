@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Conv_UTM Swiss CondensedBold';
+    src: url('../fonts/UTM-Swiss-CondensedBold.eot');
+    src: local('☺'), url('../fonts/UTM-Swiss-CondensedBold.woff') format('woff'), url('../fonts/UTM-Swiss-CondensedBold.ttf') format('truetype'), url('../fonts/UTM-Swiss-CondensedBold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Conv_UTM Swiss Condensed';
+    src: url('../fonts/UTM-Swiss-Condensed.eot');
+    src: local('☺'), url('../fonts/UTM-Swiss-Condensed.woff') format('woff'), url('../fonts/UTM-Swiss-Condensed.ttf') format('truetype'), url('../fonts/UTM-Swiss-Condensed.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe';
+    src: url('../fonts/Segoe-Ui-Semibold.eot');
+    src: url('../fonts/Segoe-Ui-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Segoe-Ui-Semibold.woff') format('woff'),
+         url('../fonts/Segoe-Ui-Semibold.ttf') format('truetype'),
+         url('../fonts/Segoe-Ui-Semibold.svg#Segoe') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*Category*/
+ul.category {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+ul.category li.post {
+    margin: 5px; 
+    padding: 10px; 
+    background: #fff; 
+    float: left; 
+    width: 95%; 
+    border-bottom: 1px dotted #C0C0C0;
+}
+ul.category li.post img  {
+    float: left;
+    width: 180px;
+    height: 130px;
+    margin-right: 10px;
+}
+ul.category li.post a.post-title {
+    text-transform: uppercase;
+    color: #666666;
+    text-align: left;
+    margin: 0px 0 10px 0;
+    font-size: 16.5px;
+    line-height: 40px;
+    display: block;
+    text-rendering: optimizelegibility;
+}
+ul.category li.post a.post-title:hover {
+    color: #5FB435;
+}
+ul.category li.post p.post-content {
+    line-height: 1.8;
+    color: black;
+    text-align: justify;
+}
+/* Single Category */
+ul.relatedNews li {
+    margin: 5px 10px;
+    width:90%; 
+    float: left;
+}
+ul.relatedNews li img {
+    width: 70px;
+    padding: 2px;
+    float: left;
+    height: 60px;
+    margin-right: 5px;
+}
+ul.relatedNews li a.post-title {
+    color: #397797;
+}
+ul.relatedNews li p.post-content {
+    text-align: justify;
+    font-style: normal;
+}
+/*Phan Trang*/
+.wp-pagenavi {
+    margin: 10px;
+    float: left;
+    font: bold 12px Arial;
+    color: #fff;
+}
+.wp-pagenavi a, .wp-pagenavi span  {
+    background-color: #191919!important;
+    border: 1px solid #191919!important;
+    border-radius: 0!important;
+    color: #fff!important;
+    display: inline-block!important;
+    font-size: 1em!important;
+    font-weight: 700!important;
+    margin: 0 2px!important;
+    padding: 0.6em 1em!important;
+    position: relative!important;
+    text-decoration: none!important;
+}
+.wp-pagenavi span.current, .wp-pagenavi span:hover, .wp-pagenavi a:hover, .wp-pagenavi .pages {
+    background-color: #2ECC71!important;
+    border: 1px solid #2ECC71!important;
+    color: #FFFFFF!important;
+}
+/* ============================================================
+  CUSTOM PAGINATION
+============================================================ */
+.spaginate .spaginate-title {
+    display: none;
+}
+.spaginate-inner {
+    margin-bottom: 20px;
+}
+.spaginate .spaginate-link, .spaginate .spaginate-current, .spaginate .spaginate-next, .spaginate .spaginate-prev {
+    background-color: #E9E9E9;
+    border: 1px solid #D2D2D2;
+    border-radius: 2px;
+    color: #555555;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 2px;
+    padding: 0.6em 1em;
+    position: relative;
+    text-decoration: none;
+}
+.spaginate-inner a.next {
+    background: none;
+}
+.spaginate .spaginate-current, .spaginate .spaginate-link:hover, .spaginate .spaginate-next:hover, .spaginate .spaginate-prev:hover {
+    background-color: #2ECC71;
+    border: 1px solid #2ECC71;
+    color: #FFFFFF!important;
+}
+
+.spaginate-inner {
+    padding-top: 10px;
+}
+.wpcf7 {
+    color: #000;
+    width: 500px;
+}
+
+.wpcf7 p {
+    margin: 5px;
+    float: left;
+}
+
+.wpcf7 input {
+    padding: 8px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+    width: 215px;
+    background: #F2F2F2;
+}
+
+.wpcf7 select {
+    padding: 8px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+    width: 228px;
+    font: bold 12px Arial;
+}
+
+.wpcf7-textarea {
+    padding: 8px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+    width: 460px;
+    background: #F2F2F2;
+}
+
+.wpcf7 .your-subject input {
+    width: 460px;
+}
+
+.wpcf7 .wpcf7-submit {
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    width: 100px;
+    background: #38B04A;
+    padding: 10px;
+}
+
+.wpcf7-response-output, .wpcf7-display-none, .wpcf7-mail-sent-ok {
+    clear: both;
+    float: left;
+}
+.highlight{
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+ul.post-info li {
+    display: inline-block;
+    font-size: 14px;
+    color: #E62534;
+    margin-right: 30px;
+}
+
+ul.post-info {
+    margin: 5px 0;
+}
+
+ul.post-info li:last-child {
+    margin-right: 0;
+}
+
+ul.post-info li.post-date {
+    background: url(../images/date.png) left center no-repeat;
+    padding-left: 20px;
+}
+
+ul.post-info li.post-author {
+    background: url(../images/author.png) left center no-repeat;
+    padding-left: 20px;
+}
+
+ul.post-info li.post-categories {
+    background: url(../images/categories.png) left center no-repeat;
+    padding-left: 20px;
+}
+
+ul.post-info a {
+    color: #E62534;
+}

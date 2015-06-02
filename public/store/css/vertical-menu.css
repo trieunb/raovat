@@ -1,0 +1,126 @@
+/* Vertical Mega Menu Styles */
+.dcjq-vertical-mega-menu .menu {
+    line-height: 16px;
+    position: relative;
+    font-family: Arial;
+    font-size: 14px;
+ /* Required */
+    ;
+}
+
+.dcjq-vertical-mega-menu .menu li a {
+    display: block;
+    color: #000;
+    padding: 11px 38px 11px 25px;
+    text-decoration: none;
+    border-bottom: 1px solid #ebeef2;
+    background: url(../images/bg_nav.png) repeat-x 0 0;
+}
+
+.dcjq-vertical-mega-menu .menu li a i {
+    margin-right: 5px;
+}
+
+.dcjq-vertical-mega-menu .menu li a:hover, .dcjq-vertical-mega-menu .menu li.mega-hover a {
+    color: #38b04a;
+}
+
+.dcjq-vertical-mega-menu .menu li a.dc-mega {
+    position: relative;
+}
+/* Add arrow icon to parent links */
+.dcjq-vertical-mega-menu .menu li a .dc-mega-icon {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    width: 6px;
+    height: 8px;
+    background: url(../images/arrow_right.png) no-repeat -6px 0;
+}
+/* Mega menu container */
+.dcjq-vertical-mega-menu .menu li .sub-container {
+    position: absolute;
+ /* Required */
+    overflow: hidden;
+    background: url(../images/bg_menu.png) no-repeat 100% 100%;
+ /* Add the drop shadow */
+    padding: 0 13px 17px 0;
+ /* Padding for drop shadow */
+    ;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub-container .sub {
+    padding: 15px 15px 5px 15px;
+    background: #fff;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub .row {
+    width: 100%;
+    overflow: hidden;
+ /* Clear floats */
+    ;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub li {
+    float: none;
+    width: 160px;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub li.mega-hdr {
+    float: left;
+ /* Required */
+    margin: 0 5px 10px 5px;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub a, .dcjq-vertical-mega-menu .menu.left li .sub a {
+    background: none;
+    border: none;
+    text-shadow: none;
+    float: none;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub li.mega-hdr a.mega-hdr-a {
+    padding: 5px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #6cc550;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background: none;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub li.mega-hdr a.mega-hdr-a:hover {
+    color: #000;
+}
+
+.dcjq-vertical-mega-menu .menu .sub li.mega-hdr li {
+    margin-bottom: 3px;
+}
+
+.dcjq-vertical-mega-menu .menu .sub li a {
+    padding: 3px 3px 3px 15px;
+    background: url(../images/bullet.png) no-repeat 3px 8px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+/* Styling for menu items with only 2 levels */
+.dcjq-vertical-mega-menu .menu li .sub-container.non-mega .sub {
+    padding: 10px;
+    background: #fff;
+}
+
+.dcjq-vertical-mega-menu .menu li .sub-container.non-mega li {
+    padding: 0;
+    margin: 0;
+    width: 150px;
+    float: none;
+}
