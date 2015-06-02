@@ -156,3 +156,8 @@ footer {
   font-size: 15px;
   font-weight: 700;
 }
+.row.contet-news {
+  border-bottom: 2px solid #E2E1E1;
+  margin: 10px 0;
+  padding-bottom: 10px;
+}

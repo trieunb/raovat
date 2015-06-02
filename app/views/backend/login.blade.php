@@ -7,14 +7,15 @@
 <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
 {{ HTML::style('assets/css/login.css') }}
 {{ HTML::style('assets/css/structure.css') }}
+
 </head>
 
 <body>
 
 {{ Form::open(array('url'=>'/admin/login','class'=>'box login')) }}
-
 @include('includes.notifications')
 	<fieldset class="boxBody">
+
 	  <label>Username</label>
 	 
 	  {{ Form::text('username',null,array('placeholder'=>'User Name','required')) }}
@@ -27,6 +28,9 @@
 	  <input type="submit" class="btnLogin" value="Login" tabindex="4">
 	</footer>
 </form>
-
+<!-- jQuery -->
+		{{ HTML::script('assets/js/jquery-2.1.1.js') }}
+		<!-- Bootstrap JavaScript -->
+		{{ HTML::script('assets/js/bootstrap.min.js') }}
 </body>
 </html>

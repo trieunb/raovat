@@ -17,7 +17,15 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('frontend.index');
+		$news = News::orderBy('id', 'desc')->paginate(10);
+
+		$images = array();
+
+        foreach ($news as $key => $value) {
+            $images[] = json_decode($value->image);
+        }
+		
+		return View::make('frontend.index',compact('news','images'));
 	}
 	public function showWelcome()
 	{

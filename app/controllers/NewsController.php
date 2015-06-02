@@ -1,6 +1,7 @@
 <?php
 
 class NewsController extends Controller {
+    
 	public function getDangTin()
 	{
 		$user_id = Sentry::getUser();
