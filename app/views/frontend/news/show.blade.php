@@ -66,9 +66,9 @@
 			</tr>
 		</tbody>
 	</table>
-<div class="fb-like" data-href="http://www.canthoinfo.com/index.asp" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+<div class="fb-like" data-href="http://www.cantho.info.vn/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 <div class="fb-comments"
- data-href="http://www.canthoinfo.com/index.asp"
+ data-href="http://www.cantho.info.vn/"
  data-width="100%" 
  data-colorscheme="light"
  data-numposts="1">

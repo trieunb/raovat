@@ -17,7 +17,23 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$news = News::orderBy('id', 'desc')->paginate(10);
+
+		if (isset($_GET['keyword'])) {
+
+			$keyword = $_GET['keyword'];
+
+			$news = News::where('tieude','like',"%$keyword%")
+							->with('category')
+							->paginate(10);
+		}else{
+			$news = News::orderBy('id', 'desc')
+					->with('category')
+					->paginate(10);
+		}
+
+
+		// echo '<pre>';
+		// print_r($news->toArray());die();
 
 		$images = array();
 

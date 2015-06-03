@@ -20,7 +20,14 @@
 							<a class="pull-left" href="{{ URL::action('NewsController@getXemTin',$new->id) }}">{{ $new->tieude }}</a><br>
 							<span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
 						</p>
-						<p><span class="index-company"><strong>Người đăng</strong>: {{ $new->name }} - <strong>địa chỉ</strong>: {{ $new->address }}</span></p>
+						<p><span class="index-company"><strong>Người đăng</strong>: {{ $new->name }} - <strong>địa chỉ</strong>: {{ $new->address }}</span></p><br>
+						<p>
+							<small>
+							@if(!is_null($new->category))
+							{{ $new->category->tendanhmuc }}
+							</small>
+						</p>
+						@endif
 					</div>
 				</div>
 			@endforeach	

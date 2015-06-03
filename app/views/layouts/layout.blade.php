@@ -19,8 +19,6 @@
 		@yield('style')
 	</head>
 	<body class="cantho">
-	<div id="fb-root"></div>
-	<div id="fb-root"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -64,6 +62,7 @@
 								<li> {{ HTML::link('/', 'Liên hệ') }} </li>
 							</ul>
 						</div>
+
 					</div>
 						
 				</div>
@@ -73,6 +72,7 @@
 				<div class="col-md-12 column">
 					<div class="row clearfix">
 						<div class="col-md-9 column">
+
 							@yield('content')
 						</div>
 						<div class="col-md-3 column">

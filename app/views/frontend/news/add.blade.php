@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="input" class="col-sm-2 control-label">Tiêu Đề Tin:</label>
+			<label for="input" class="col-sm-2 control-label">Loại Tin:</label>
 			<div class="col-sm-10">
 				{{ Form::radio('loaitin', 1, ['required']) }}cần bán
 				{{ Form::radio('loaitin', 0, ['required']) }}cần mua

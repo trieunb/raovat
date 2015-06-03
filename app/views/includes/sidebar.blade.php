@@ -1,9 +1,20 @@
-<div class="panel panel-primary widget">
-								<div class="panel-body">
-									<a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;" class="btn btn-block btn-success">Tạo gian hàng</a>
-								</div>
-							</div>
 
+<div class="panel panel-primary widget">
+	<div class="panel-body">
+		<a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;" class="btn btn-block btn-success">Tạo gian hàng</a>
+	</div>
+</div>
+<div style="panel panel-primary widget padding:20px; margin-bottom:20px;">
+    <form class="form-search form-inline">
+    <?php $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : ''; ?>
+        <div class="input-group">
+            <input type="text" name="keyword" class="form-control search-query" placeholder="Search..." /> <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary"> Search</button>
+            </span>
+
+        </div>
+    </form>
+</div>
 <div class="panel panel-primary widget">
 								<div class="panel-heading">
 									<h3 class="panel-title">
