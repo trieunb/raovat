@@ -7,6 +7,12 @@ class NewsAddForm extends FormValidator {
 		'tieude'	=>	'required|min:4|max:255',
 		'cat_id'	=>	'required',
 		'noidung'	=>	'required|min:10|max:5000',
+		'image1'		=>	'image',
+		'image2'		=>	'image',
+		'image3'		=>	'image',
+		'image4'		=>	'image',
+		'image5'		=>	'image',
+		'image6'		=>	'image'
 
 		);
 	protected $messages = array(
@@ -17,5 +23,11 @@ class NewsAddForm extends FormValidator {
 		'noidung.required'  =>	'Bạn phải nhập nội dung rao vặt.',
 		'noidung.min' 		=>	'Nội dung phải lớn hơn 10 kí tự.',
 		'noidung.max'		=>	'Nội dung quá dài. Nội dung phải nhỏ hơn 5000 kí tự',
+		'image1.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image2.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image3.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image4.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image5.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image6.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
 		);
 }

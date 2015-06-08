@@ -4,11 +4,12 @@
 <div class="content">
 	<h3>Đăng tin rao vặt</h3>
 	<form action="{{ URL::to('rao-vat/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
-	@include('includes.notifications')
+	<!-- @include('includes.notifications') -->
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Tiêu Đề Tin:</label>
 			<div class="col-sm-10">
 				{{ Form::text('tieude', null, ['required']) }}
+				@if ($errors->has('tieude')) <p class="help-block" style="color:red">{{ $errors->first('tieude') }}</p> @endif
 			</div>
 		</div>
 		<div class="form-group">
@@ -22,12 +23,14 @@
 			<label for="input" class="col-sm-2 control-label">Danh mục:</label>
 			<div class="col-sm-10">
 				{{ Form::select('cat_id', Category::lists('tendanhmuc', 'id') ) }}
+				@if ($errors->has('cat_id')) <p class="help-block" style="color:red">{{ $errors->first('cat_id') }}</p> @endif
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Nội dung:</label>
 			<div class="col-sm-10">
 				{{ Form::textarea('noidung', null, ['required', 'class'=>'form-control','id'=>'editor']) }}
+				@if ($errors->has('noidung')) <p class="help-block" style="color:red">{{ $errors->first('noidung') }}</p> @endif
 			</div>
 		</div>
 		<div class="form-group">
@@ -48,6 +51,7 @@
 				<span><strong>Image 1</strong></span>
 				{{ Form::file('image1', null,['required']) }}
 				</label>
+				@if ($errors->has('image1')) <p class="help-block" style="color:red">{{ $errors->first('image1') }}</p> @endif
 			</div>
 			
 			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
@@ -55,6 +59,7 @@
 				<span><strong>Image 2</strong></span>
 				{{ Form::file('image2', null,['required']) }}
 				</label>
+				@if ($errors->has('image2')) <p class="help-block" style="color:red">{{ $errors->first('image2') }}</p> @endif
 			</div>
 			
 			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
@@ -62,6 +67,7 @@
 				<span><strong>Image 3</strong></span>
 				{{ Form::file('image3', null,['required']) }}
 				</label>
+				@if ($errors->has('image3')) <p class="help-block" style="color:red">{{ $errors->first('image3') }}</p> @endif
 			</div>
 			
 			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
@@ -69,6 +75,7 @@
 				<span><strong>Image 4</strong></span>
 				{{ Form::file('image4', null,['required']) }}
 				</label>
+				@if ($errors->has('image4')) <p class="help-block" style="color:red">{{ $errors->first('image4') }}</p> @endif
 			</div>
 			
 			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
@@ -76,6 +83,7 @@
 				<span><strong>Image 5</strong></span>
 				{{ Form::file('image5', null,['required']) }}
 				</label>
+				@if ($errors->has('image5')) <p class="help-block" style="color:red">{{ $errors->first('image5') }}</p> @endif
 			</div>
 			
 			<div class="col-sm-10 col-sm-offset-2 file-upload-btn field">
@@ -83,6 +91,7 @@
 				<span><strong>Image 6</strong></span>
 				{{ Form::file('image6', null,['required']) }}
 				</label>
+				@if ($errors->has('image6')) <p class="help-block" style="color:red">{{ $errors->first('image6') }}</p> @endif
 			</div>
 			</div>
 

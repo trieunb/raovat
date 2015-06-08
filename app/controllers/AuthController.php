@@ -20,8 +20,9 @@ class AuthController extends \BaseController {
 			try
 			{
 				$user = Sentry::authenticate($credentials, $remember);
-				
-				return Redirect::route('home');
+				if($user){
+					return Redirect::route('home');
+				}
 			}
 			catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
 			{
@@ -119,7 +120,7 @@ class AuthController extends \BaseController {
 	        	{
 	        		$result['username'] = explode('@', $result['email']);
 	        		$result['username'] = $result['username'][0];
-	        		Session::put('result', $result);
+	        		Session::flash('result', $result);
 	        		return Redirect::to('auth/dang-ky');
 	        	} else {
 	        		try

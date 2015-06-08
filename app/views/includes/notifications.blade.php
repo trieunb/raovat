@@ -1,7 +1,9 @@
 @if ($errors->has())
 	<div class="alert alert-danger">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		{{ $errors->first() }}
+		@foreach($errors->all() as $err)
+		{{ $err }}<br>
+		@endforeach()
 	</div>
 @endif
 

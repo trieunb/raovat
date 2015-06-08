@@ -45,7 +45,7 @@
 		        
 		        <div class="checkbox">
 		          <label>
-		           	{{ Form::checkbox('remember', 1, 1) }} Ghi nhớ đăng nhập ?
+		           	{{ Form::checkbox('remember', 1,1) }} Ghi nhớ đăng nhập ?
 		          </label>
 		        </div>
 		        <div class="btn-login">

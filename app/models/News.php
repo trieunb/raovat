@@ -9,6 +9,6 @@ class News extends \Eloquent {
 	}
 	public function category()
 	{
-		return $this->belongsTo('category', 'cat_id');
+		return $this->belongsTo('Category', 'cat_id');
 	}
 }
