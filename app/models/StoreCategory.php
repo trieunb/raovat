@@ -7,4 +7,8 @@ class StoreCategory extends \Eloquent {
 	{
 		return $this->belongsTo('Store');
 	}
+	public function product()
+	{
+		return $this->hasMany('Product', 'cat_id');
+	}
 }

@@ -187,6 +187,13 @@ class StoreController extends \BaseController {
 		return View::make('stores.category', compact('products', 'category'));
 	}
 
+	public function storeAdminIndex()
+	{
+		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
+		$products = Product::where('store_id', $store->id)->with('category')->orderBy('id', 'desc')->paginate(10);
+		return View::make('stores.admin.index', compact('store', 'products'));
+	}
+
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /store/{id}/edit
@@ -197,6 +204,8 @@ class StoreController extends \BaseController {
 	public function edit($id)
 	{
 		//
+
+		return $id;
 	}
 
 	/**

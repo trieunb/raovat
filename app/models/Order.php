@@ -7,4 +7,12 @@ class Order extends \Eloquent {
 	{
 		return $this->hasMany('OrderDetail', 'order_id');
 	}
+	public function store()
+	{
+		return $this->belongsTo('Store', 'store_id');
+	}
+	public function total()
+	{
+		return number_format($this->order_total, 0, ',', '.');
+	}
 }

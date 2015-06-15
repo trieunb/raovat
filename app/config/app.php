@@ -126,6 +126,7 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Vinelab\Editor\EditorServiceProvider',
+		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 
 	),
 
@@ -198,7 +199,8 @@ return array(
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 		'Form'		=>	'App\DTT\Services\Form',
+		'Cart'            => 'Gloudemans\Shoppingcart\Facades\Cart',
 
 	),
-
+	'upload_dir'	=>	public_path() . '/uploads/',
 );

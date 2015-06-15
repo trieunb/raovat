@@ -13,4 +13,9 @@ class UserController extends \BaseController {
 		 $admin = Sentry::findGroupByName('Admins');
 		return $user;
 	}
+	public function getGianHang()
+	{
+		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
+		return View::make('users.storemanager', compact('store'));
+	}
 }

@@ -162,6 +162,11 @@ img.emoji {
         .product-thumbnail {
           display: block !important;
         }
+        h1.site-title {
+          font-size: 30px;
+  text-transform: uppercase;
+  padding: 20px 0;
+        }
 		</style>
 		<meta name="author" content="CanThoIT - DTT"></head>
 <body class="<?php if(Request::segment(3)=='') echo 'home blog';
@@ -190,7 +195,12 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
                   
               <a href="{{ $store->store_url() }}" title="{{ $store->tengianhang }}">
                    
-                  {{ $store->image('logo.png', ['width'=>280, 'height'=>'auto']) }}
+                  
+                  @if($store->key('logo'))
+                    {{ $store->image($store->key('logo'), ['width'=>280, 'height'=>'auto']) }}
+                  @else 
+                    <h1 class="site-title">{{ $store->tengianhang }}</h1>
+                  @endif
                    
               </a>
             </h1>
@@ -294,7 +304,7 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
                                                                           </ul>
                                                       </div>
                   <div class="footer-item">
-                     <div class="face-footer"><h2 class="title"><i class="fa fa-chevron-circle-right"></i> Kết nối với KenShop</h2></div>                  </div>
+                     <div class="face-footer"><h2 class="title"><i class="fa fa-chevron-circle-right"></i> Kết nối với chúng tôi</h2></div>                  </div>
                </div>
                <div class="clear"></div>
             </div>

@@ -7,4 +7,16 @@ class OrderDetail extends \Eloquent {
 	{
 		return $this->belongsTo('Order', 'order_id');
 	}
+	public function product()
+	{
+		return $this->belongsTo('Product', 'product_id');
+	}
+	public function price()
+	{
+		return number_format($this->price, 0, ',', '.');
+	}
+	public function total()
+	{
+		return number_format($this->qty*$this->price, 0, ',', '.');
+	}
 }

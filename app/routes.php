@@ -24,9 +24,18 @@ Route::group(array('before'=>'sentry.auth'), function() {
 	Route::post('rao-vat/dang-tin', 'NewsController@postDangTin');
 	Route::get('gian-hang/tao-moi', 'StoreController@create');
 	Route::post('gian-hang/tao-moi', 'StoreController@store');
+	Route::get('gian-hang/{slug?}/admin', 'StoreController@storeAdminIndex');
+	Route::group(['prefix'=>'gian-hang/{slug?}/admin'], function(){
+		Route::resource('san-pham', 'StoreProductController');
+		Route::resource('category', 'StoreCategoryController');
+		Route::resource('orders', 'StoreOrderController');
+		Route::controller('settings', 'StoreSettingController');
+	});
+	
 
 });
 Route::get('gian-hang/{slug?}', 'StoreController@show');
+
 Route::get('gian-hang/{slug?}/san-pham/{id}', 'StoreController@productInfo');
 Route::get('gian-hang/{slug?}/danh-muc/{id?}', 'StoreController@productCategory');
 Route::get('gian-hang/{slug?}/xoa-san-pham/{rowid}', 'StoreController@delCart');

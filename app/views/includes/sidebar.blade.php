@@ -29,6 +29,7 @@
 									<ul>
 										<li> {{ HTML::link('/thanh-vien/thong-tin-tai-khoan', 'Thông tin tài khoản') }}</li>
 										<li> {{ HTML::link('/rao-vat/cac-tin-da-dang', 'Các tin đã đăng') }}</li>
+										<li> {{ HTML::link('/thanh-vien/gian-hang', 'Gian hàng của bạn') }}</li>
 										<li> {{ HTML::link('/thanh-vien/nang-cap-tai-khoan', 'Nâng cấp tài khoản') }}</li>
 										<li> {{ HTML::link('/thanh-vien/dang-xuat', 'Đăng xuât') }}</li>
 									</ul>
