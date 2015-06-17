@@ -2,13 +2,13 @@
 @section('title','Đăng tin')
 @section('content')
 <div class="content">
-	<h3 class="text-center">Đăng tin rao vặt</h3>
+	<h3 class="text-center">Sửa Tin Đăng</h3>
 	<form action="{{ URL::to('rao-vat/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<!-- @include('includes.notifications') -->
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Tiêu Đề Tin:</label>
 			<div class="col-sm-10">
-				{{ Form::text('tieude', null, ['required']) }}
+				{{ Form::text('tieude', $news->tieude, ['required']) }}
 				@if ($errors->has('tieude')) <p class="help-block" style="color:red">{{ $errors->first('tieude') }}</p> @endif
 			</div>
 		</div>
@@ -43,6 +43,7 @@
 			</div>VNĐ
 		</div>
 		<div class="form-group">
+
 			<label for="input" class="col-sm-2 control-label">Hình Ảnh:</label>
 			<div class="image-group">
 			<div class="col-sm-10 file-upload-btn field">
@@ -109,32 +110,32 @@
 	    <div class="form-group">
 	        <label for="ten" class="col-sm-2 control-label">Tên:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('name',$thongtinlienhe->full_name,array('class'=>'form-control')) }}
+	        	{{ Form::text('name',null,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 
 	    <div class="form-group">
 	        <label for="email" class="col-sm-2 control-label">Email:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::email('email',$thongtinlienhe->email,array('class'=>'form-control')) }}
+	        	{{ Form::email('email',null,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 
 	    <div class="form-group">
 	        <label for="phone" class="col-sm-2 control-label">Số điện thoại:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('phone',$thongtinlienhe->phone,array('class'=>'form-control')) }}
+	        	{{ Form::text('phone',null,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 	    <div class="form-group">
 	        <label for="phone" class="col-sm-2 control-label">Địa Chỉ:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('address',$thongtinlienhe->address,array('class'=>'form-control')) }}
+	        	{{ Form::text('address',null,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 		<div class="form-group">
 			<div class="col-sm-10 col-sm-offset-2">
-				<button type="submit" class="btn btn-success">ĐĂNG NGAY</button>
+				<button type="submit" class="btn btn-success">Cập Nhập</button>
 			</div>
 		</div>
 	</form>

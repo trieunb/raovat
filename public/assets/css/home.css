@@ -267,3 +267,7 @@ form.form-search:before {
     opacity: .5;
     z-index: 1000;
 }
+img.img-thumbnail.img-info {
+  width: 70px;
+  height: 80px;
+}

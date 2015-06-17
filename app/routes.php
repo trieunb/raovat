@@ -21,6 +21,7 @@ Route::group(array('before'=>'sentry.logged'), function() {
 Route::group(array('before'=>'sentry.auth'), function() {
 	Route::controller('thanh-vien','UserController');
 	Route::get('rao-vat/dang-tin', 'NewsController@getDangTin');
+	Route::get('rao-vat/xem-tin/{id}', 'NewsController@getDangTin');
 	Route::post('rao-vat/dang-tin', 'NewsController@postDangTin');
 	Route::get('gian-hang/tao-moi', 'StoreController@create');
 	Route::post('gian-hang/tao-moi', 'StoreController@store');
