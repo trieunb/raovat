@@ -170,7 +170,7 @@ img.emoji {
 		</style>
 		<meta name="author" content="CanThoIT - DTT"></head>
 <body class="<?php if(Request::segment(3)=='') echo 'home blog';
-elseif(Request::segment(3)=='san-pham' || Request::segment(3)=='danh-muc') echo 'single single-product woocommerce woocommerce-page';
+elseif(Request::segment(3)=='san-pham' || Request::segment(3)=='danh-muc' || Request::segment(3)=='tim-kiem' || Request::segment(3)=='lien-he') echo 'single single-product woocommerce woocommerce-page';
 elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocommerce-cart woocommerce-page';
  ?>">
 <header>
@@ -208,13 +208,6 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
          <div class="menu-bottom clear">
             <div class="center">
                <ul class="nav-bottom"><li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-63"><a href="{{ $store->store_url() }}">Home</a></li>
-<li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-96"><a href="{{ $store->store_url('tai-khoan') }}">Tài khoản</a>
-<ul class="sub-menu">
-	<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-97"><a href="{{ $store->store_url('tai-khoan') }}">Thông tin tài khoản</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="{{ $store->store_url('gio-hang') }}">Giỏ hàng</a></li>
-
-</ul>
-</li>
 <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="{{ $store->store_url('san-pham') }}">Danh mục</a>
 <ul class="sub-menu">
   @foreach($cats as $cat)
@@ -224,13 +217,27 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
 </li>
 <li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="{{ $store->store_url('lien-he') }}">Liên hệ</a></li>
 <li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="{{ $store->store_url('thanh-toan') }}">Thanh Toán</a></li>
-</ul>               <div class="cart-info">
+</ul>               
+<div class="cart-info">
+                <a href="{{ $store->store_url('gio-hang') }}" style="color: #FFF"><i class="fa fa-shopping-cart"></i></a>
                 <a title="View your shopping cart" class="view-cart">
-                <i class="fa fa-shopping-cart"></i>
-                <p>0 items - <span class="amount">0&nbsp;VNĐ</span></p>                            
+                
+                <p>{{ Cart::count() }} items - <span class="amount">{{ number_format(Cart::total(), 0, ',', '.') }}&nbsp;VNĐ</span></p>                            
                 </a>
                 <div class="cart-widget">
-                <div class="woocommerce"><div class="widget_shopping_cart_content"></div></div> 
+                <div class="woocommerce"><div class="widget_shopping_cart_content">
+                  <ul class="cart_list product_list_widget ">
+                  @foreach(Cart::content() as $p)
+                    <li>
+                      <a href="{{ $store->store_url('san-pham/'.$p->id) }}">
+                      <img width="720" height="960" src="{{ $store->image_url($product_image[$p->id]) }}" class="attachment-shop_thumbnail wp-post-image" alt="sexy">{{ $p->name }}</a>
+                              
+                    <span class="quantity">{{ $p->qty }} × <span class="amount">{{ number_format($p->price, 0, ',', '.') }}&nbsp;VNĐ</span></span>
+                    </li>
+                    @endforeach
+                  </ul>
+
+                </div></div> 
                 </div>  
               </div>
             </div>
@@ -247,9 +254,19 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
                      <h2 class="title"> <i class="fa fa-home"></i> VĂN PHÒNG</h2>
                      <i class="fa fa-taxi"></i> Địa chỉ: <br/> {{ $store->key('diachi') }} <br/>
                      <i class="fa fa-wifi"></i> Điện thoại:<br/> {{ $store->key('dienthoai') }} <br/>
-                     <i class="fa fa-envelope-o"></i> Email: <br/> {{ $store->key('email') }}<br/>
+                     
+                     
+                  </div>
+                  <div class="footer-item">
+                     <h2 class="title"><i class="fa fa-tags"></i> GIỚI THIỆU</h2>
+                      <i class="fa fa-envelope-o"></i> Email: <br/> {{ $store->key('email') }}<br/>
                      <i class="fa fa-desktop"></i> Website:  <br><a href="{{ $store->store_url() }}" title="{{ $store->title }}" target="_blank">{{ $store->store_url() }}</a> <br/>
-                     <ul class="followUs">
+                                                      </div>
+               </div>
+               <div class="footer-col">
+                  <div class="footer-item">
+                     <h2 class="title"><i class="fa fa-th-large"></i> LIÊN KẾT VỚI CHÚNG TÔI</h2>
+                        <ul class="followUs">
                         @if($store->key('facebook'))
                         <li><a href="{{ $store->key('facebook') }}">{{ HTML::image('store/images/socials/facebook.png') }}</a></li>
                         @endif
@@ -260,48 +277,6 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
                         <li><a href="{{ $store->key('youtube') }}">{{ HTML::image('store/images/socials/youtube.png') }}</a></li>
                         @endif
                      </ul>
-                  </div>
-                  <div class="footer-item">
-                     <h2 class="title"><i class="fa fa-tags"></i> GIỚI THIỆU</h2>
-                      <ul class="footer-item-top">
-                         <li>
-                                              <a class="post-title" href="#" title="Tài khoản &#038; đơn hàng">Tài khoản &#038; đơn hàng</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Hình thức thanh toán">Hình thức thanh toán</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Cách thức mua hàng">Cách thức mua hàng</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Trả hàng &#038; Hoàn tiền">Trả hàng &#038; Hoàn tiền</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Mua hàng trực tiếp">Mua hàng trực tiếp</a>
-                                        </li>   
-                                                                          </ul>
-                                                      </div>
-               </div>
-               <div class="footer-col">
-                  <div class="footer-item">
-                     <h2 class="title"><i class="fa fa-th-large"></i>  THÔNG TIN HỮU ÍCH</h2>
-                                                                                          <ul class="footer-item-top">
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Tài khoản &#038; đơn hàng">Tài khoản &#038; đơn hàng</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Hình thức thanh toán">Hình thức thanh toán</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Cách thức mua hàng">Cách thức mua hàng</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Trả hàng &#038; Hoàn tiền">Trả hàng &#038; Hoàn tiền</a>
-                                        </li>   
-                                                                                <li>  
-                                              <a class="post-title" href="#" title="Mua hàng trực tiếp">Mua hàng trực tiếp</a>
-                                        </li>   
-                                                                          </ul>
                                                       </div>
                   <div class="footer-item">
                      <div class="face-footer"><h2 class="title"><i class="fa fa-chevron-circle-right"></i> Kết nối với chúng tôi</h2></div>                  </div>
