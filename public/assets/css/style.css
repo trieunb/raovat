@@ -1087,14 +1087,7 @@ p.img-post span {
   font-size: 30px;
   color: rgb(66, 139, 202);
 }
-.bigicon {
-  color: #5CB85C;
-  font-size: 35px !important;
-}
-.sui-button:hover {
-  color: #fff;
-  background-color: #2199e0;
-}
-.table-responsive{
-
+img.img-thumbnail.img-info {
+  width: 70px !important;
+  height: 80px !important;
 }

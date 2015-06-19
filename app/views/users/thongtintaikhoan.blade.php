@@ -1,8 +1,37 @@
 @extends('layouts.layout')
 @section('title','Thông Tin Tài Khoản')
 @stop
-@section('content')
 
+@section('banner')
+    <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>
+                        <div class="glyphicon glyphicon-file"></div> {{ $user->full_name }}</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb  pull-right">
+                        <li>
+                            <a href="{{ URL::to('/') }}" class="breadcrumb_home">
+                                <div class="glyphicon glyphicon-home"> Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('thanh-vien/thong-tin-tai-khoan') }}" class="breadcrumb_home">Thông Tin Tài Khoản</a>
+                        </li>
+                        <li class="active">
+                            {{ $user->full_name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+@stop
+
+@section('content')
+<div class="col-md-9">
 	<h2>Thông tin tài khoản</h2>
 	<div class="info">
 		<table class="table table-bordered">
@@ -42,7 +71,7 @@
 				<th>Quy Trình Vận Chuyển</th>
 				<th>Lượt Xem</th>
 				<th>Hình Ảnh</th>
-				<th>Action</th>
+				<th colspan="2" class="text-center">action</th>
 			</thead>
 			<tbody>
 				@foreach($news as $k => $v)
@@ -53,17 +82,22 @@
 					<td><?php if($v->loaitin == 0) echo "cần mua"; else echo "cần bán"; ?></td>
 					<td>{{ $v->quytrinhvanchuyen }}</td>
 					<td>{{ $v->luotxem }}</td>
-					<td><img src="{{ asset($images[$k][0]) }}" class="img-thumbnail img-info"></td>
 					<td>
+						 @if(!empty($images[$k]))
+						<img src="{{ asset($images[$k][0]) }}" class="img-thumbnail img-info">
+						@else
+						<img src="{{ asset('images/dangtin/img.jpg') }}" class="img-thumbnail img-info">
+						@endif
+					</td>
+					<td style="vertical-align: middle;">
+
 						<a href="{{ URL::action('UserController@getEditDangTin',$v->id) }}">
-							<p data-placement="top" data-toggle="tooltip" title="Edit">
-								<button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button>
-							</p>
+							<span class="fa fa-edit pull-right bigicon"></span>
 						</a>
-			    		<a href="">
-			    			<p data-placement="top" data-toggle="tooltip" title="Delete">
-			    				<button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button>
-			    			</p>
+					</td>
+					<td style="vertical-align: middle;">
+			    		<a href="{{ URL::action('UserController@getDeleteDangTin',$v->id) }}">	
+							<img class="img-del" src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png">
 			    		</a>
 			    	</td>
 				</tr>
@@ -71,5 +105,103 @@
 			</tbody>
 		</table>
 	</div>
+</div>
+@stop
+@section('menu_main')
+    <div id="content" class="site-content col-md-3" role="main">
+        <div class="content">
+            {{-- Tao gian hang moi --}}
+            <div class="panel panel-primary widget">
+                <div class="panel-body">
+                    <a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;"
+                       class="btn btn-block btn-success">Tạo gian hàng</a>
+                </div>
+            </div> {{-- ##Tao gian hang moi --}}
 
+            {{-- Search --}}
+            <div style="panel panel-primary widget padding:20px; margin-bottom:20px;">
+                <form class="form-search form-inline">
+                    <?php $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : ''; ?>
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control search-query" placeholder="Tìm kiếm ..."/> <span
+                                class="input-group-btn">
+            <button class="btn btn-danger" type="submit"><i class="icon-search"></i></button>
+            </span>
+
+                    </div>
+                </form>
+            </div> {{-- ##search --}}
+
+            {{-- Tài khoản --}}
+            <div class="panel panel-primary widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Tài khoản
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    @if(Sentry::check())
+                        <span>
+										Xin chào, <strong>{{ $user->full_name }}</strong>
+									</span>
+                        <ul>
+                            <li> {{ HTML::link('/thanh-vien/thong-tin-tai-khoan', 'Thông tin tài khoản') }}</li>
+                            <li> {{ HTML::link('/rao-vat/cac-tin-da-dang', 'Các tin đã đăng') }}</li>
+                            <li> {{ HTML::link('/thanh-vien/nang-cap-tai-khoan', 'Nâng cấp tài khoản') }}</li>
+                            <li> {{ HTML::link('/thanh-vien/dang-xuat', 'Đăng xuât') }}</li>
+                        </ul>
+                    @else
+                        <ul>
+                            <li> {{ HTML::link('auth/dang-ky', 'Đăng Ký') }}</li>
+                            <li> {{ HTML::link('auth/dang-nhap', 'Đăng Nhập') }}</li>
+                            <li> {{ HTML::link('auth/quen-mat-khau', 'Quên mật khẩu ?') }}</li>
+
+                        </ul>
+                    @endif
+
+                </div>
+
+            </div> {{-- ##Tài koản --}}
+
+            {{-- Chuyên mục --}}
+            <div class="panel panel-primary widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Danh mục
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="{{ URL::to('danh-muc') }}">Tất cả các danh mục</a></li>
+                        @foreach(Category::lists('tendanhmuc', 'id') as $key=>$cate)
+
+                            <li><a href="{{ URL::to('danh-muc/' . $key) }}">{{ $cate }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>  {{-- ##Chuyên mục --}}
+
+            {{--
+            <div class="panel panel-primary widget">
+                <div class="panel-body">
+                    {{ HTML::image('assets/img/ads.jpg', null, array('class'=>'img-thumbnail im-responsive')) }}
+                </div>
+            </div>
+            --}}
+            <div>
+                <h3>Tags cloud</h3>
+
+                <div class="tagcloud"><a href='#' class='tag-link-9' title='1 topic'
+                                         style='font-size: 8pt;'>Bootstrap</a>
+                    <a href='#' class='tag-link-10' title='2 topics' style='font-size: 16.4pt;'>CSS</a>
+                    <a href='#' class='tag-link-11' title='1 topic'
+                       style='font-size: 8pt;'>CSS3</a>
+                    <a href='#' class='tag-link-12' title='2 topics' style='font-size: 16.4pt;'>HTML5</a>
+                    <a href='#' class='tag-link-13' title='2 topics' style='font-size: 16.4pt;'>Joomla</a>
+                    <a href='#' class='tag-link-8' title='3 topics' style='font-size: 22pt;'>Wordpress</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @stop

@@ -1,174 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>@yield('title', isset($title) ?: 'Trang chủ') - Cần Thơ Info</title>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title', isset($title) ?: 'Cantho.info.vn') | Cantho.info.vn</title>
+    <!--[if lt IE 9]>
+    {{ HTML::script('cti_design/assets/js/html5shiv.js') }}
+    {{ HTML::script('cti_design/assets/js/respond.min.js') }}
+    <![endif]-->
 
-		<!-- Bootstrap CSS -->
-		{{ HTML::style('assets/css/bootstrap.min.css') }}
-		{{ HTML::style('assets/css/home.css') }}
+    {{--LOGO--}}
+    <link rel="shortcut icon"
+          href="http://shapebootstrap.net/demo/wordpress/flat_theme/wp-content/themes/flat-theme/favicon.png">
+    {{-- <link rel="alternate" type="application/rss+xml" title="Flat Theme &raquo; Feed" href="http://shapebootstrap.net/demo/wordpress/flat_theme/?feed=rss2" /> --}}
+    {{-- <link rel="alternate" type="application/rss+xml" title="Flat Theme &raquo; Comments Feed" href="http://shapebootstrap.net/demo/wordpress/flat_theme/?feed=comments-rss2" /> --}}
 
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		@yield('style')
-	</head>
-	<body class="cantho">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=1671697466387668";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<div class="row clearfix header">
-						<div class="col-sm-6 column">
-							<div id="header">
-								<h1><a href="#">CanTho.Info.Vn</a></h1>
-								<span>Trang rao vặt lớn nhất Cần Thơ</span>
-							</div>
-						</div>
-						<div class="col-sm-6 column">
-							<div id="ads" class="pull-right">
-								<a href="{{ URL::to('/') }}" target="_blank">{{ HTML::image('assets/img/468x80.gif', null, array('class'=>'img-responsive') ) }}</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			<nav class="navbar navbar-default cantho-navbar" role="navigation">
-				<div class="container">
-					
-					<div class="row">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> 
+    {{-- CSS Style --}}
+    {{ HTML::style('cti_design/assets/css/bootstrap.min.css') }}
+    {{ HTML::style('cti_design/assets/css/prettyPhoto.css') }}
+    {{ HTML::style('cti_design/assets/css/animate.css') }}
+    {{ HTML::style('cti_design/assets/css/font-awesome.min.css') }}
+    {{ HTML::style('cti_design/assets/css/style.css') }}
 
-						</div>
-						
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav navbar-left">
-								<li class="active"> {{ HTML::link('/', 'Trang chủ') }} </li>
-								<li> <a href="{{ URL::to('rao-vat/dang-tin') }}">Đăng tin</a> </li>
-								<li> {{ HTML::link('/', 'Liên hệ') }} </li>
-							</ul>
-						</div>
+    {{-- CSS Style /End --}}
 
-					</div>
-						
-				</div>
-			</nav>
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-md-12 column">
-					<div class="row clearfix">
-						<div class="col-md-9 column">
+    {{-- Custom CSS --}}
+    <style type='text/css'>
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
 
-							@yield('content')
-						</div>
-						<div class="col-md-3 column">
-							@include('includes.sidebar')
-							
-						</div>
-						<div class="col-xs-12">
-							@include('includes.advertiser')
-						</div>
-					</div>
+        /* Body Style */
+        body {
+            background: #f5f5f5;
+            color: #34495e;
+            font-family: 'Roboto';
+            size: 14px;
+        }
 
-				</div>
-			</div> <!-- .row -->
-		</div> <!-- .container -->
-		<footer>
-			<div class="container">
-				<div class="row clearfix">
-					<div class="col-md-12 column">
-						<div class="row clearfix">
-							<div class="col-md-4 column">
-								<h3>Contacts</h3>
-								 <address> <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
-							</div>
-							<div class="col-md-4 column">
-								<h3>Dịch vụ</h3>
-								<ul>
-									<li>
-										<a href="#">Lorem ipsum dolor sit amet</a>
-									</li>
-									<li>
-										<a href="#">Consectetur adipiscing elit</a>
-									</li>
-									<li>
-										<a href="#">Integer molestie lorem at massa</a>
-									</li>
-									<li>
-										<a href="#">Facilisis in pretium nisl aliquet</a>
-									</li>
-									<li>
-										<a href="#">Nulla volutpat aliquam velit</a>
-									</li>
-									<li>
-										<a href="#">Faucibus porta lacus fringilla vel</a>
-									</li>
-									<li>
-										<a href="#">Aenean sit amet erat nunc</a>
-									</li>
-									<li>
-										<a href="#">Eget porttitor lorem</a>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-4 column">
-								<h3>Nhận bài mới qua email</h3>
-								<form action="form-inline" method="POST" role="form">
-									<div class="form-group">
-										<div class="col-sm-12">
-											<div class="input-group">
-												<input type="text" class="form-control" placeholder="Nhập email của bạn">
-											    	<span class="input-group-btn">
-											    		<button class="btn btn-success" type="button">Go!</button>
-											    	</span>
-											</div>
-										</div>
-									</div>
-									
-								
-									
-								</form>
-							</div>
-						</div>
-						<div class="row clearfix">
-							<div class="col-xs-6">
-								<span>
-									Copyright &copy; 2015 CanThoIT
-								</span>
-							</div>
-							<div class="col-xs-6">
-								<span class="pull-right">
-									All rights reserved
-								</span>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer> <!-- #footer -->
+        /* Heading Style */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto';
+        }
 
-		<!-- jQuery -->
-		{{ HTML::script('assets/js/jquery-1.11.1.js') }}
-		<!-- Bootstrap JavaScript -->
-		{{ HTML::script('assets/js/bootstrap.min.js') }}
-		
-		<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-		
-		@yield('script')
-	</body>
+        /*Link Color*/
+        a {
+            color: #428bca;
+        }
+
+        /*Link Hover Color*/
+        a:hover {
+            color: #d9534f;
+        }
+
+        /* Header Style */
+        #header {
+            background-color: #34495e;
+        }
+    </style> {{-- End Custom CSS--}}
+
+    <meta name="generator" content="www.cantho.info.vn  v15.06.12"/>
+</head>
+<!--/head-->
+
+<body class="blog">
+@include('includes.navbar_top')
+@yield('banner') {{-- Khi nao can banner thi @section('banner') tren @section('content') --}}
+
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="primary" class="content-area">
+                    <div class="row">
+                        @yield('content')  {{-- Khi them content, nho dua vao col-md9-, neu muon full thi de 12 --}}
+                        @yield('menu_main') {{-- them col-md-3-, trong @section('content') nho them vao --}}
+                    </div>
+                </div>
+            </div>
+            <!--/.col-lg-12-->
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container.-->
+</section>
+<!--/#main-->
+
+@include('includes.footer')
+@include('includes.footer2')
+
+@yield('style')
+@yield('script')
+{{-- Java Script --}}
+{{ HTML::script('cti_design/assets/js/jquery.js') }}
+{{ HTML::script('cti_design/assets/js/jquery-migrate.min.js') }}
+{{ HTML::script('cti_design/assets/js/bootstrap.min.js') }}
+{{ HTML::script('cti_design/assets/js/jquery.prettyPhoto.js') }}
+{{ HTML::script('cti_design/assets/js/jquery.isotope.min.js') }}
+{{ HTML::script('cti_design/assets/js/main.js') }}
+
+{{-- End Java Script --}}
+</body>
 </html>

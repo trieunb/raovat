@@ -52,13 +52,13 @@
 	</table>
 
 	<div class="clearfix"></div>
-		<ul class="pagination pull-right">
+		<div class="pagination">
 		 <!--  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li> -->
 		 
 		  {{ $tinraovat->links() }}
 
 		  <!-- <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li> -->
-		</ul>
+		</div>
                 
 </div>       
 </div>

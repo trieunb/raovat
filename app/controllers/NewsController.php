@@ -12,7 +12,7 @@ class NewsController extends Controller {
 	}
 	public function postDangTin()
 	{
-
+        
 		$data = Input::all();
 		$validator = new App\DTT\Forms\NewsAddForm;
 		if($validator->fails())

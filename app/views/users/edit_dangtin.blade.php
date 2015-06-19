@@ -1,9 +1,16 @@
+
 @extends('layouts.layout')
 @section('title','Đăng tin')
 @section('content')
 <div class="content">
 	<h3 class="text-center">Sửa Tin Đăng</h3>
-	<form action="{{ URL::to('rao-vat/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+	<?php if(Session::has('success')){ ?>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>Success!</strong> {{Session::get('success')}}
+    </div>
+    <?php } ?>
+	<form action="{{ URL::action('UserController@postEditDangTin',$news->id) }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<!-- @include('includes.notifications') -->
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Tiêu Đề Tin:</label>
@@ -15,28 +22,33 @@
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Loại Tin:</label>
 			<div class="col-sm-10">
-				{{ Form::radio('loaitin', 1, ['required']) }}cần bán
-				{{ Form::radio('loaitin', 0, ['required']) }}cần mua
+				<input <?php if($news->loaitin == 1) echo "checked"; ?>  name="loaitin" type="radio" value="1">cần bán
+				<input <?php if($news->loaitin == 0) echo "checked"; ?>  name="loaitin" type="radio" value="0">cần mua
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Danh mục:</label>
 			<div class="col-sm-10">
-				{{ Form::select('cat_id', Category::lists('tendanhmuc', 'id') ) }}
+				<select class="form-control" name="cat_id">
+					<option></option>
+					@foreach($category as $k => $v)
+						<option value="{{ $v->id }}" <?php if($v->id == $news->cat_id) echo "selected"; ?> >{{ $v->tendanhmuc }}</option>
+					@endforeach
+				</select>
 				@if ($errors->has('cat_id')) <p class="help-block" style="color:red">{{ $errors->first('cat_id') }}</p> @endif
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Nội dung:</label>
 			<div class="col-sm-10">
-				{{ Form::textarea('noidung', null, ['required', 'class'=>'form-control','id'=>'editor']) }}
+				{{ Form::textarea('noidung', $news->noidung, ['required', 'class'=>'form-control','id'=>'editor']) }}
 				@if ($errors->has('noidung')) <p class="help-block" style="color:red">{{ $errors->first('noidung') }}</p> @endif
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Giá:</label>
 			<div class="col-sm-4">
-				{{ Form::text("gia",Input::old("gia"),array("placeholder"=>"Nhập giá ...",
+				{{ Form::text("gia",$news->gia,array("placeholder"=>"Nhập giá ...",
                                                                "autocomplete"=>"off",
                                                                 "onkeyup"=>"AutoFormatDigit(this)"
                                                                 )) }}
@@ -100,7 +112,7 @@
 		<div class="form-group">
 			<label for="input" class="col-sm-2 control-label">Quy Trình Vận Chuyển:</label>
 			<div class="col-sm-10">
-				{{ Form::textarea('quytrinhvanchuyen', null, ['required', 'class'=>'form-control']) }}
+				{{ Form::textarea('quytrinhvanchuyen', $news->quytrinhvanchuyen, ['required', 'class'=>'form-control']) }}
 			</div>
 		</div>
 		<div class="form-group lienhe">
@@ -110,27 +122,27 @@
 	    <div class="form-group">
 	        <label for="ten" class="col-sm-2 control-label">Tên:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('name',null,array('class'=>'form-control')) }}
+	        	{{ Form::text('name',$news->name,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 
 	    <div class="form-group">
 	        <label for="email" class="col-sm-2 control-label">Email:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::email('email',null,array('class'=>'form-control')) }}
+	        	{{ Form::email('email',$news->email,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 
 	    <div class="form-group">
 	        <label for="phone" class="col-sm-2 control-label">Số điện thoại:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('phone',null,array('class'=>'form-control')) }}
+	        	{{ Form::text('phone',$news->phone,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 	    <div class="form-group">
 	        <label for="phone" class="col-sm-2 control-label">Địa Chỉ:</label>
 	        <div class="col-sm-10 mag">
-	        	{{ Form::text('address',null,array('class'=>'form-control')) }}
+	        	{{ Form::text('address',$news->address,array('class'=>'form-control')) }}
 	        </div>
 	    </div>
 		<div class="form-group">
