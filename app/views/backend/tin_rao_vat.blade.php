@@ -8,6 +8,12 @@
 </p>
 @stop
 @section('content')
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="text-center"><strong>Tin Rao Vặt</strong></h4>
+        </div>
+        <div class="panel-body text-center">
     <div class="table-responsive">  
     <table id="mytable" class="table table-bordred table-striped">
 	   	<thead>
@@ -16,8 +22,8 @@
 	        <th>Giá</th>
 	        <th>vip_to</th>
 	        <th>Trạng Thái</th>
-	        <th>Edit</th>
-	        <th>Delete</th>
+	        <th colspan="2" class="text-center" style="margin-left:-10px;">action</th>
+
 	   	</thead>
 		<tbody>
 			 <?php  $stt = 1 ?>
@@ -36,8 +42,8 @@
 			    <td>{{ $value->gia }}</td>
 			    <td>{{ $value->vip_to }}</td>
 			    <td><a href="{{ URL::action('AdminAuthController@getUpdateTrangThai',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="action"><?php if($value->trangthai == 1)  echo "Enable"; else echo "Disable"; ?></p></a></td>
-			    <td><a href=""><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></a></td>
-			    <td><a href="{{ URL::action('AdminAuthController@getDeleteTinRaoVat',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></a></td>
+			    <td><a href=""><span class="fa fa-edit pull-right bigicon"></span></a></td>
+			    <td><a href="{{ URL::action('AdminAuthController@getDeleteTinRaoVat',$value->id) }}"><button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button></a></td>
 			</tr>
 			<?php  $stt++ ?>
 			@endforeach
@@ -55,6 +61,8 @@
 		</ul>
                 
 </div>       
-
+</div>
+    </div>
+</div>
 	
 @stop

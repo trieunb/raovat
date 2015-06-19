@@ -8,6 +8,12 @@
 </p>
 @stop
 @section('content')
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="text-center"><strong>Thành Viên</strong></h4>
+        </div>
+        <div class="panel-body text-center">
     <div class="table-responsive">  
     <table id="mytable" class="table table-bordred table-striped">
 	   	<thead>
@@ -47,6 +53,8 @@
 		</ul>
                 
 </div>       
-
+</div>
+    </div>
+</div>
 	
 @stop

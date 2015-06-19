@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 @section('title') {{ $news->tieude }} @stop
 @section('content')
@@ -66,9 +67,9 @@
 			</tr>
 		</tbody>
 	</table>
-<div class="fb-like" data-href="http://www.cantho.info.vn/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+<div class="fb-like" data-href="{{ URL::to('rao-vat/xem-tin',$news->id) }}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 <div class="fb-comments"
- data-href="http://www.cantho.info.vn/"
+ data-href="{{ URL::to('rao-vat/xem-tin',$news->id) }}"
  data-width="100%" 
  data-colorscheme="light"
  data-numposts="1">
