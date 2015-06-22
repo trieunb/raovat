@@ -10,6 +10,12 @@ class StoreController extends \BaseController {
 		$store = Store::where('store_slug', Request::segment(2))->with('option')->first();
 		View::share('store', $store);
 		
+		$products = array();
+		 foreach (Cart::content() as $key => $value) {
+		 	$products[] = $value->id;
+		 }
+		$product_image = Product::whereIn('id', $products)->lists('image', 'id');
+		View::share('product_image', $product_image);
 	}
 
 	/**
@@ -107,12 +113,8 @@ class StoreController extends \BaseController {
 	}
 	public function cart()
 	{
-		 $products = array();
-		 foreach (Cart::content() as $key => $value) {
-		 	$products[] = $value->id;
-		 }
-		$products = Product::whereIn('id', $products)->lists('image', 'id');
-		return View::make('stores.cart', compact('products'));
+		 
+		return View::make('stores.cart');
 	}
 	public function delCart($slug, $rowid)
 	{
@@ -190,8 +192,25 @@ class StoreController extends \BaseController {
 	public function storeAdminIndex()
 	{
 		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
-		$products = Product::where('store_id', $store->id)->with('category')->orderBy('id', 'desc')->paginate(10);
+		$products = Product::where('store_id', $store->id)->with('category')->orderBy('id', 'desc')->paginate(12);
 		return View::make('stores.admin.index', compact('store', 'products'));
+	}
+	public function search()
+	{
+		$keyword = Input::get('s');
+		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
+		$products = Product::where('store_id', $store->id)->with('category')->where('title', 'LIKE', "%$keyword%")->orderBy('id', 'desc')->paginate(12);
+		$products->appends(['s'=>$keyword]);
+		return View::make('stores.search', compact('store', 'products', 'keyword'));
+	}
+	public function contact()
+	{
+
+		return View::make('stores.contact');
+	}
+	public function thanks()
+	{
+		return View::make('stores.thanks');
 	}
 
 	/**

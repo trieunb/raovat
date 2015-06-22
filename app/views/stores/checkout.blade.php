@@ -167,7 +167,7 @@
       <p>Vui lòng chuyển khoản và gửi số hóa đơn của bạn với bộ phận hỗ trợ.</p>
       <h3>Thông tin thanh toán</h3>
       <p>
-        {{ $store->key('thongtinthanhtoan') }}
+        {{ nl2br($store->key('thongtinthanhtoan')) }}
       </p>
     </div>
   </li>

@@ -44,6 +44,9 @@ Route::post('gian-hang/{slug?}/gio-hang/update', 'StoreController@updateCart');
 Route::get('gian-hang/{slug?}/thanh-toan', 'StoreController@checkout');
 Route::post('gian-hang/{slug?}/thanh-toan', 'StoreController@doCheckout');
 Route::get('gian-hang/{slug?}/thanh-toan-thanh-cong', 'StoreController@success');
+Route::get('gian-hang/{slug?}/tim-kiem', 'StoreController@search');
+Route::get('gian-hang/{slug?}/lien-he', 'StoreController@contact');
+Route::match(['GET', 'POST'], 'gian-hang/{slug?}/lien-he/thanks', 'StoreController@thanks');
 
 Route::match(['GET', 'POST'], 'gian-hang/{slug?}/add-cart/{id?}', 'StoreController@addCart');
 Route::get('gian-hang/{slug?}/gio-hang', 'StoreController@cart');

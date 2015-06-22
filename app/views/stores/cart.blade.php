@@ -32,8 +32,8 @@
           <td class="product-remove">
             <a href="{{ $store->store_url('xoa-san-pham/'.$p->rowid) }}" class="remove" title="Xóa sản phẩm này">×</a>         </td>
           <td class="product-thumbnail">
-            <a href="http://www.kenshoping.com/shop/dien-thoai/zenfone-4">
-            <img width="300" height="225" src="{{ $store->image_url($products[$p->id]) }}" class="attachment-shop_thumbnail wp-post-image" alt="{{ $p->name }}"></a>
+            <a href="{{ $store->store_url('san-pham/'.$p->id) }}">
+            <img width="300" height="225" src="{{ $store->image_url($product_image[$p->id]) }}" class="attachment-shop_thumbnail wp-post-image" alt="{{ $p->name }}"></a>
           </td>
 
           <td class="product-name">
