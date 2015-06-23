@@ -111,9 +111,26 @@
 
                 {{-- //Tài khoản --}}
 
-                <li id=""
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330"><a
-                            title="Đăng tin mới" href="{{ URL::to('rao-vat/dang-tin') }}"><div class="glyphicon glyphicon-pencil"></div>  Đăng tin mới</a></li>
+                <!-- <li id=""
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330">
+                    <a title="Đăng tin mới" href="{{ URL::to('rao-vat/dang-tin') }}">
+                        <div class="glyphicon glyphicon-pencil"></div>  Đăng tin mới
+                    </a>
+                </li> -->
+
+                <li id="menu-item-301"
+                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-301 dropdown"><a
+                            title="Tài khoản" href="#"><div class="glyphicon glyphicon-pencil"></div> Đăng tin mới <i class="icon-angle-down"></i></a>
+                    <ul role="menu" class=" dropdown-menu">
+                        <li id="menu-item-313"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a
+                                    title="Đăng ký" href="">Đăng tin tuyển dụng</a></li>
+                        <li id="menu-item-312"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a
+                                    title="Đăng nhập" href="{{ URL::to('rao-vat/dang-tin') }}">Đăng tin rao vặt</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
 
@@ -210,7 +227,36 @@
                             </ul>
                         </li>
                     @endif
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-310"><a title="Đăng tin mới" href="/rao-vat/dang-tin"><div class="glyphicon glyphicon-pencil"></div> Đăng tin mới</a>
+                    <!-- <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-310">
+                        <a title="Đăng tin mới" href="/rao-vat/dang-tin">
+                            <div class="glyphicon glyphicon-pencil"></div> Đăng tin mới
+                        </a>
+                        <span class="menu-toggler" data-toggle="collapse" data-target=".collapse-304">
+                        <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+                        </span>
+                        <ul role="menu" class="collapse collapse-303 ">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a
+                                        title="About Us" href="">Đăng nhập</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a
+                                        title="Services" href="">Đăng ký</a></li>
+                            
+                        </ul>
+                    </li> -->
+
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-304"><a
+                                title="Đăng tin mới"
+                                href="#"><div class="glyphicon glyphicon-pencil"></div> Đăng tin mới </a>
+                        <span class="menu-toggler" data-toggle="collapse" data-target=".collapse-304">
+                        <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+                        </span>
+                        <ul role="menu" class="collapse collapse-304">
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a
+                                        title="About Us" href="">Đăng tin tuyển dụng</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a
+                                        title="Services" href="{{ URL::to('/rao-vat/dang-tin') }}">Đăng tin rao vặt</a></li>
+                           
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

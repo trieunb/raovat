@@ -57,7 +57,7 @@
 			</tr>
 		</table>
 		<div class="col-xs-12">
-			<a href="" class="btn btn-info">chỉnh sửa thông tin tài khoản</a>
+			<a href="" class="btn btn-info">Nâng Cấp Tài Khoản</a>
 		</div>			
 	</div>
 	<p style="margin-top:80px;"><h2>Các tin đã đăng</h2></p>

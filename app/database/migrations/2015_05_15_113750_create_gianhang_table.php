@@ -17,7 +17,7 @@ class CreateGianhangTable extends Migration {
 			$table->increments('id');
 			$table->string('tengianhang');
 			$table->integer('user_id');
-			$table->string('slug');
+			$table->string('store_slug');
 			$table->timestamps();
 		});
 	}

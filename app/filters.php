@@ -40,7 +40,8 @@ Route::filter('sentry.admin',function(){
 	}else{
 		$user = Sentry::getUser();
 		if(! $user->hasAccess('admin')){
-			return Response::make('Unauthorized', 401);
+			//return Response::make('Unauthorized', 401);
+			return Redirect::to('/');
 		}
 	}
 });

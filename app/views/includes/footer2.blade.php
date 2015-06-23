@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                © 2013 <a target="_blank" href="#"
-                          title="Free Twitter Bootstrap based WordPress Themes and HTML templates">ShapeBootstrap</a>.
+               Copyright © 2015 <a target="_blank" href="#"
+                          title="Free Twitter Bootstrap based WordPress Themes and HTML templates">by CanTho.Info.Vn</a>.
                 All Rights Reserved.
             </div>
             <div class="col-sm-6">
