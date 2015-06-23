@@ -6,14 +6,15 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"cartalyst/sentry": "2.1.*",
-		"way/generators": "~2.6",
+		"way/generators": "2.*",
 		"barryvdh/laravel-debugbar": "~1.8",
 		"bllim/datatables": "1.4.4",
 		"fzaninotto/faker": "1.5.*@dev",
 		"swiftmailer/swiftmailer": "~5.4",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"vinelab/laravel-editor": "*",
-		"gloudemans/shoppingcart": "~1.2"
+		"gloudemans/shoppingcart": "~1.2",
+		"intervention/image": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

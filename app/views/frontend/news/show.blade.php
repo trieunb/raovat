@@ -18,6 +18,10 @@
                         <li>
                             <a href="{{ URL::to('danh-muc') }}" class="breadcrumb_home">Rao vặt</a>
                         </li>
+                        <li>
+                            <a href="/danh-muc/{{ $cat->id }}" class="breadcrumb_home">{{ $cat->tendanhmuc }}</a>
+                        </li>
+
                         <li class="active">
                             {{ $news->tieude }}
                         </li>

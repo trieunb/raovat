@@ -1753,3 +1753,7 @@ img.img-del {
 span.fa.fa-edit.pull-right.bigicon {
   font-size: 24px;
 }
+img.img-thumbnail.img-index {
+  width: 260px;
+  height: 100px;
+}

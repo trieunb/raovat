@@ -6,6 +6,7 @@ class NewsController extends Controller {
 	{
 		$user_id = Sentry::getUser();
 		$thongtinlienhe = User::where('id','=',$user_id->id)->first();
+        
 		// echo '<pre>';
 		// print_r($thongtinlienhe->toArray());die();
 		return View::make('frontend.news.add',compact('thongtinlienhe'));
@@ -145,7 +146,7 @@ class NewsController extends Controller {
 	{
 		if( ! $id) return Redirect::to('/');
 		$news = News::find($id);
-
+        $cat = Category::where('id',$news->cat_id)->first();
 		$images = json_decode($news->image);
 
 		// echo '<pre>';
@@ -157,7 +158,7 @@ class NewsController extends Controller {
 		} else {
 			$news->luotxem += 1;
 			$news->save();
-			return View::make('frontend.news.show', compact('news','images'));
+			return View::make('frontend.news.show', compact('news','images','cat'));
 		}
 	}
 	public function getDanhMuc($id = false)
@@ -184,4 +185,65 @@ class NewsController extends Controller {
 		
 		return View::make('frontend.news.list', compact('news','images'));
 	}
+    public function getTuyenDung(){
+        return View::make('frontend.recruit.add');
+    }
+    public function postTuyenDung(){
+
+        $data = Input::all();
+        $validator = new App\DTT\Forms\TuyenDungForm;
+        if($validator->fails())
+        {
+            return Redirect::back()->withInput()->withErrors($validator);
+        } else {
+            $data['tencty'] = Input::get('tencty');
+            //$data['luotxem']= 0;
+            $user = Sentry::getUser();
+            $data['user_id'] = $user->id;
+            $data['diachi'] = Input::get('diachi');
+            $data['linhvuc'] = Input::get('linhvuc');
+            $data['vitrituyendung'] = Input::get('vitrituyendung');
+            $data['noilamviec'] = Input::get('noilamviec');
+            $data['mucluong'] = Input::get('mucluong');
+            $data['hannophoso'] = Input::get('hannophoso');
+            $data['noidungchitiet'] = Input::get('noidungchitiet');
+
+            $data['nguoidangtin'] = Input::get('nguoidangtin');
+            $data['email'] = Input::get('email');
+            $data['sodienthoai'] = Input::get('sodienthoai');
+            $data['chucvu'] = Input::get('chucvu');
+
+            //$file = array();
+
+            if (Input::hasfile('logo')) {
+                $file =Input::file('logo');
+                $destinationPath = public_path().'/images/tuyendung/';
+                $filename = $file->getClientOriginalName();
+
+                $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
+                    0, 10);
+                $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                if ($file->move($destinationPath, $newname)) {
+                   $logo = 'images/tuyendung/' . $newname;
+                }
+            }
+
+            // echo '<pre>';
+            // print_r($data['logo']);die();
+
+            $data['logo'] =  $logo;
+
+            $tuyendung = Tuyendung::create($data);
+            if($tuyendung)
+            {
+                return Redirect::to('/');
+            } else {
+                return Redirect::back()->withInput()->withErrors('Có lỗi khi đăng tin.');
+            }
+        }
+    }
+    public function getTinTuyenDung($id){
+
+    }
 }

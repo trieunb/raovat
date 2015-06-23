@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1><div class="glyphicon glyphicon-pencil"></div> Đăng tin mới</h1>
+                    <h1><div class="glyphicon glyphicon-pencil"></div> Đăng tin rao vặt</h1>
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb  pull-right">
@@ -27,6 +27,12 @@
 @section('content')
     <div id="content" class="site-content col-md-12" role="main">
         <div class="content">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="text-center" style="color:rgb(52, 73, 94);">Đăng Tin Rao Vặt</h2>
+                    </div>
+                    <div class="panel-body text-center">
             <form action="{{ URL::to('rao-vat/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                 <!-- @include('includes.notifications') -->
                 <div class="form-group">
@@ -39,8 +45,10 @@
                 <div class="form-group">
                     <label for="input" class="col-sm-2 control-label">Loại Tin:</label>
                     <div class="col-sm-10">
+                        <p class="pull-left">
                         {{ Form::radio('loaitin', 0, ['required']) }} Cần mua
                         {{ Form::radio('loaitin', 1, ['required']) }} Cần bán
+                        </p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -73,37 +81,37 @@
                         {{-- Upload Anh --}}
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image1', null,['required','image']) }}
+                                {{ Form::file('image1') }}
                             </label>
                             @if ($errors->has('image1')) <p class="help-block" style="color:red">{{ $errors->first('image1') }}</p> @endif
                         </div>
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image2', null,['required','image']) }}
+                                {{ Form::file('image2') }}
                             </label>
                             @if ($errors->has('image2')) <p class="help-block" style="color:red">{{ $errors->first('image2') }}</p> @endif
                         </div>
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image3', null,['required','image']) }}
+                                {{ Form::file('image3') }}
                             </label>
                             @if ($errors->has('image3')) <p class="help-block" style="color:red">{{ $errors->first('image3') }}</p> @endif
                         </div>
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image4', null,['required','image']) }}
+                                {{ Form::file('image4') }}
                             </label>
                             @if ($errors->has('image4')) <p class="help-block" style="color:red">{{ $errors->first('image4') }}</p> @endif
                         </div>
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image5', null,['required','image']) }}
+                                {{ Form::file('image5') }}
                             </label>
                             @if ($errors->has('image5')) <p class="help-block" style="color:red">{{ $errors->first('image5') }}</p> @endif
                         </div>
                         <div class="col-sm-5">
                             <label class="file-upload">
-                                {{ Form::file('image6', null,['required','image']) }}
+                                {{ Form::file('image6') }}
                             </label>
                             @if ($errors->has('image6')) <p class="help-block" style="color:red">{{ $errors->first('image6') }}</p> @endif
                         </div>
@@ -155,8 +163,9 @@
                     </div>
                 </div>
             </form>
-
-
+            </div>
+            </div>
+        </div>
         </div>
     </div>
 

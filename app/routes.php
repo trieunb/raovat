@@ -32,7 +32,8 @@ Route::group(array('before'=>'sentry.auth'), function() {
 		Route::resource('orders', 'StoreOrderController');
 		Route::controller('settings', 'StoreSettingController');
 	});
-	
+	Route::get('tuyen-dung/dang-tin', 'NewsController@getTuyenDung');
+	Route::post('tuyen-dung/dang-tin', 'NewsController@postTuyenDung');
 
 });
 Route::get('gian-hang/{slug?}', 'StoreController@show');

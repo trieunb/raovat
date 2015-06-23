@@ -7,13 +7,12 @@ class NewsAddForm extends FormValidator {
 		'tieude'	=>	'required|min:4|max:255',
 		'cat_id'	=>	'required',
 		'noidung'	=>	'required|min:10|max:5000',
-		'image1'		=>	'image',
-		'image2'		=>	'image',
-		'image3'		=>	'image',
-		'image4'		=>	'image',
-		'image5'		=>	'image',
-		'image6'		=>	'image'
-
+		'image1'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
+		'image2'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
+		'image3'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
+		'image4'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
+		'image5'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
+		'image6'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image'
 		);
 	protected $messages = array(
 		'tieude.required'	=>	'Tiêu đề không được trống.',
@@ -23,11 +22,17 @@ class NewsAddForm extends FormValidator {
 		'noidung.required'  =>	'Bạn phải nhập nội dung rao vặt.',
 		'noidung.min' 		=>	'Nội dung phải lớn hơn 10 kí tự.',
 		'noidung.max'		=>	'Nội dung quá dài. Nội dung phải nhỏ hơn 5000 kí tự',
-		'image1.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
-		'image2.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
-		'image3.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
-		'image4.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
-		'image5.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
-		'image6.image'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image1.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image2.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image3.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image4.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image5.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image6.mimes'		=>  'vui lòng nhập đúng định dạng hình ảnh',
+		'image1.max'		=>  'Dung lượng hình ảnh không quá 2M.',
+		'image2.max'		=>  'Dung lượng hình ảnh không quá 2M.',
+		'image3.max'		=>  'Dung lượng hình ảnh không quá 2M.',
+		'image4.max'		=>  'Dung lượng hình ảnh không quá 2M.',
+		'image5.max'		=>  'Dung lượng hình ảnh không quá 2M.',
+		'image6.max'		=>  'Dung lượng hình ảnh không quá 2M.',
 		);
 }

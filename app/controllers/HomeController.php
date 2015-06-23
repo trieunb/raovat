@@ -18,6 +18,8 @@ class HomeController extends BaseController {
 	public function index()
 	{
 
+		$tuyendung = Tuyendung::all();
+
 		if (isset($_GET['keyword'])) {
 
 			$keyword = $_GET['keyword'];
@@ -41,7 +43,7 @@ class HomeController extends BaseController {
             $images[] = json_decode($value->image);
         }
 		
-		return View::make('frontend.index',compact('news','images'));
+		return View::make('frontend.index',compact('news','images','tuyendung'));
 	}
 	public function showWelcome()
 	{

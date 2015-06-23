@@ -52,117 +52,46 @@
         <div class="content">
             <h2>Thông tin tuyển dụng - Việc làm</h2>
             <hr>{{-- TUYEN DUNG VIEC LAM --}}
+            @foreach($tuyendung as $k => $v)
             <div class="media services">
-                <div class="pull-left">
-                    <i style="background-color:#;" class="icon-th-large icon-md"></i>
-                </div>
+                
                 <div class="media-body">
-                    <h3 class="media-heading"><a href="#">CTY CNHH MTV QUẢNG CÁO DỊCH VỤ XYZ ABC</a></h3>
+                     
                     <table>
+                    
                         <tr>
-                            <td>Lĩnh vực: Kinh doanh dịch vụ</td>
-                            <td>Hạn nộp hồ sơ: 10/10/2015</td>
+                            <td colspan="2">
+                                <div class="col-sm-4">
+                                    @if($v->logo != null)
+                                    <img  src="{{ asset($v->logo) }}" class="img-thumbnail img-index">
+                                    @else
+                                    <img  src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
+                                    @endif
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3 class="media-heading"><a href="#">{{ $v->tencty }}</a></h3>
+                                </div>
+                                
+                            </td>
                         </tr>
                         <tr>
-                            <td>Mức lương: Thỏa thuận</td>
-                            <td>Nơi làm việc: Cần Thơ</td>
+                            <td class="col-sm-6">Lĩnh vực: {{ $v->linhvuc }}</td>
+                            <td class="col-sm-6">Hạn nộp hồ sơ: {{ $v->hannophoso }}</td>
                         </tr>
                         <tr>
-                            <td>Vị trí: Giám đốc, kế toán, bán hàng</td>
-                            <td><a href="#">(Xem chi tiết...)</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="media services">
-                <div class="pull-left">
-                    <i style="background-color:#;" class="icon-th-large icon-md"></i>
-                </div>
-                <div class="media-body">
-                    <h3 class="media-heading"><a href="#">CTY CNHH MTV QUẢNG CÁO DỊCH VỤ XYZ ABC</a></h3>
-                    <table>
-                        <tr>
-                            <td>Lĩnh vực: Kinh doanh dịch vụ</td>
-                            <td>Hạn nộp hồ sơ: 10/10/2015</td>
+                            <td class="col-sm-6">Mức lương: {{ $v->mucluong }}</td>
+                            <td class="col-sm-6">Nơi làm việc: {{ $v->noilamviec }}</td>
                         </tr>
                         <tr>
-                            <td>Mức lương: Thỏa thuận</td>
-                            <td>Nơi làm việc: Cần Thơ</td>
+                            <td class="col-sm-6">Vị trí: {{ $v->vitritruyendung }}</td>
+                            <td class="col-sm-6"><a href="#">(Xem chi tiết...)</a></td>
                         </tr>
-                        <tr>
-                            <td>Vị trí: Giám đốc, kế toán, bán hàng</td>
-                            <td><a href="#">(Xem chi tiết...)</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="media services">
-                <div class="pull-left">
-                    <i style="background-color:#;" class="icon-th-large icon-md"></i>
-                </div>
-                <div class="media-body">
-                    <h3 class="media-heading"><a href="#">CTY CNHH MTV QUẢNG CÁO DỊCH VỤ XYZ ABC</a></h3>
-                    <table>
-                        <tr>
-                            <td>Lĩnh vực: Kinh doanh dịch vụ</td>
-                            <td>Hạn nộp hồ sơ: 10/10/2015</td>
-                        </tr>
-                        <tr>
-                            <td>Mức lương: Thỏa thuận</td>
-                            <td>Nơi làm việc: Cần Thơ</td>
-                        </tr>
-                        <tr>
-                            <td>Vị trí: Giám đốc, kế toán, bán hàng</td>
-                            <td><a href="#">(Xem chi tiết...)</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="media services">
-                <div class="pull-left">
-                    <i style="background-color:#;" class="icon-th-large icon-md"></i>
-                </div>
-                <div class="media-body">
-                    <h3 class="media-heading"><a href="#">CTY CNHH MTV QUẢNG CÁO DỊCH VỤ XYZ ABC</a></h3>
-                    <table>
-                        <tr>
-                            <td>Lĩnh vực: Kinh doanh dịch vụ</td>
-                            <td>Hạn nộp hồ sơ: 10/10/2015</td>
-                        </tr>
-                        <tr>
-                            <td>Mức lương: Thỏa thuận</td>
-                            <td>Nơi làm việc: Cần Thơ</td>
-                        </tr>
-                        <tr>
-                            <td>Vị trí: Giám đốc, kế toán, bán hàng</td>
-                            <td><a href="#">(Xem chi tiết...)</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="media services">
-                <div class="pull-left">
-                    <i style="background-color:#;" class="icon-th-large icon-md"></i>
-                </div>
-                <div class="media-body">
-                    <h3 class="media-heading"><a href="#">CTY CNHH MTV QUẢNG CÁO DỊCH VỤ XYZ ABC</a></h3>
-                    <table>
-                        <tr>
-                            <td>Lĩnh vực: Kinh doanh dịch vụ</td>
-                            <td>Hạn nộp hồ sơ: 10/10/2015</td>
-                        </tr>
-                        <tr>
-                            <td>Mức lương: Thỏa thuận</td>
-                            <td>Nơi làm việc: Cần Thơ</td>
-                        </tr>
-                        <tr>
-                            <td>Vị trí: Giám đốc, kế toán, bán hàng</td>
-                            <td><a href="#">(Xem chi tiết...)</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>{{-- //TUYEN DUNG VIEC LAM --}}
 
+                    </table>
+                </div>
+            </div>
+            @endforeach
+        
         </div>
 
     </div>

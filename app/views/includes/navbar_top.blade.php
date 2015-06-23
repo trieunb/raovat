@@ -124,7 +124,7 @@
                     <ul role="menu" class=" dropdown-menu">
                         <li id="menu-item-313"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a
-                                    title="Đăng ký" href="">Đăng tin tuyển dụng</a></li>
+                                    title="Đăng ký" href="{{ URL::to('tuyen-dung/dang-tin') }}">Đăng tin tuyển dụng</a></li>
                         <li id="menu-item-312"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a
                                     title="Đăng nhập" href="{{ URL::to('rao-vat/dang-tin') }}">Đăng tin rao vặt</a></li>
