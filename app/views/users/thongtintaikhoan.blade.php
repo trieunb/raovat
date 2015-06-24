@@ -32,7 +32,14 @@
 
 @section('content')
 <div class="col-md-9">
-	<h2>Thông tin tài khoản</h2>
+
+    <div class="col-sm-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="text-center" style="color:rgb(52, 73, 94);">Thông tin tài khoản</h2>
+        </div>
+        <div class="panel-body text-center">
+
 	<div class="info">
 		<table class="table table-bordered">
 			<tr>
@@ -56,12 +63,19 @@
 				<td class="col-xs-7">{{ $user->address }}</td>
 			</tr>
 		</table>
-		<div class="col-xs-12">
-			<a href="" class="btn btn-info">Nâng Cấp Tài Khoản</a>
-		</div>			
+        </div>
+        <a href="" class="btn btn-info">Chỉnh sửa thông tin tài khoản</a>
+    </div>
+    </div>
+			
 	</div>
-	<p style="margin-top:80px;"><h2>Các tin đã đăng</h2></p>
-	<div class="news">
+    <div class="col-sm-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="text-center" style="color:rgb(52, 73, 94);">Các tin rao vặt</h2>
+        </div>
+        <div class="panel-body text-center">
+
 		<table class="table table-bordered">
 			<thead>
 				<th>Tiên Đề</th>
@@ -76,7 +90,7 @@
 			<tbody>
 				@foreach($news as $k => $v)
 				<tr>
-					<td>{{ $v->tieude }}</td>
+					<td><a href="{{ URL::action('NewsController@getXemTin',$v->id) }}">{{ $v->tieude }}</a></td>
 					<td>{{ $v->noidung }}</td>
 					<td>{{ $v->gia }}</td>
 					<td><?php if($v->loaitin == 0) echo "cần mua"; else echo "cần bán"; ?></td>
@@ -90,21 +104,86 @@
 						@endif
 					</td>
 					<td style="vertical-align: middle;">
-
-						<a href="{{ URL::action('UserController@getEditDangTin',$v->id) }}">
-							<span class="fa fa-edit pull-right bigicon"></span>
+                   
+						<a class="btn btn-warning" href="{{ URL::action('UserController@getEditDangTin',$v->id) }}">
+							<!-- <span class="fa fa-edit pull-right bigicon"></span> -->
+                            Edit
 						</a>
-					</td>
-					<td style="vertical-align: middle;">
-			    		<a href="{{ URL::action('UserController@getDeleteDangTin',$v->id) }}">	
-							<img class="img-del" src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png">
-			    		</a>
+                    
+                    </td>
+                    <td style="vertical-align: middle;">
+                   
+			    		<a class="delete btn btn-danger" onclick="return confirm('Are you sure you want to Remove?');"  data-confirm="Are you sure to delete this item?" href="{{ URL::action('UserController@getDeleteDangTin',$v->id) }}">	
+							<!-- <img class="img-del" src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"> -->
+			    		   Delete
+                        </a>
+                   
 			    	</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
-	</div>
+
+    </div>
+    </div>
+</div>
+ <div class="col-sm-12">
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="text-center" style="color:rgb(52, 73, 94);">Các tin tuyển dụng</h2>
+        </div>
+        <div class="panel-body text-center">
+
+        <table class="table table-bordered">
+            <thead>
+                <th>Tên Cty</th>
+                <th>Địa chỉ</th>
+                <th>Lĩnh vực</th>
+                <th>Mức lương</th>
+                <th>Vị trí</th>
+                <th>Hạn nộp hồ sơ</th>
+                <th>Nơi làm việc</th>
+                <th colspan="2" class="text-center">action</th>
+            </thead>
+            <tbody>
+                @foreach($tuyendung as $k => $v)
+                <tr>
+                    <td><a href="{{ URL::action('NewsController@getTinTuyenDung',$v->id) }}">{{ $v->tencty }}</a></td>
+                    <td>{{ $v->diachi }}</td>
+                    <td>{{ $v->linhvuc }}</td>
+                    <td>{{ $v->mucluong }}</td>
+                    <td>{{ $v->vitri }}</td>
+                    <td>
+                        {{ $v->hannophoso }}
+                    </td>
+                     <td>
+                        {{ $v->noilamviec }}
+                    </td>
+                    <td style="vertical-align: middle;">
+                   
+                        <a class="btn btn-warning" href="">
+                            <!-- <span class="fa fa-edit pull-right bigicon"></span> -->
+                            Edit
+                        </a>
+                    
+                    </td>
+                    <td style="vertical-align: middle;">
+                   
+                        <a class="delete btn btn-danger" onclick="return confirm('Are you sure you want to Remove?');"  href="">    
+                            <!-- <img class="img-del" src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"> -->
+                           Delete
+                        </a>
+                   
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+</div>
+
 </div>
 @stop
 @section('menu_main')
@@ -113,8 +192,13 @@
             {{-- Tao gian hang moi --}}
             <div class="panel panel-primary widget">
                 <div class="panel-body">
+                    @if($store == null)
                     <a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;"
                        class="btn btn-block btn-success">Tạo gian hàng</a>
+                    @else
+                    <a href="/thanh-vien/gian-hang" style="height: 50px; font-size: 25px;"
+                           class="btn btn-block btn-success">Gian hàng của bạn</a>
+                    @endif
                 </div>
             </div> {{-- ##Tao gian hang moi --}}
 

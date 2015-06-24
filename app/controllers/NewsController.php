@@ -6,10 +6,11 @@ class NewsController extends Controller {
 	{
 		$user_id = Sentry::getUser();
 		$thongtinlienhe = User::where('id','=',$user_id->id)->first();
+        $store = Store::where('user_id',$user_id->id)->first();
         
 		// echo '<pre>';
 		// print_r($thongtinlienhe->toArray());die();
-		return View::make('frontend.news.add',compact('thongtinlienhe'));
+		return View::make('frontend.news.add',compact('thongtinlienhe','store'));
 	}
 	public function postDangTin()
 	{
@@ -225,14 +226,16 @@ class NewsController extends Controller {
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
 
                 if ($file->move($destinationPath, $newname)) {
-                   $logo = 'images/tuyendung/' . $newname;
+                   $data['logo'] = 'images/tuyendung/' . $newname;
                 }
+            }else{
+                $data['logo'] = '';
             }
 
             // echo '<pre>';
             // print_r($data['logo']);die();
 
-            $data['logo'] =  $logo;
+           // $data['logo'] =  $logo;
 
             $tuyendung = Tuyendung::create($data);
             if($tuyendung)
@@ -244,6 +247,7 @@ class NewsController extends Controller {
         }
     }
     public function getTinTuyenDung($id){
-
+        $tuyendung = Tuyendung::where('id',$id)->first();
+        return View::make('frontend.recruit.show',compact('tuyendung'));
     }
 }

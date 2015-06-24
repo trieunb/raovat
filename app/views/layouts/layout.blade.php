@@ -97,6 +97,8 @@
 {{ HTML::script('cti_design/assets/js/jquery.isotope.min.js') }}
 {{ HTML::script('cti_design/assets/js/main.js') }}
 
+
+
 {{-- End Java Script --}}
 </body>
 </html>

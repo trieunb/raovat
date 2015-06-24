@@ -18,7 +18,15 @@ class HomeController extends BaseController {
 	public function index()
 	{
 
-		$tuyendung = Tuyendung::all();
+		$tuyendung = Tuyendung::where('trangthai','=',1)->orderBy('id','desc')->get();
+		$user_id = Sentry::getUser();
+		if (!empty($user_id)) {
+			$store = Store::where('user_id',$user_id->id)->first();
+		}else{
+			$store = '';
+		}
+		
+		//var_dump($user_id->id);die();
 
 		if (isset($_GET['keyword'])) {
 
@@ -43,7 +51,7 @@ class HomeController extends BaseController {
             $images[] = json_decode($value->image);
         }
 		
-		return View::make('frontend.index',compact('news','images','tuyendung'));
+		return View::make('frontend.index',compact('news','images','tuyendung','store'));
 	}
 	public function showWelcome()
 	{

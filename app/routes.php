@@ -34,6 +34,7 @@ Route::group(array('before'=>'sentry.auth'), function() {
 	});
 	Route::get('tuyen-dung/dang-tin', 'NewsController@getTuyenDung');
 	Route::post('tuyen-dung/dang-tin', 'NewsController@postTuyenDung');
+	Route::get('tuyen-dung/tin-tuyen-dung/{id}', 'NewsController@getTinTuyenDung');
 
 });
 Route::get('gian-hang/{slug?}', 'StoreController@show');

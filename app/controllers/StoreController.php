@@ -191,8 +191,11 @@ class StoreController extends \BaseController {
 
 	public function storeAdminIndex()
 	{
+		//var_dump($GLOBALS['user']->id);die();
 		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
+		//var_dump($store->id);die();
 		$products = Product::where('store_id', $store->id)->with('category')->orderBy('id', 'desc')->paginate(12);
+		
 		return View::make('stores.admin.index', compact('store', 'products'));
 	}
 	public function search()

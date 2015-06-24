@@ -27,8 +27,8 @@ return array(
             'scope'         => array('email'),
         ),	
         'Google' => array(
-		    'client_id'     => '945035754502-m7cnst134co70m8nooeqjhudp4psq39u.apps.googleusercontent.com',
-		    'client_secret' => '8X9P_fDMQaRJa6lRMTx3pX4Z',
+		    'client_id'     => '678157578033-c1tlnh8maqo8goitff8dqujsfejne6d9.apps.googleusercontent.com',
+		    'client_secret' => 'FrAL0sD_LE6bOvPzcTeGuBm0',
 		    'scope'         => array('userinfo_email', 'userinfo_profile'),
 		),  	
 

@@ -3,7 +3,6 @@
 <body>
 
     <div class="container" id="primary">
-
       <div class="starter-template">
         <h1>Quản lý sản phẩm</h1>
         @include('includes.notifications')

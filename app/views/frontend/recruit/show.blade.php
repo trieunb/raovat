@@ -1,47 +1,28 @@
 @extends('layouts.layout')
 @section('title') Trang chủ @stop
 @section('banner')
-    <section id=services class="emerald">
+    <section id="title" class="emerald">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="media services">
-                        <div class="pull-left">
-                            <i style="background-color:#;" class="icon-twitter icon-md"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Tuyển dụng & Việc làm</h3>
-                            Website chuyên cung cấp thông tin tuyển dụng - lao động - việc làm hàng đầu Cần Thơ, hãy liên hệ với chúng tôi để được đăng tin hoàn toàn miễn phí...<a href="#">(Xem thêm)</a> <br>
-                            Email: <a href="#" class="mail">haotptcantho@gmail.com</a>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <h1>
+                        <div class="glyphicon glyphicon-file"></div> Thông tin tuyển dụng - Việc làm</h1>
                 </div>
-                <div class="col-sm-4">
-                    <div class="media services">
-                        <div class="pull-left">
-                            <i style="background-color:#;" class="icon-facebook icon-md"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Đăng tin rao vặt</h3>
-                            Bạn có sản phẩm hoặc dịch vụ cần cung cấp? <br>
-                            Bạn đang là người cần sản phẩm hoặc dịch vụ ?
-                            Website sẽ là cầu nối liên kết các bạn lại với nhau...<a href="#">(Xem thêm)</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="media services">
-                        <div class="pull-left">
-                            <i style="background-color:#;" class="icon-google-plus icon-md"></i>
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Gian hàng Online</h3>
-                            Bạn đang bán nhiều loại mặt hàng?
-                            Bạn cần 1 website để dễ dàng quản lý và quảng cáo sản phẩm?
-                            Hãy đăng ký gian hàng ngay bây giờ, bạn sẽ sở hữu 1 website của chính bạn..
-                            <a href="#">(Xem thêm)</a>
-                        </div>
-                    </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb  pull-right">
+                        <li>
+                            <a href="{{ URL::to('/') }}" class="breadcrumb_home">
+                                <div class="glyphicon glyphicon-home"> Home</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/" class="breadcrumb_home">Tuyển dụng - việc làm</a>
+                        </li>
+
+                        <li class="active">
+                            {{ $tuyendung->tencty }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -50,9 +31,8 @@
 @section('content')
     <div id="content" class="site-content col-md-9" role="main">
         <div class="content">
-            <h2>Thông tin tuyển dụng - Việc làm</h2>
-            <hr>{{-- TUYEN DUNG VIEC LAM --}}
-            @foreach($tuyendung as $k => $v)
+            
+          
             <div class="media services">
                 
                 <div class="media-body">
@@ -62,35 +42,43 @@
                         <tr>
                             <td colspan="2">
                                 <div class="col-sm-4">
-                                    @if($v->logo != null)
-                                    <img  src="{{ asset($v->logo) }}" class="img-thumbnail img-index">
+                                    @if($tuyendung->logo != null)
+                                    <img  src="{{ asset($tuyendung->logo) }}" class="img-thumbnail img-index">
                                     @else
                                     <img  src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
                                     @endif
                                 </div>
                                 <div class="col-sm-8" style="height:100px;">
-                                    <h3  class="media-heading"><a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">{{ $v->tencty }}</a></h3>
+                                    <h3  class="media-heading">{{ $tuyendung->tencty }}</a></h3>
                                 </div>
                                 
                             </td>
                         </tr>
                         <tr>
-                            <td class="col-sm-6">Lĩnh vực: {{ $v->linhvuc }}</td>
-                            <td class="col-sm-6">Hạn nộp hồ sơ: {{ $v->hannophoso }}</td>
+                            <td class="col-sm-6">Lĩnh vực: {{ $tuyendung->linhvuc }}</td>
+                            <td class="col-sm-6">Hạn nộp hồ sơ: {{ $tuyendung->hannophoso }}</td>
                         </tr>
                         <tr>
-                            <td class="col-sm-6">Mức lương: {{ $v->mucluong }}</td>
-                            <td class="col-sm-6">Nơi làm việc: {{ $v->noilamviec }}</td>
+                            <td class="col-sm-6">Mức lương: {{ $tuyendung->mucluong }}</td>
+                            <td class="col-sm-6">Nơi làm việc: {{ $tuyendung->noilamviec }}</td>
                         </tr>
                         <tr>
-                            <td class="col-sm-6">Vị trí: {{ $v->vitrituyendung }}</td>
-                            <td class="col-sm-6"><a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">(Xem chi tiết...)</a></td>
+                            <td class="col-sm-6">Vị trí: {{ $tuyendung->vitrituyendung }}</td>
+                            <td class="col-sm-6"></td>
                         </tr>
-
+                        <tr>
+                            <td colspan="2" class="col-sm-12">NỘI DUNG CHI TIẾT:<br> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                {{ $tuyendung->noidungchitiet }}
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
-            @endforeach
+           
         
         </div>
 
@@ -103,13 +91,8 @@
             {{-- Tao gian hang moi --}}
             <div class="panel panel-primary widget">
                 <div class="panel-body">
-                @if($store == null)
                     <a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;"
                        class="btn btn-block btn-success">Tạo gian hàng</a>
-                @else
-                <a href="/thanh-vien/gian-hang" style="height: 50px; font-size: 25px;"
-                       class="btn btn-block btn-success">Gian hàng của bạn</a>
-                @endif
                 </div>
             </div> {{-- ##Tao gian hang moi --}}
 

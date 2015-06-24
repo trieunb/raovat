@@ -11,8 +11,10 @@ class UserController extends \BaseController {
 	{
 		$user = Sentry::getUser();
 
+        $store = Store::where('user_id',$user->id)->first();
 		// $admin = Sentry::findGroupByName('Admins');
 		$news = News::where('user_id',$user->id)->get();
+        $tuyendung = $tuyendung = Tuyendung::where('trangthai','=',1)->where('user_id',$user->id)->orderBy('id','desc')->get();
 		$images = array();
 			foreach ($news as $key => $value) {
             $images[] = json_decode($value->image);
@@ -20,7 +22,7 @@ class UserController extends \BaseController {
 		
         
 		//var_dump($news);die();
-		return View::make('users.thongtintaikhoan',compact('user','news','images'));
+		return View::make('users.thongtintaikhoan',compact('user','news','images','tuyendung','store'));
 	}
 	public function getEditDangTin($id)
 	{
