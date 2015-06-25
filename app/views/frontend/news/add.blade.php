@@ -32,7 +32,7 @@
                     <div class="panel-heading">
                         <h2 class="text-center" style="color:rgb(52, 73, 94);">Đăng Tin Rao Vặt</h2>
                     </div>
-                    <div class="panel-body text-center">
+                    <div class="panel-body">
             <form action="{{ URL::to('rao-vat/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                 <!-- @include('includes.notifications') -->
                 <div class="form-group">
@@ -51,6 +51,7 @@
                         </p>
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <label for="input" class="col-sm-2 control-label">Danh mục:</label>
                     <div class="col-sm-10">
@@ -58,10 +59,11 @@
                         @if ($errors->has('cat_id')) <p class="help-block" style="color:red">{{ $errors->first('cat_id') }}</p> @endif
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="input" class="col-sm-2 control-label">Nội dung:</label>
                     <div class="col-sm-10">
-                        {{ Form::textarea('noidung', null, ['required', 'class'=>'form-control','id'=>'editor','class'=>'form-control',"placeholder"=>"Nhập nội dung chi tiết về sản phẩm/dịch vụ | Chú ý: Phải là tiếng Việt có dấu ..."]) }}
+                        {{ Form::textarea('noidung', null, ['required', 'class'=>'form-control','id'=>'edit','class'=>'form-control',"placeholder"=>"Nhập nội dung chi tiết về sản phẩm/dịch vụ | Chú ý: Phải là tiếng Việt có dấu ..."]) }}
                         @if ($errors->has('noidung')) <p class="help-block" style="color:red">{{ $errors->first('noidung') }}</p> @endif
                     </div>
                 </div>
@@ -174,8 +176,11 @@
 @section('style')
 	{{ HTML::style('assets/css/prettify.css') }}
 	{{ HTML::style('assets/css/bootstrap-wysihtml5.css') }}
-	{{ HTML::style('assets/css/froala_style.min.css') }}
-	{{ HTML::style('assets/css/froala_editor.min.css') }}
+    {{ HTML::style('editor/css/froala_editor.min.css') }}
+    {{ HTML::style('editor/css/froala_style.min.css') }}
+    <!-- {{ HTML::style('editor/css/sample.css') }} -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
 	{{--{{ HTML::style('assets/css/file-upload.css') }}--}}
 	<style type="text/css">
 	.form-group.lienhe {
@@ -187,27 +192,54 @@
 @stop
 
 @section('script')
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  {{ HTML::script('assets/js/froala_editor.min.js') }}
+  <!--[if lt IE 9]>
+    <script src="../js/froala_editor_ie8.min.js"></script>
+  <![endif]-->
+  <!-- {{ HTML::script('editor/js/plugins/tables.min.js') }}
+  {{ HTML::script('editor/js/plugins/char_counter.min.js') }}
+  {{ HTML::script('editor/js/plugins/lists.min.js') }}
+  {{ HTML::script('editor/js/plugins/colors.min.js') }}
+  {{ HTML::script('editor/js/plugins/font_family.min.js') }}
+  {{ HTML::script('editor/js/plugins/font_size.min.js') }}
+  {{ HTML::script('editor/js/plugins/block_styles.min.js') }}
+  {{ HTML::script('editor/js/plugins/media_manager.min.js') }}
+  {{ HTML::script('editor/js/plugins/video.min.js') }} -->
+  <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+    <!-- {{ HTML::script('editor/ckeditor.js') }}
+ -->
+    <script>
+        CKEDITOR.inline( 'noidung' );
+    </script>
+  <script>
+      // $(function(){
+      //   $('#edit')
+      //     .editable({inlineMode: false, maxCharacters: 140})
+      //     .on('editable.maxCharNumberExceeded', function () {
+      //       alert('Character number was exceeded.')
+      //     })
+      // });
+  </script>
+
 	{{ HTML::script('assets/js/wysihtml5-0.3.0.js') }}
 	{{ HTML::script('assets/js/prettify.js') }}
 	{{ HTML::script('assets/js/bootstrap-wysihtml5.js') }}
 	
 	{{--{{ HTML::script('assets/js/upload-file-jelly-min.js') }}--}}
+
 	<script>
 		$('.textarea').wysihtml5();
 	</script>
-	{{ HTML::script('assets/js/froala_editor.min.js') }}
-	{{ HTML::script('assets/js/froala_editor_ie8.min.j') }}
+	
 <script language="javascript">
         function AutoFormatDigit(obj) {
             var value = $(obj).val().replace(/,/g, '');
             $(obj).val(value.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         }
 </script>
-<script>
-      $(function() {
-          $('#editor').editable({inlineMode: false})
-      });
-  </script>
+
   {{ HTML::script('assets/js/file-upload.js') }}
      <!-- Include Font Awesome. -->
 

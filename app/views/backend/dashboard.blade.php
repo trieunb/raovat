@@ -59,8 +59,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Rao Vặt Cần Thơ</span>
-							- Nguyễn Bá Triều &copy; 2015
+							<span class="blue bolder">Admin Rao Vặt Cần Thơ</span>
+							- &copy; 2015
 						</span>
 
 						<!-- <span class="action-buttons">

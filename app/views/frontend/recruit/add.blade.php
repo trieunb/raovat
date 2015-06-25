@@ -26,13 +26,13 @@
 @stop
 @section('content')
     <div id="content" class="site-content col-md-12" role="main">
-        <div class="content text-center">
+        <div class="content">
         	<div class="col-sm-12">
 			    <div class="panel panel-default">
 			        <div class="panel-heading">
 			            <h2 class="text-center" style="color:rgb(52, 73, 94);">Đăng Tin Tuyển Dụng</h2>
 			        </div>
-			        <div class="panel-body text-center">
+			        <div class="panel-body">
             <form action="{{ URL::to('tuyen-dung/dang-tin') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
                 {{ Form::token() }}
                 <!-- @include('includes.notifications') -->
@@ -178,8 +178,36 @@
 	{{ HTML::script('assets/js/wysihtml5-0.3.0.js') }}
 	{{ HTML::script('assets/js/prettify.js') }}
 	{{ HTML::script('assets/js/bootstrap-wysihtml5.js') }}
-	
+	{{ HTML::style('editor/css/froala_editor.min.css') }}
+    {{ HTML::style('editor/css/froala_style.min.css') }}
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 	{{--{{ HTML::script('assets/js/upload-file-jelly-min.js') }}--}}
+
+
+      <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  {{ HTML::script('assets/js/froala_editor.min.js') }}
+  <!--[if lt IE 9]>
+    <script src="../js/froala_editor_ie8.min.js"></script>
+  <![endif]-->
+  {{ HTML::script('editor/js/plugins/tables.min.js') }}
+  {{ HTML::script('editor/js/plugins/char_counter.min.js') }}
+  {{ HTML::script('editor/js/plugins/lists.min.js') }}
+  {{ HTML::script('editor/js/plugins/colors.min.js') }}
+  {{ HTML::script('editor/js/plugins/font_family.min.js') }}
+  {{ HTML::script('editor/js/plugins/font_size.min.js') }}
+  {{ HTML::script('editor/js/plugins/block_styles.min.js') }}
+  {{ HTML::script('editor/js/plugins/media_manager.min.js') }}
+  {{ HTML::script('editor/js/plugins/video.min.js') }}
+
+  <script>
+      $(function(){
+        $('#editor')
+          .editable({inlineMode: false, maxCharacters: 140})
+          .on('editable.maxCharNumberExceeded', function () {
+            alert('Character number was exceeded.')
+          })
+      });
+  </script>
 	<script>
 		$('.textarea').wysihtml5();
 	</script>
@@ -191,11 +219,7 @@
             $(obj).val(value.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
         }
 </script>
-<script>
-      $(function() {
-          $('#editor').editable({inlineMode: false})
-      });
-  </script>
+
   {{ HTML::script('assets/js/file-upload.js') }}
      <!-- Include Font Awesome. -->
 

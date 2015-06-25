@@ -160,6 +160,14 @@
 
 								<b class="arrow"></b>
 							</li>
+							<li class="">
+								<a href="{{ URL::action('AdminAuthController@getTinTuyenDung') }}">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Tin Tuyển Dụng
+								</a>
+
+								<b class="arrow"></b>
+							</li>
 						</ul>
 					</li>
 

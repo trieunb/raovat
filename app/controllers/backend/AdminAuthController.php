@@ -136,6 +136,20 @@
 
 		}
 
+		public function getTinTuyenDung(){
+			$user_admin = Sentry::getUser();
+			$tuyendung = Tuyendung::paginate(10);
+			return View::make('backend.tintuyendung',compact('user_admin','tuyendung'));
+		}
+
+		public function getTrangThaiTd($id){
+			$tuyendung = Tuyendung::where('id',$id)->first();
+			$tuyendung->trangthai == 1 ? $trangthai = 0 : $trangthai=1;
+			$tuyendung->trangthai = $trangthai;
+			$tuyendung->save();
+			return Redirect::back();
+		}
+
 		public function getLogout(){
 			Sentry::logout();
 		return Redirect::to('/admin/login');

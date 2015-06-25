@@ -42,7 +42,7 @@
 								</li>
 
 								<li>
-									<a href="profile.html">
+									<a href="">
 										<i class="ace-icon fa fa-user"></i>
 										Thông tin cá nhân
 									</a>

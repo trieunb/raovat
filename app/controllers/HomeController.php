@@ -20,6 +20,7 @@ class HomeController extends BaseController {
 
 		$tuyendung = Tuyendung::where('trangthai','=',1)->orderBy('id','desc')->get();
 		$user_id = Sentry::getUser();
+		
 		if (!empty($user_id)) {
 			$store = Store::where('user_id',$user_id->id)->first();
 		}else{

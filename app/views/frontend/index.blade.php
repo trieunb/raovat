@@ -169,9 +169,11 @@
                 <div class="panel-body">
                     <ul>
                         <li><a href="{{ URL::to('danh-muc') }}">Tất cả các danh mục</a></li>
+                        
                         @foreach(Category::lists('tendanhmuc', 'id') as $key=>$cate)
 
                             <li><a href="{{ URL::to('danh-muc/' . $key) }}">{{ $cate }}</a></li>
+
                         @endforeach
                     </ul>
                 </div>
