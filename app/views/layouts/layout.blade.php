@@ -87,8 +87,9 @@
 @include('includes.footer')
 @include('includes.footer2')
 
-@yield('style')
+
 @yield('script')
+@yield('style')
 {{-- Java Script --}}
 {{ HTML::script('cti_design/assets/js/jquery.js') }}
 {{ HTML::script('cti_design/assets/js/jquery-migrate.min.js') }}

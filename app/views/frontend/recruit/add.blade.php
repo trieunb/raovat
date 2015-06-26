@@ -189,7 +189,7 @@
   <!--[if lt IE 9]>
     <script src="../js/froala_editor_ie8.min.js"></script>
   <![endif]-->
-  {{ HTML::script('editor/js/plugins/tables.min.js') }}
+  <!-- {{ HTML::script('editor/js/plugins/tables.min.js') }}
   {{ HTML::script('editor/js/plugins/char_counter.min.js') }}
   {{ HTML::script('editor/js/plugins/lists.min.js') }}
   {{ HTML::script('editor/js/plugins/colors.min.js') }}
@@ -197,17 +197,15 @@
   {{ HTML::script('editor/js/plugins/font_size.min.js') }}
   {{ HTML::script('editor/js/plugins/block_styles.min.js') }}
   {{ HTML::script('editor/js/plugins/media_manager.min.js') }}
-  {{ HTML::script('editor/js/plugins/video.min.js') }}
+  {{ HTML::script('editor/js/plugins/video.min.js') }} -->
 
   <script>
-      $(function(){
-        $('#editor')
-          .editable({inlineMode: false, maxCharacters: 140})
-          .on('editable.maxCharNumberExceeded', function () {
-            alert('Character number was exceeded.')
-          })
-      });
-  </script>
+  $(function() {
+    $('#editor').editable({
+      inlineMode: false
+    })
+  });
+</script>
 	<script>
 		$('.textarea').wysihtml5();
 	</script>

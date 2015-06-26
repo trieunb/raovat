@@ -26,15 +26,17 @@ Route::group(array('before'=>'sentry.auth'), function() {
 	Route::get('gian-hang/tao-moi', 'StoreController@create');
 	Route::post('gian-hang/tao-moi', 'StoreController@store');
 	Route::get('gian-hang/{slug?}/admin', 'StoreController@storeAdminIndex');
+
 	Route::group(['prefix'=>'gian-hang/{slug?}/admin'], function(){
 		Route::resource('san-pham', 'StoreProductController');
 		Route::resource('category', 'StoreCategoryController');
 		Route::resource('orders', 'StoreOrderController');
 		Route::controller('settings', 'StoreSettingController');
 	});
+	
 	Route::get('tuyen-dung/dang-tin', 'NewsController@getTuyenDung');
 	Route::post('tuyen-dung/dang-tin', 'NewsController@postTuyenDung');
-	Route::get('tuyen-dung/tin-tuyen-dung/{id}', 'NewsController@getTinTuyenDung');
+	
 
 });
 Route::get('gian-hang/{slug?}', 'StoreController@show');
@@ -55,7 +57,7 @@ Route::get('gian-hang/{slug?}/gio-hang', 'StoreController@cart');
 Route::get('rao-vat/xem-tin/{id}', 'NewsController@getXemTin');
 Route::get('/trang-khong-tim-thay', 'HomeController@notfound');
 Route::get('/danh-muc/{id?}', 'NewsController@getDanhMuc');
-
+Route::get('tuyen-dung/tin-tuyen-dung/{id}', 'NewsController@getTinTuyenDung');
 
 Route::group(['prefix'=>'admin'],function(){
 

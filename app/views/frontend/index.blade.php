@@ -170,9 +170,15 @@
                     <ul>
                         <li><a href="{{ URL::to('danh-muc') }}">Tất cả các danh mục</a></li>
                         
-                        @foreach(Category::lists('tendanhmuc', 'id') as $key=>$cate)
+                        @foreach($categories as $key=>$cate)
 
-                            <li><a href="{{ URL::to('danh-muc/' . $key) }}">{{ $cate }}</a></li>
+                            <li>
+                               
+                                <a href="{{ URL::to('danh-muc/' . $key) }}">
+                                    {{ $cate->tendanhmuc }} 
+                                </a>
+                               
+                            </li>
 
                         @endforeach
                     </ul>

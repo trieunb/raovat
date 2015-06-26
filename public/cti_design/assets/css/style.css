@@ -1757,3 +1757,6 @@ img.img-thumbnail.img-index {
   width: 260px;
   height: 100px;
 }
+.froala-box div a {
+  display: none !important;
+}
