@@ -1,50 +1,39 @@
 <section id="bottom" class="wet-asphalt">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3 col-xs-6"><h3>About Us</h3>
+            <div class="col-sm-3 col-xs-6"><h3><div class="glyphicon glyphicon-leaf"></div> Thông tin</h3>
 
-                <div class="textwidget"><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                        turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
-                        ante.</p>
-
-                    <p>Pellentesque habitant morbi tristique senectus.</p>
+                <div class="textwidget"><p><b>CanTho.info.vn</b> là website chuyên cung cấp miễn phí đăng tin tuyển dụng - việc làm - rao vặt Cần Thơ.</p>
+                    <p><b>CanTho.info.vn</b> đang trong quá trình chạy thử nghiệm</p>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-6"><h3>Company</h3>
+            <div class="col-sm-3 col-xs-6"><h3><div class="glyphicon glyphicon-link"></div> Company</h3>
 
                 <div class="menu-company-menu-container">
                     <ul id="menu-company-menu" class="menu">
                         <li id="menu-item-27"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Company
-                                Overview</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="#">Giới thiệu</a></li>
                         <li id="menu-item-293"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-293"><a href="#">Meet
-                                The Team</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-293"><a href="#">Nhóm dự án</a></li>
                         <li id="menu-item-294"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><a href="#">Our
-                                Awesome Partners</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><a href="#">Đối tác</a></li>
                         <li id="menu-item-295"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-295"><a href="#">Our
-                                Services</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-295"><a href="#">Dịch vụ</a></li>
                         <li id="menu-item-296"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-296"><a href="#">Frequently
-                                Asked Questions</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-296"><a href="#">Câu hỏi thường gặp</a></li>
                         <li id="menu-item-297"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-297"><a href="#">Conatct
-                                Us</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-297"><a href="#">Liên hệ với chúng tôi</a></li>
                         <li id="menu-item-298"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-298"><a href="#">Privacy
-                                Policy</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-298"><a href="#">Chính sách riêng tư</a></li>
                         <li id="menu-item-299"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-299"><a href="#">Terms
-                                of Use</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-299"><a href="#">Điều khoản sử dụng</a></li>
                         <li id="menu-item-300"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-300"><a href="#">Copyright</a>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-300"><a href="#">Bản quyền</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-6"><h3>Recent Posts</h3>
+            <div class="col-sm-3 col-xs-6"><h3><div class="glyphicon glyphicon-send"></div> Bài viết mới nhất</h3>
 
                 <div class="media">
                     <div class="pull-left">
@@ -77,23 +66,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-6"><h3>Address</h3>
+            <div class="col-sm-3 col-xs-6"><h3><div class="glyphicon glyphicon-globe"></div> Mạng xã hội</h3>
 
                 <div class="textwidget">
                     <address>
-                        <strong>Twitter, Inc.</strong><br>
-                        795 Folsom Ave, Suite 600<br>
-                        San Francisco, CA 94107<br>
-                        <abbr title="Phone">P:</abbr> (123) 456-7890
+                        <a title="Mạng xã hội Facebook Cantho.info.vn" target="_blank" href="{{ URL::to('https://www.facebook.com/Cantho.info.vn') }}" class="btn btn-md btn-primary btn-block"><b><i class="fa fa-facebook"></i> Facebook</b></a>
+                        <a title="Mạng xã hội Google+ Cantho.info.vn" target="_blank" href="{{ URL::to('https://www.facebook.com/Cantho.info.vn') }}" class="btn btn-md btn-danger btn-block"><b><i class="icon-google-plus"></i> Facebook</b></a>
+                        <a title="Mạng xã hội Twitter Cantho.info.vn" target="_blank" href="{{ URL::to('https://www.facebook.com/Cantho.info.vn') }}" class="btn btn-md btn-info btn-block"><b><i class="icon-twitter"></i> Twitter</b></a>
+
                     </address>
-                    <h4>Newsletter</h4>
+                    <h4>Đăng ký nhận tin:</h4>
 
                     <form role="form">
                         <div class="input-group">
-                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
-		<span class="input-group-btn">
-			<button class="btn btn-danger" type="button">Go!</button>
-		</span>
+                            <input title="Bạn sẽ nhận được thông tin mới nhất từ Website CTI" type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+        <span class="input-group-btn">
+            <button class="btn btn-danger" type="button">Go!</button>
+        </span>
                         </div>
                     </form>
                 </div>

@@ -7,19 +7,23 @@
                 <div class="col-sm-4">
                     <div class="media services">
                         <div class="pull-left">
-                            <i style="background-color:#;" class="icon-twitter icon-md"></i>
+                            <i style="background-color:#;" class="icon-ok icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Tuyển dụng & Việc làm</h3>
-                            Website chuyên cung cấp thông tin tuyển dụng - lao động - việc làm hàng đầu Cần Thơ, hãy liên hệ với chúng tôi để được đăng tin hoàn toàn miễn phí...<a href="#">(Xem thêm)</a> <br>
-                            Email: <a href="#" class="mail">haotptcantho@gmail.com</a>
+                            Website chuyên cung cấp miễn phí đăng tin tuyển dụng - việc làm - rao vặt hàng đầu Cần Thơ,
+                            hãy liên hệ với chúng tôi để được đăng tin hoàn toàn miễn phí...<a href="#">(Xem thêm)</a>
+                            <br>
+
+                            <div class="glyphicon glyphicon-envelope"></div>
+                            haotptcantho@gmail.com
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="media services">
                         <div class="pull-left">
-                            <i style="background-color:#;" class="icon-facebook icon-md"></i>
+                            <i style="background-color:#;" class="icon-ok icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Đăng tin rao vặt</h3>
@@ -32,7 +36,7 @@
                 <div class="col-sm-4">
                     <div class="media services">
                         <div class="pull-left">
-                            <i style="background-color:#;" class="icon-google-plus icon-md"></i>
+                            <i style="background-color:#;" class="icon-ok icon-md"></i>
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Gian hàng Online</h3>
@@ -44,56 +48,57 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 @stop
 @section('content')
     <div id="content" class="site-content col-md-9" role="main">
         <div class="content">
-            <h2>Thông tin tuyển dụng - Việc làm</h2>
-            <hr>{{-- TUYEN DUNG VIEC LAM --}}
-            @foreach($tuyendung as $k => $v)
-            <div class="media services">
-                
-                <div class="media-body">
-                     
-                    <table>
-                    
-                        <tr>
-                            <td colspan="2">
-                                <div class="col-sm-4">
-                                    @if($v->logo != null)
-                                    <img  src="{{ asset($v->logo) }}" class="img-thumbnail img-index">
-                                    @else
-                                    <img  src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
-                                    @endif
+            <div class="col-md-12">
+                <h2 class="center">
+                    <b>Thông tin tuyển dụng việc làm mới nhất</b>
+                </h2>
+                @foreach($tuyendung as $k => $v)
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="col-md-2">
+                                @if($v->logo != null)
+                                    <a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">
+                                        <img src="{{ asset($v->logo) }}" class="img-thumbnail img-index">
+                                    </a>
+                                @else
+                                    <a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">
+                                        <img src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
+                                    </a>
+                                @endif
+                            </div>
+                            <div class="col-md-10">
+                                <div class="media-body">
+                                    <h3 class="media-heading"> <a
+                                                href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}"> {{ $v->tencty }}</a>
+                                    </h3>
+                                    <table>
+                                        <tr>
+                                            <td>Lĩnh vực: <b>{{ $v->linhvuc }}</b></td>
+                                            <td>Hạn nộp hồ sơ: <b>{{ $v->hannophoso }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mức lương: <b>{{ $v->mucluong }}</b></td>
+                                            <td>Nơi làm việc: <b>{{ $v->noilamviec }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vị trí: <b>{{ $v->vitrituyendung }}</b></td>
+                                            <td><a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">(Xem chi
+                                                    tiết...)</a></td>
+                                        </tr>
+                                    </table>
                                 </div>
-                                <div class="col-sm-8" style="height:100px;">
-                                    <h3  class="media-heading"><a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">{{ $v->tencty }}</a></h3>
-                                </div>
-                                
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6">Lĩnh vực: {{ $v->linhvuc }}</td>
-                            <td class="col-sm-6">Hạn nộp hồ sơ: {{ $v->hannophoso }}</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6">Mức lương: {{ $v->mucluong }}</td>
-                            <td class="col-sm-6">Nơi làm việc: {{ $v->noilamviec }}</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6">Vị trí: {{ $v->vitrituyendung }}</td>
-                            <td class="col-sm-6"><a href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$v->id) }}">(Xem chi tiết...)</a></td>
-                        </tr>
+                            </div>
 
-                    </table>
-                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            @endforeach
-        
         </div>
-
     </div>
 @stop
 
@@ -103,13 +108,8 @@
             {{-- Tao gian hang moi --}}
             <div class="panel panel-primary widget">
                 <div class="panel-body">
-                @if($store == null)
                     <a href="{{ URL::to('gian-hang/tao-moi') }}" style="height: 50px; font-size: 25px;"
                        class="btn btn-block btn-success">Tạo gian hàng</a>
-                @else
-                <a href="/thanh-vien/gian-hang" style="height: 50px; font-size: 25px;"
-                       class="btn btn-block btn-success">Gian hàng của bạn</a>
-                @endif
                 </div>
             </div> {{-- ##Tao gian hang moi --}}
 
@@ -137,8 +137,8 @@
                 <div class="panel-body">
                     @if(Sentry::check())
                         <span>
-										Xin chào, <strong>{{ $user->full_name }}</strong>
-									</span>
+                                        Xin chào, <strong>{{ $user->full_name }}</strong>
+                                    </span>
                         <ul>
                             <li> {{ HTML::link('/thanh-vien/thong-tin-tai-khoan', 'Thông tin tài khoản') }}</li>
                             <li> {{ HTML::link('/rao-vat/cac-tin-da-dang', 'Các tin đã đăng') }}</li>
@@ -169,17 +169,9 @@
                 <div class="panel-body">
                     <ul>
                         <li><a href="{{ URL::to('danh-muc') }}">Tất cả các danh mục</a></li>
-                        
-                        @foreach($categories as $key=>$cate)
+                        @foreach(Category::lists('tendanhmuc', 'id') as $key=>$cate)
 
-                            <li>
-                               
-                                <a href="{{ URL::to('danh-muc/' . $key) }}">
-                                    {{ $cate->tendanhmuc }} 
-                                </a>
-                               
-                            </li>
-
+                            <li><a href="{{ URL::to('danh-muc/' . $key) }}">{{ $cate }}</a></li>
                         @endforeach
                     </ul>
                 </div>

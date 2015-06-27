@@ -31,57 +31,51 @@
 @section('content')
     <div id="content" class="site-content col-md-9" role="main">
         <div class="content">
-            
-          
-            <div class="media services">
-                
-                <div class="media-body">
-                     
-                    <table>
-                    
-                        <tr>
-                            <td colspan="2">
-                                <div class="col-sm-4">
-                                    @if($tuyendung->logo != null)
-                                    <img  src="{{ asset($tuyendung->logo) }}" class="img-thumbnail img-index">
-                                    @else
-                                    <img  src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
-                                    @endif
-                                </div>
-                                <div class="col-sm-8" style="height:100px;">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            @if($tuyendung->logo != null)
+                                <img  src="{{ asset($tuyendung->logo) }}" class="img-thumbnail img-index">
+                            @else
+                                <img  src="{{ asset('/images/img.jpg') }}" class="img-thumbnail img-index">
+                            @endif
+                        </div>
+                        <div class="col-md-10">
+                            <div class="media-body">
+                                <h3 class="media-heading">
                                     <h3  class="media-heading">{{ $tuyendung->tencty }}</a></h3>
-                                </div>
-                                
-                            </td>
-                        </tr>
+                                </h3>
+                                <table>
+                                    <tr>
+                                        <td>Lĩnh vực: <b>{{ $tuyendung->linhvuc }}</b></td>
+                                        <td>Hạn nộp hồ sơ: <b>{{ $tuyendung->hannophoso }}</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mức lương: <b>{{ $tuyendung->mucluong }}</b></td>
+                                        <td>Nơi làm việc: <b> {{ $tuyendung->noilamviec }}</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Vị trí: <b>{{ $tuyendung->vitrituyendung }}</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table ">
+                        <tbody>
                         <tr>
-                            <td class="col-sm-6">Lĩnh vực: {{ $tuyendung->linhvuc }}</td>
-                            <td class="col-sm-6">Hạn nộp hồ sơ: {{ $tuyendung->hannophoso }}</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6">Mức lương: {{ $tuyendung->mucluong }}</td>
-                            <td class="col-sm-6">Nơi làm việc: {{ $tuyendung->noilamviec }}</td>
-                        </tr>
-                        <tr>
-                            <td class="col-sm-6">Vị trí: {{ $tuyendung->vitrituyendung }}</td>
-                            <td class="col-sm-6"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="col-sm-12">NỘI DUNG CHI TIẾT:<br> 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <td>
+                                <h4 class="center"><b>Nội dung chi tiết</b></h4>
                                 {{ $tuyendung->noidungchitiet }}
                             </td>
                         </tr>
+
+                        </tbody>
                     </table>
                 </div>
             </div>
-           
-        
         </div>
-
     </div>
 @stop
 
@@ -120,8 +114,8 @@
                 <div class="panel-body">
                     @if(Sentry::check())
                         <span>
-										Xin chào, <strong>{{ $user->full_name }}</strong>
-									</span>
+                                        Xin chào, <strong>{{ $user->full_name }}</strong>
+                                    </span>
                         <ul>
                             <li> {{ HTML::link('/thanh-vien/thong-tin-tai-khoan', 'Thông tin tài khoản') }}</li>
                             <li> {{ HTML::link('/rao-vat/cac-tin-da-dang', 'Các tin đã đăng') }}</li>

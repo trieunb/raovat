@@ -40,15 +40,16 @@
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td colspan="2">
-                                        <h1>
-                                            <div class="glyphicon glyphicon-file"></div> {{ $news->tieude }}</h1>
-
+                                    <td align="right">
+                                        <b>Chuyên mục:</b>
+                                    </td>
+                                    <td>
+                                        {{ $cat->tendanhmuc }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Loại tin:
+                                    <td align="right">
+                                       <b>Loại tin:</b>
                                     </td>
                                     <td>
                                         <?php if ($news->loaitin = 1) { ?>
@@ -59,34 +60,31 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Nội dung:
+                                    <td  align="right">
+                                        <b>Nội dung:</b>
                                     </td>
                                     <td>
                                         {{ nl2br($news->noidung) }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                       Giá:
+                                    <td align="right">
+                                      <b>Nội dung:</b>
                                     </td>
                                     <td>
                                         {{$news->gia}} VNĐ
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Quy trình vận chuyển, giao & nhận:
+                                    <td align="right">
+                                        <b>Quy trình vận chuyển, giao & nhận:</b>
                                     </td>
                                     <td>
                                         {{ $news->quytrinhvanchuyen }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        Hình ảnh:
-                                    </td>
-                                    <td>
+                                    <td colspan="2">
                                         {{-- show anh --}}
                                         <section id="page">
                                             <div class="container">
@@ -107,7 +105,7 @@
                                                                     </li>
                                                                 </ul> {{-- //tags-tin --}}
                                                                 {{-- show hinh theo nhom: portfolio-item tin-1-active --}}
-                                                                <ul class="portfolio-items col-4">
+                                                                <ul class="portfolio-items col-3">
                                                                     <?php foreach ($images as $key => $value) { ?>
                                                                     <li class="portfolio-item tin-1-active">
                                                                         <div class="item-inner">
@@ -133,6 +131,7 @@
                                         </section>
                                         {{-- //show anh --}}
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td colspan="2">
@@ -143,28 +142,28 @@
                                             <div class="well">
                                                 <table>
                                                     <tr>
-                                                        <td>Tên: </td>
-                                                        <td>{{ $news->name }}</td>
+                                                        <td align="right">Tên: </td>
+                                                        <td><b>{{ $news->name }}</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Email: </td>
-                                                        <td>{{ $news->email }}</td>
+                                                        <td align="right">Email: </td>
+                                                        <td><b>{{ $news->email }}</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Điện thoại: </td>
-                                                        <td>{{ $news->phone }}</td>
+                                                        <td align="right">Điện thoại: </td>
+                                                        <td><b>{{ $news->phone }}</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Địa chỉ: </td>
-                                                        <td>{{ $news->address }}</td>
+                                                        <td align="right">Địa chỉ: </td>
+                                                        <td><b>{{ $news->address }}</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Ngày đăng: </td>
-                                                        <td>{{ $news->ngaydang }}</td>
+                                                        <td align="right">Ngày đăng: </td>
+                                                        <td><b>{{ $news->ngaydang }}</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Lượt xem: </td>
-                                                        <td>{{ $news->luotxem }}</td>
+                                                        <td align="right">Lượt xem: </td>
+                                                        <td><b>{{ $news->luotxem }}</b></td>
                                                     </tr>
                                                 </table>
 
@@ -245,8 +244,8 @@
                 <div class="panel-body">
                     @if(Sentry::check())
                         <span>
-										Xin chào, <strong>{{ $user->full_name }}</strong>
-									</span>
+                                        Xin chào, <strong>{{ $user->full_name }}</strong>
+                                    </span>
                         <ul>
                             <li> {{ HTML::link('/thanh-vien/thong-tin-tai-khoan', 'Thông tin tài khoản') }}</li>
                             <li> {{ HTML::link('/rao-vat/cac-tin-da-dang', 'Các tin đã đăng') }}</li>

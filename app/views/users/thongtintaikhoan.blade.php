@@ -143,12 +143,21 @@
                 <th>Vị trí</th>
                 <th>Hạn nộp hồ sơ</th>
                 <th>Nơi làm việc</th>
+                <th>Trạng thái</th>
                 <th colspan="2" class="text-center">action</th>
             </thead>
             <tbody>
                 @foreach($tuyendung as $k => $v)
                 <tr>
-                    <td><a href="{{ URL::action('NewsController@getTinTuyenDung',$v->id) }}">{{ $v->tencty }}</a></td>
+                    <td>
+                        @if($v->trangthai==0)
+                            {{ $v->tencty }}
+                        @else
+                        <a href="{{ URL::action('NewsController@getTinTuyenDung',$v->id) }}">
+                            {{ $v->tencty }}
+                        </a>
+                        @endif
+                    </td>
                     <td>{{ $v->diachi }}</td>
                     <td>{{ $v->linhvuc }}</td>
                     <td>{{ $v->mucluong }}</td>
@@ -156,12 +165,19 @@
                     <td>
                         {{ $v->hannophoso }}
                     </td>
-                     <td>
+                    <td>
                         {{ $v->noilamviec }}
                     </td>
                     <td style="vertical-align: middle;">
+                        @if($v->trangthai == 0)
+                            <span class="label label-warning">Not Active</span>
+                        @else
+                            <span class="label label-primary">Active</span>
+                        @endif
+                    </td>
+                    <td style="vertical-align: middle;">
                    
-                        <a class="btn btn-warning" href="">
+                        <a class="btn btn-warning" href="{{ URL::action('UserController@getEditTuyenDung',$v->id) }}">
                             <!-- <span class="fa fa-edit pull-right bigicon"></span> -->
                             Edit
                         </a>
@@ -169,7 +185,7 @@
                     </td>
                     <td style="vertical-align: middle;">
                    
-                        <a class="delete btn btn-danger" onclick="return confirm('Are you sure you want to Remove?');"  href="">    
+                        <a class="delete btn btn-danger" onclick="return confirm('Are you sure you want to Remove?');"  href="{{ URL::action('UserController@getDeleteTuyenDung',$v->id) }}">    
                             <!-- <img class="img-del" src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"> -->
                            Delete
                         </a>
