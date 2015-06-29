@@ -44,7 +44,7 @@
                         <div class="col-md-10">
                             <div class="media-body">
                                 <h3 class="media-heading">
-                                    <h3  class="media-heading">{{ $tuyendung->tencty }}</a></h3>
+                                    <h3  class="media-heading">{{ $tuyendung->tencty }}</h3>
                                 </h3>
                                 <table>
                                     <tr>
@@ -62,6 +62,7 @@
                             </div>
                         </div>
                     </div>
+
                     <table class="table ">
                         <tbody>
                         <tr>
@@ -74,9 +75,27 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="fb-like" 
+                    data-href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$tuyendung->id) }}" 
+                    data-layout="button_count" data-action="like" 
+                    data-show-faces="true" data-share="false">
+                </div>
+                <div class="fb-share-button"
+                    data-href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$tuyendung->id) }}"
+                    data-layout="button_count">
+                </div>
+                <div class="fb-comments"
+                     data-href="{{ URL::to('tuyen-dung/tin-tuyen-dung',$tuyendung->id) }}"
+                     data-width="100%" 
+                     data-colorscheme="light"
+                     data-numposts="1">
+                </div>
             </div>
+
         </div>
+
     </div>
+
 @stop
 
 @section('menu_main')

@@ -43,7 +43,7 @@
 			    <td>{{ $value->updated_at }}</td>
 
 			    <td><a href="{{ URL::action('AdminAuthController@getEditDanhMuc',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></a></td>
-			    <td><a href="{{ URL::action('AdminAuthController@getDeleteDanhMuc',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></a></td>
+			    <td><a onclick="return confirm('Are you sure you want to Remove?');" href="{{ URL::action('AdminAuthController@getDeleteDanhMuc',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></a></td>
 			</tr>
 			<?php  $stt++ ?>
 			@endforeach

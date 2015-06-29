@@ -5,6 +5,7 @@ class StoreSettingController extends Controller {
 	{
 		$store = Store::where('user_id', $GLOBALS['user']->id)->first();
 		$settings = StoreOption::where('store_id', $store->id)->lists('option_value', 'option_key');
+		//var_dump($store->toArray());die();
 		return View::make('stores.admin.settings', compact('settings', 'store'));
 	}
 	public function postIndex($slug)

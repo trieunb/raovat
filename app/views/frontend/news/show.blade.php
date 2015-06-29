@@ -34,7 +34,7 @@
 @section('content')
     <div id="content" class="site-content col-md-9" role="main">
         <div class="content">
-            <div class="entry-content">
+            <div class="col-md-12 entry-content">
                         <div class="panel panel-default">
                             <div class="clearfix"></div>
                             <table class="table">
@@ -174,8 +174,24 @@
                                 </tbody>
                             </table>
                             </div>
+ 
+                <div class="fb-like" 
+                    data-href="{{ URL::to('rao-vat/xem-tin',$news->id) }}" 
+                    data-layout="button_count" data-action="like" 
+                    data-show-faces="true" data-share="false">
+                </div>
+                <div class="fb-share-button"
+                    data-href="{{ URL::to('rao-vat/xem-tin',$news->id) }}"
+                    data-layout="button_count">
+                </div>
 
-
+                <div class="fb-comments"
+                     data-href="{{ URL::to('rao-vat/xem-tin',$news->id) }}"
+                     data-width="100%" 
+                     data-colorscheme="light"
+                     data-numposts="1">
+                </div>
+                
 
 
             </div> {{-- //entry-content --}}
@@ -192,10 +208,7 @@
             color: #C20000;
         }
 
-        .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
-            min-width: 100% !important;
-            width: 100% !important;
-        }
+        
 
         p.img-post span {
             color: rgb(95, 176, 228);

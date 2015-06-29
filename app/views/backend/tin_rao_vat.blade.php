@@ -43,7 +43,13 @@
 			    <td>{{ $value->vip_to }}</td>
 			    <td><a href="{{ URL::action('AdminAuthController@getUpdateTrangThai',$value->id) }}"><p data-placement="top" data-toggle="tooltip" title="action"><?php if($value->trangthai == 1)  echo "Enable"; else echo "Disable"; ?></p></a></td>
 			    <td><a href=""><span class="fa fa-edit pull-right bigicon"></span></a></td>
-			    <td><a href="{{ URL::action('AdminAuthController@getDeleteTinRaoVat',$value->id) }}"><button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png"><span>Delete</span></button></a></td>
+			    <td>
+			    	<a onclick="return confirm('Are you sure you want to Remove?');" href="{{ URL::action('AdminAuthController@getDeleteTinRaoVat',$value->id) }}">
+				    	<button type="button" class="sui-button sui-unselectable deleteButton sui-delete"><img src="http://www.prepbootstrap.com/Content/images/template/BootstrapEditableGrid/delete.png">
+				    		<span>Delete</span>
+				    	</button>
+			    	</a>
+			    </td>
 			</tr>
 			<?php  $stt++ ?>
 			@endforeach

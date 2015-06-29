@@ -171,12 +171,32 @@ class UserController extends \BaseController {
 
 	public function getDeleteDangTin($id){
 		$delete = News::where('id',$id)->first();
+
+        $img_arr = array();
+        $images = json_decode($delete->image);
+        foreach ($images as $key => $value) {
+           $img_arr[] = public_path().'/'.$value;
+           
+              File::delete($img_arr);
+           
+        }
+
+       //var_dump($img_arr[0]);die();
+        
 		$delete->delete();
 		return  Redirect::to('thanh-vien/thong-tin-tai-khoan');
 	}
 
     public function getDeleteTuyenDung($id){
         $tuyendung = Tuyendung::where('id',$id)->first();
+        $images = $tuyendung->logo;
+       
+        $fileimage = public_path().'/'.$images;
+        //var_dump($fileimage);die();
+        if (File::exists($fileimage)) {
+            File::delete($fileimage);
+        } 
+      
         $tuyendung->delete();
         return Redirect::to('thanh-vien/thong-tin-tai-khoan');
     }

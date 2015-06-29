@@ -35,7 +35,6 @@ class NewsController extends Controller {
 			$data['phone'] = Input::get('phone');
 			$data['address'] = Input::get('address');
 
-
 			$image = array();
 			//$file = array();
 
@@ -224,6 +223,8 @@ class NewsController extends Controller {
                 $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),
                     0, 10);
                 $newname = $randomString . '.' . pathinfo($filename, PATHINFO_EXTENSION);
+
+                //var_dump($newname);die();
 
                 if ($file->move($destinationPath, $newname)) {
                    $data['logo'] = 'images/tuyendung/' . $newname;

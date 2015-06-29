@@ -10,7 +10,7 @@ class StoreOption extends \Eloquent {
 	public function getKey($key = null)
 	{
 		foreach ($this as $key => $value) {
-			if($$this->key = $value->option_key)
+			if($this->key = $value->option_key)
 			{
 				return $value->option_value;
 			}

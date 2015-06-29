@@ -119,6 +119,15 @@
 		public function getDeleteTinRaoVat($id){
 
 			$tinraovat = News::where('id','=',$id)->first();
+			//var_dump($tinraovat);die();
+			$img_arr = array();
+	        $images = json_decode($tinraovat->image);
+
+	        foreach ($images as $key => $value) {
+	           $img_arr[] = public_path().'/'.$value;
+	            File::delete($img_arr);
+	        } 
+
 			$tinraovat->delete();
 			return Redirect::back();
 
@@ -149,6 +158,20 @@
 			$tuyendung->save();
 			return Redirect::back();
 		}
+
+		public function getDeleteTd($id){
+        $tuyendung = Tuyendung::where('id',$id)->first();
+        $images = $tuyendung->logo;
+       
+        $fileimage = public_path().'/'.$images;
+        //var_dump($fileimage);die();
+        if (File::exists($fileimage)) {
+            File::delete($fileimage);
+        } 
+      
+        $tuyendung->delete();
+        return Redirect::back();
+    }
 
 		public function getLogout(){
 			Sentry::logout();
