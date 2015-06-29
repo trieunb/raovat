@@ -9,8 +9,8 @@ class TuyenDungForm extends FormValidator {
 		'vitrituyendung'	=>	'required',
 		'nguoidangtin'	=>	'required',
 		'chucvu'	=>	'required',
-		'sodienthoai'	=>	'required'
-
+		'sodienthoai'	=>	'required',
+		'logo'		=>	'mimes:jpeg,jpg,png,gif|max:2000|image',
 		
 		);
 	protected $messages = array(

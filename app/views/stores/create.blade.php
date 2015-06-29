@@ -16,7 +16,7 @@
 				<label for="inputStore_name" class="col-sm-2 control-label">Đường dẫn:</label>
 				<div class="col-sm-10">
 					{{ Form::text('store_slug', null, ['required']) }}
-					<span style="font-style: italic;">http://cantho.info/ten_gian_hang</span>
+					<span style="font-style: italic;">http://cantho.info.vn/gian-hang/ten_gian_hang</span>
 				</div>
 			</div>
 			<div class="form-group">

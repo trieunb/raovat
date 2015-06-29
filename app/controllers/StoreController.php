@@ -59,6 +59,17 @@ class StoreController extends \BaseController {
 			if($store == 1) return Redirect::back()->withInput()->withErrors('Bạn chỉ được tạo 1 gian hàng.');
 			$store = Store::create(['store_slug'=>Input::get('store_slug'), 'tengianhang'=>Input::get('store_name'), 'user_id'=>$GLOBALS['user']->id]);
 			File::makeDirectory(Config::get('app.upload_dir') . Input::get('store_slug'), 777);
+			StoreOption::insert([
+				['store_id'	=>	$store->id, 'option_key'=>'title', 'option_value'=>Input::get('store_name')],
+				['store_id'	=>	$store->id, 'option_key'=>'logo', 'option_value'=>''],
+				['store_id'	=>	$store->id, 'option_key'=>'thongtinthanhtoan', 'option_value'=>''],
+				['store_id'	=>	$store->id, 'option_key'=>'diachi', 'option_value'=>'Cần Thơ'],
+				['store_id'	=>	$store->id, 'option_key'=>'dienthoai', 'option_value'=>'0988.888.888'],
+				['store_id'	=>	$store->id, 'option_key'=>'email', 'option_value'=>'admin@cantho.info.vn'],
+				['store_id'	=>	$store->id, 'option_key'=>'facebook', 'option_value'=>''],
+				['store_id'	=>	$store->id, 'option_key'=>'twitter', 'option_value'=>''],
+				['store_id'	=>	$store->id, 'option_key'=>'youtube', 'option_value'=>'']
+				]);
 			return Redirect::to('gian-hang/'.Input::get('store_slug'));
 		}
 	}
