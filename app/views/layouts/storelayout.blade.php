@@ -184,7 +184,7 @@ elseif(Request::segment(3)=='gio-hang') echo 'page page-template-default woocomm
             onfocus="if (this.value == 'Tìm kiếm') {this.value = '';}" />
         <input name="search" type="submit" id='buttom-search' class='buttom-search' value="" /> 
     </form>
-</div>               <ul><li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-174"><a href="index.html">Home</a></li>
+</div>               <ul><li id="menu-item-174" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-174"><a href="/">Home</a></li>
 <li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175"><a href="{{ $store->store_url('gioi-thieu') }}">Giới Thiệu</a></li>
 <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="{{ $store->store_url('thanh-toan') }}">Thanh Toán</a></li>
 <li id="menu-item-176" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-176"><a href="{{ $store->store_url('lien-he') }}">Liên Hệ</a></li>

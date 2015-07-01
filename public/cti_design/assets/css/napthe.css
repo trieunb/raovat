@@ -1,0 +1,12 @@
+li.col-md-4 {
+  list-style: none;
+}
+.radio {
+  text-align: center !important;
+}
+input.cart {
+  width: 100%;
+}
+p.description {
+  color: red;
+}

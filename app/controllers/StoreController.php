@@ -8,6 +8,7 @@ class StoreController extends \BaseController {
 		})->get();
 		View::share('cats', $cats);
 		$store = Store::where('store_slug', Request::segment(2))->with('option')->first();
+		var_dump($store->toArray());die();
 		View::share('store', $store);
 		
 		$products = array();
