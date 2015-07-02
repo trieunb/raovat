@@ -79,7 +79,7 @@
 			return Redirect::back();
 
 		}
-
+		
 		public function getEditDanhMuc($id){
 
 			$danhmuc = Category::where('id','=',$id)->first();

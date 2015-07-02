@@ -269,4 +269,15 @@ class UserController extends \BaseController {
         $store = Store::where('user_id',$user->id)->first();
         return View::make('users.napthecao',compact('store'));
     }
+    public function postNangCapTaiKhoan(){
+        $user = Sentry::getUser();
+        $amount = $user->amount;
+        $user_amount = User::find($user->id);
+
+        $user_amount->amount = Input::get('mathecao') + $amount;
+        $user_amount->save();
+        Session::flash('success','Xin chúc mừng, Bạn vừa nạp thành công '. '<strong>'. Input::get('mathecao') .'vnd'. '</strong> vào tài khoản');
+        return Redirect::back();
+
+    }
 }

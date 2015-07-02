@@ -10,7 +10,7 @@
         </div>
         <div class="panel-body text-center">
 
-        	<form name="napthe" action="" method="post" class="form-horizontal">
+        	<form name="napthe" action="{{ '/thanh-vien/nang-cap-tai-khoan' }}" method="post" class="form-horizontal">
 					<div class="list-ncc" style="padding:5px 0;">
 						<ul class="row">
 							<li class="col-md-4">
@@ -39,6 +39,12 @@
 							</li>
 						</ul>
 					</div>
+					<?php if(Session::has('success')){ ?>
+					    <div class="alert alert-success alert-dismissible" role="alert">
+					      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					      {{Session::get('success')}}
+					    </div>
+					<?php } ?>
 					<div class="form-napthe col-md-8 col-md-offset-2">
 						<p class="description"><i>Bạn vui lòng nhập <u>mã thẻ cào</u> dưới lớp tráng bạc trên thẻ.</i></p>
 						<div class="form-group">
@@ -50,8 +56,18 @@
 						<div class="form-group">
 							<label for="input" class="col-sm-4 control-label">Số Seri</label>
 							<div class="col-sm-8">
-								{{ Form::text('soseri',null,['required','placeholder'=>"Nhập số seri"]) }}
+								{{ Form::text('soseri',null,['placeholder'=>"Nhập số seri"]) }}
 							</div>	
+						</div>
+
+						<div class="form-group">
+							<label for="input" class="col-sm-4 control-label">Mã xác nhận</label>
+							<div class="col-sm-4">
+								{{ Form::text('captcha',null,['placeholder'=>"Nhập capcha"]) }}
+							</div>	
+							<div class="col-sm-4">
+								<img src="{{ asset('cti_design/assets/images/lgviettel.png') }}" alt="Viettel" title="Mạng Viettel">
+							</div>
 						</div>
 
 						<div class="form-group center">
