@@ -127,7 +127,7 @@ return array(
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Vinelab\Editor\EditorServiceProvider',
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
-		'Intervention\Image\ImageServiceProvider',
+		
 
 	),
 
@@ -201,7 +201,7 @@ return array(
 		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 		'Form'		=>	'App\DTT\Services\Form',
 		'Cart'            => 'Gloudemans\Shoppingcart\Facades\Cart',
-		'Image' 		  => 'Intervention\Image\Facades\Image',
+		
 
 	),
 	'upload_dir'	=>	public_path() . '/uploads/',

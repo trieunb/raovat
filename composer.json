@@ -13,8 +13,8 @@
 		"swiftmailer/swiftmailer": "~5.4",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"vinelab/laravel-editor": "*",
-		"gloudemans/shoppingcart": "~1.2",
-		"intervention/image": "dev-master"
+		"gloudemans/shoppingcart": "~1.2"
+		
 	},
 	"autoload": {
 		"classmap": [

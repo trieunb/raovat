@@ -9,6 +9,10 @@ class UserController extends \BaseController {
 	}
 	public function getThongTinTaiKhoan()
 	{
+        // $date = date_create(date('Y-m-d'));
+        // date_add($date, date_interval_create_from_date_string('10 days'));
+        // echo date_format($date, 'Y-m-d');
+
 		$user = Sentry::getUser();
 
         $store = Store::where('user_id',$user->id)->first();
@@ -270,6 +274,7 @@ class UserController extends \BaseController {
         return View::make('users.napthecao',compact('store'));
     }
     public function postNangCapTaiKhoan(){
+
         $user = Sentry::getUser();
         $amount = $user->amount;
         $user_amount = User::find($user->id);
@@ -279,5 +284,56 @@ class UserController extends \BaseController {
         Session::flash('success','Xin chúc mừng, Bạn vừa nạp thành công '. '<strong>'. Input::get('mathecao') .'vnd'. '</strong> vào tài khoản');
         return Redirect::back();
 
+    }
+
+    public function postVipToRaovat(){
+
+        $user = Sentry::getUser();
+        $raovat = News::find($user->id);
+        $user_vip = User::find($user->id);
+        if(date('Y-m-d') <= $raovat->vip_to ){
+            return Redirect::back();
+        }else{
+            if($user_vip->amount >= 20000){
+
+                $date = date_create(date('Y-m-d'));
+                date_add($date, date_interval_create_from_date_string('10 days'));
+                
+                $raovat->vip_to = date_format($date, 'Y-m-d');
+                $raovat->save();
+
+                $user_vip->amount = $user_vip->amount - 20000;
+                $user_vip->save();
+
+            }else{
+                return View::back()->with('message','Tài khoản không đủ tiền tiêu vặt, vui lòng nộp them tiền!');
+            }
+        }
+        
+    }
+
+    public function postVipToTuyenDung(){
+
+        $user = Sentry::getUser();
+        $tuyendung = Tuyendung::find($user->id);
+        $user_vip = User::find($user->id);
+        if(date('Y-m-d') <= $tuyendung->vip_to ){
+            return Redirect::back()->with('message','Tin vip!');
+        }else{
+            if($user->amount >= 20000){
+                
+                $date = date_create(date('Y-m-d'));
+                date_add($date, date_interval_create_from_date_string('10 days'));
+                
+                $tuyendung->vip_to = date_format($date, 'Y-m-d');
+                $tuyendung->save();
+                
+                $user_vip->amount = $user_vip->amount - 20000;
+                $user_vip->save();
+
+            }else{
+                return View::back()->with('message','Tài khoản không đủ tiền tiêu vặt, vui lòng nộp them tiền!');
+            }
+        }
     }
 }
