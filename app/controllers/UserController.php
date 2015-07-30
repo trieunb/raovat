@@ -274,6 +274,7 @@ class UserController extends \BaseController {
         Payment::show();
         return View::make('users.napthecao',compact('store'));
     }
+    
     public function postNangCapTaiKhoan(){
         @unlink(public_path() . '/cookies/'.Session::get("cookie").'.png');
         $user = Sentry::getUser();

@@ -72,7 +72,11 @@
 								{{ Form::text('captcha',null,['placeholder'=>"Nhập capcha"]) }}
 							</div>	
 							<div class="col-sm-4">
+<<<<<<< HEAD
+								<img src="" alt="Captcha" title="Captcha">
+=======
 								<img src="{{ asset('cookies/'.Session::get("cookie").'.png') }}" alt="">
+>>>>>>> abe3023d1ed6b10a2aae6fa36389d22010d731f2
 							</div>
 						</div>
 
