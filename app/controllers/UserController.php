@@ -1,5 +1,5 @@
 <?php
-
+use Drivers\Curl\Payment;
 class UserController extends \BaseController {
 
 	public function getDangXuat()
@@ -271,18 +271,23 @@ class UserController extends \BaseController {
         $user = Sentry::getUser();
 
         $store = Store::where('user_id',$user->id)->first();
+        Payment::show();
         return View::make('users.napthecao',compact('store'));
     }
     public function postNangCapTaiKhoan(){
-
+        @unlink(public_path() . '/cookies/'.Session::get("cookie").'.png');
         $user = Sentry::getUser();
-        $amount = $user->amount;
-        $user_amount = User::find($user->id);
-
-        $user_amount->amount = Input::get('mathecao') + $amount;
-        $user_amount->save();
-        Session::flash('success','Xin chúc mừng, Bạn vừa nạp thành công '. '<strong>'. Input::get('mathecao') .'vnd'. '</strong> vào tài khoản');
-        return Redirect::back();
+        $rs = Payment::make(Input::get('seri'), Input::get('pwd'), Input::get('cardtype'), Input::get('captcha'));
+        $json = json_decode($rs);
+        if($json->has)
+        {//napj thanh cong, cong tien cho user
+            $user->amount += $json->amount;
+            $user->save();
+            return Redirect::back()->withInput()->withSuccess('Nạp thẻ mệnh giá <strong>'.number_format($json->amount, 0, ",", ".").'</strong> đ thành công. Bạn có <strong>'.number_format($user->amount, 0, ",", ".").'</strong> đ trong tài khoản.');
+        } else {
+            return Redirect::back()->withInput()->withError($json->message);
+        }
+       
 
     }
 

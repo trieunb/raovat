@@ -17,7 +17,7 @@
 								<label>
 									<img src="{{ asset('cti_design/assets/images/lgmobifone.png') }}" alt="Mobifone" title="Mạng Mobifone">
 									<div class="radio">
-										<input type="radio" name="baokimcard1" class="cart" id="bkcardmobi1" value="1" checked="checked"><i></i>
+										<input type="radio" name="cardtype" class="cart" id="bkcardmobi1" value="MOBI" checked="checked"><i></i>
 									</div>
 								</label>
 							</li>
@@ -25,7 +25,7 @@
 								<label>
 									<img src="{{ asset('cti_design/assets/images/lgviettel.png') }}" alt="Viettel" title="Mạng Viettel">
 									<div class="radio">
-										<input type="radio" name="baokimcard1" class="cart" id="bkcardviettel1" value="1"><i></i>
+										<input type="radio" name="cardtype" class="cart" id="bkcardviettel1" value="VIETEL"><i></i>
 									</div>
 								</label>
 							</li>
@@ -33,7 +33,7 @@
 								<label>
 									<img src="{{ asset('cti_design/assets/images/lgvinaphone.png') }}" alt="Vinaphone" title="Mạng Vinaphone">
 									<div class="radio">
-										<input type="radio" name="baokimcard1" class="cart" id="bkcardvina1" value="1"><i></i>
+										<input type="radio" name="cardtype" class="cart" id="bkcardvina1" value="VINA"><i></i>
 									</div>												
 								</label>
 							</li>
@@ -45,18 +45,24 @@
 					      {{Session::get('success')}}
 					    </div>
 					<?php } ?>
+                    <?php if(Session::has('error')){ ?>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          {{Session::get('error')}}
+                        </div>
+                    <?php } ?>
 					<div class="form-napthe col-md-8 col-md-offset-2">
 						<p class="description"><i>Bạn vui lòng nhập <u>mã thẻ cào</u> dưới lớp tráng bạc trên thẻ.</i></p>
 						<div class="form-group">
 							<label for="input" class="col-sm-4 control-label">Mã Thẻ Cào</label>
 							<div class="col-sm-8">
-								{{ Form::text('mathecao',null,['required','placeholder'=>"Nhập mã thẻ cào"]) }}
+								{{ Form::text('pwd',null,['required','placeholder'=>"Nhập mã thẻ cào"]) }}
 							</div>	
 						</div>
 						<div class="form-group">
 							<label for="input" class="col-sm-4 control-label">Số Seri</label>
 							<div class="col-sm-8">
-								{{ Form::text('soseri',null,['placeholder'=>"Nhập số seri"]) }}
+								{{ Form::text('seri',null,['placeholder'=>"Nhập số seri"]) }}
 							</div>	
 						</div>
 
@@ -66,7 +72,7 @@
 								{{ Form::text('captcha',null,['placeholder'=>"Nhập capcha"]) }}
 							</div>	
 							<div class="col-sm-4">
-								<img src="{{ asset('cti_design/assets/images/lgviettel.png') }}" alt="Viettel" title="Mạng Viettel">
+								<img src="{{ asset('cookies/'.Session::get("cookie").'.png') }}" alt="">
 							</div>
 						</div>
 
