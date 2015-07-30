@@ -273,6 +273,7 @@ class UserController extends \BaseController {
         $store = Store::where('user_id',$user->id)->first();
         return View::make('users.napthecao',compact('store'));
     }
+    
     public function postNangCapTaiKhoan(){
 
         $user = Sentry::getUser();

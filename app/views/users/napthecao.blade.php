@@ -66,7 +66,7 @@
 								{{ Form::text('captcha',null,['placeholder'=>"Nhập capcha"]) }}
 							</div>	
 							<div class="col-sm-4">
-								<img src="{{ asset('cti_design/assets/images/lgviettel.png') }}" alt="Viettel" title="Mạng Viettel">
+								<img src="" alt="Captcha" title="Captcha">
 							</div>
 						</div>
 
